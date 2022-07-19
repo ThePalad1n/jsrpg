@@ -1,3 +1,7 @@
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
+
+let state = {}
 var characters = {
     "MC": {
         name: "MC",
@@ -13,4 +17,8 @@ var characters = {
         defense: 5,
         imageUrl: ""
     }
+}
+
+function startGame() {
+  state = {}
 }
