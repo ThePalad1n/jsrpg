@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <link
+        rel="stylesheet" href="/assets/css/style.css">
+        <!-- CSS only -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    </head>
+    <header id="head">
+          <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">Stats</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" id="level-status">Level:</a>
+                    <a class="nav-link" id="health-status">Health:</a>
+                    <a class="nav-link" id="attack-status">Attack:</a>
+                    <a class="nav-link" id="gold-status">Gold:</a>
+                    <a class="nav-link" id="exp-status">Exp:</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Shop
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><button class="dropdown-item" id="larmor" type="button">Leather Armor 50gp</button></li>
+                          <li><button class="dropdown-item" id="carmor" type="button">Chainmail Armor 100gp</button></li>
+                          <li><button class="dropdown-item" id="parmor" type="button">Plate Armor 250gp</button></li>
+                          <li><button class="dropdown-item" id="marmor" type="button">Mitheral Armor 500gp</button></li>
+                          <li><button class="dropdown-item border-top" id="ssword" type="button">Short Sword 50gp</button></li>
+                          <li><button class="dropdown-item" id="lsword" type="button">Long Sword 100gp</button></li>
+                          <li><button class="dropdown-item" id="gsword" type="button">Great Sword 250gp</button></li>
+                          <li><button class="dropdown-item" id="gutssword" type="button">Guts Sword 500gp</button></li>
+                          <li><button class="dropdown-item border-top" id="hpa" type="button">Health Potion 20gp</button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Equipment
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><button class="dropdown-item" id="helm" type="button">Helmet: </button></li>
+                          <li><button class="dropdown-item" id="armor" type="button">Armor: </button></li>
+                          <li><button class="dropdown-item" id="cloak" type="button">Cloak: </button></li>
+                          <li><button class="dropdown-item" id="weapon" type="button">Weapon: </button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inventory
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item player-items" id="items" type="button"></button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sell
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><button class="dropdown-item items" id="items" type="button"></button></li>
+                      </ul>
+                    </li>
+                            </li>
+                        </ul>
+                      </li>
+                  </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <body id="body">
+        <div class="content">
+            <div class="container">
+                <div id="story">
+                    <p id="game-text" class="story-text"></p>
+                    <div id="button-holder"></div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/assets/js/game.js"></script>
+        <script src="/assets/js/player.js"></script>
+        <script src="/assets/js/enemies.js"></script>
+        <script>
+            function elementFromHtml(html) {
+                const template = document.createElement("template")
+                template.innerHTML = html.trim()
+                return template.content.firstElementChild;
+            }
+        </script>
+         <!-- JavaScript Bundle with Popper -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
+</html>

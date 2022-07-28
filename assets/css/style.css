@@ -2,18 +2,16 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  display: flex;
+.body {
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+}
+#body{
   background-color: #333;
 }
 
 .container {
+  height: auto;
   width: 800px;
   max-width: 80%;
   background-color: white;
@@ -22,24 +20,57 @@ body {
   box-shadow: 0 0 10px 2px;
 }
 
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin-top: 20px;
-}
-
 .btn {
-  background-color: hsl(200, 100%, 50%);
+  background-color: hsl(199, 56%, 89%);
   border: 1px solid hsl(200, 100%, 30%);
   border-radius: 5px;
   padding: 5px 10px;
-  color: white;
-  outline: none;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  margin-top: 20px;
+  outline: #333;
 }
+
 
 .btn:hover {
   border-color: black;
 }
 
-
+.header {
+  border: 1px solid black;
+  width: 75%;
+  margin: 5px auto;
+}
+.content {
+  text-align: center;
+  padding: 50px;
+}
+.contentBox {
+  border: 1px solid black;
+  width: 20%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.dropdown-menu li {
+  position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+  background-color: #333;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+  }
+  #story{
+    display: flex; 
+    flex-direction: column-reverse;
+  }

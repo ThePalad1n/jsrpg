@@ -1,15 +1,23 @@
 //Enemy Creation
-export default class Enemy {
-    constructor(name, hp, atk, gp, evade){
+class Enemy {
+    constructor(name, hp, atk, gp, evade, exp){
         this.name = name
         this.hp = hp
         this.atk = atk
         this.gp = gp
         this.evade = evade
+        this.exp = exp
     }
   }
 
-// enemies list
-// const spider = new Enemy('Gaint Spider', 25, 8, 10, 50)
-// const goblin = new Enemy('Goblin', 10, 10, 10, 15)
-// const skeleton = new Enemy('Skeleton', 15, 12, 1, 25)
+
+  const spider = new Enemy('Giant Spider', 25, 8, 10, 50, 20)
+  const lion = new Enemy('Lion', 55, 15, 15, 75, 35)
+  const goblin = new Enemy('Goblin', 40, 10, 10, 15, 75)
+  const witch = new Enemy('Swamp Witch', 65, 11, 10, 15, 75)
+  const golem = new Enemy('Golem', 100, 8, 10, 15, 35)
+  const golemitea = new Enemy('Golemite A', 50, 4, 5, 7, 15)
+  const golemiteb = new Enemy('Golemite B', 50, 4, 5, 7, 15)
+ 
+  
+export{spider,lion,goblin,witch,golem,golemitea,golemiteb}
