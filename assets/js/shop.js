@@ -1,30 +1,45 @@
+//This script is for processing and displaying shop items
+
+//imports
 import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD} from './items.js'
 import {mc} from './game.js'
 import {addToInventory, updateNav} from "./support.js";
 
+
+//leather armor nav changes
 var larmor = document.getElementById('larmor')
 larmor.onclick = function (){
+    //check to see if user has enough to purchase
     if( mc.gp >= armorA.gp){
+        //check to see if players current item is better
         if(mc.equip[3].hp < armorA.hp){
+        //deduct gold
         mc.gp = mc.gp - armorA.gp
+        //add to inventory
         mc.inventory.push({
             name: armorA.name
         });
+        //equip item
         mc.equip[3] = armorA
+        //adjust stats
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        //make sure that the current hp doesnt overflow on item change
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
+        //update the nav
         updateNav()
+        //add to nav invin
         addToInventory(armorA.tag)
-        console.log(mc.inventory)
     }
+
     else{
         alert(`Current Item Is Better`)
         }
     }
+
     else{
         alert(`You can't afford this item`)
     }

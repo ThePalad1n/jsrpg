@@ -1,6 +1,10 @@
+//This program is a collection of supportive functions for the game
+
+//imports
 import {mc,playerArmor,playerWeapon,playerCloak,playerHelm,gameOver} from './game.js'
 
-//========Supporting Functions begin===============
+
+//!========Supporting Functions begin===============
 
 // removes old set of buttons
 function removeElementsByClass(className) {
@@ -10,19 +14,27 @@ function removeElementsByClass(className) {
     }
 }
 
-// =======Evasion begin=========
+//!=======Evasion begin=========
+//generates random number for enemy evasion
 function getRandomInte(max) {
   return Math.floor(Math.random() * max);
 }
-// =======Evasion end=========
+//!=======Evasion end=========
+
+
+//!=========Attack Range begin=========
+//generates damage for each player attack
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
 }
+//!=========Attack Range end=========
 
-//=======Making Buttons begin=======
 
+
+//!=======Making Buttons begin=======
+//creates buttons by passing which button and descript
 function makeButton(x, xx){
   var z = 'option' + x;
   var y = document.createElement(z)
@@ -32,14 +44,12 @@ function makeButton(x, xx){
   y.id = z;
   home.appendChild(y);
 }
-
-
-//=======Making Buttons end ===============
-
+//!=======Making Buttons end ===============
 
 
 
-//Exp bar
+//!========Exp bar Begin=======================
+//Exp bar update
 function expUpdate() {
     var f = mc.exp
     var g = mc.reqexp
@@ -48,11 +58,12 @@ function expUpdate() {
     i.style.width = (h*100) + '%'; 
     return
   }
-//Exp bar end
-
-//=======Start Navbar Elements begin ===============
+//!========Exp bar end=======================
 
 
+
+//!=======Start Navbar Elements begin ===============
+//creates initial nav elements for status
 var levelStatus = document.getElementById('level-status')
 levelStatus.append(`${
     mc.level
@@ -75,10 +86,12 @@ var expStatus = document.getElementById('exp-status')
 expStatus.append(`${
     mc.exp
 }`)
-//=======Start Navbar Elements end ===============
+//!======Start Navbar Elements end ===============
 
-//=======Update Navbar begin ===============
 
+
+//!=======Update Navbar begin ===============
+//updates the nav bar items
 function updateNav() {
   levelStatus.textContent = (`Level: ${
       mc.level
@@ -94,6 +107,8 @@ function updateNav() {
   }`)
   expStatus.textContent = (`Exp: ${mc.exp}/${mc.reqexp}`)
 
+
+  //updates the players equip
   playerHelm.textContent = (`Helm: ${
       mc.equip[1].name
   }`)
@@ -108,10 +123,11 @@ function updateNav() {
   }`)
 }
 
-//=======Update Navbar end ===============
+//!======Update Navbar end ===============
 
 
-//=======Start Level Check begin ===============
+
+//!=======Start Level Check begin ===============
 
 function checkLevel() {
   if (mc.exp > mc.reqexp) {
@@ -130,12 +146,13 @@ function checkLevel() {
   }
 }
 
-//=======Start Level Check end ===============
+//!=======Start Level Check end ===============
 
 
 
-//======is alive? start====================
-
+//!======is alive? start====================
+//^needs work still have a couple neg health overflows
+//is supposed to check health after each hit to prevent overflow
 function checkHealth(){
     if(mc.currenthp <=0){
         gameOver()
@@ -145,18 +162,24 @@ function checkHealth(){
     }
 }
 
-//=======is alive? end=====================
+//!=======is alive? end=====================
 
 
+
+//!=======Add Item to invin begin=================
 //add to inventory
 function addToInventory(zzz){
     const invin = document.getElementById(zzz);
     invin.style.display = 'block';
 }
+//!=======Add Item to invin end=================
 
 
-//=======Start Update begin ===============
 
+
+
+//!=======Start Update begin ===============
+//function goes through list of what needs to be updated on page change
 function update() {
   checkHealth()
   checkLevel()
@@ -165,12 +188,13 @@ function update() {
   updateNav()
 }
 
-//=======Start Update end ===============
+//!=======Start Update end ===============
 
 
-//========Supporting Functions End ===============
+//!========Supporting Functions End ===============
 
 
+//exports
 export {getRandomInt}
 export {getRandomInte}
 export {makeButton}
