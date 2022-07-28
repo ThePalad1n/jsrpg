@@ -1,4 +1,4 @@
-import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from './items.js'
+import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD} from './items.js'
 import {mc} from './game.js'
 import {addToInventory, updateNav} from "./support.js";
 
@@ -12,7 +12,8 @@ larmor.onclick = function (){
         });
         mc.equip[3] = armorA
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -38,7 +39,8 @@ carmor.onclick = function (){
         });
         mc.equip[3] = armorB
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -65,7 +67,8 @@ parmor.onclick = function (){
         });
         mc.equip[3] = armorC
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -91,7 +94,8 @@ marmor.onclick = function (){
         });
         mc.equip[3] = armorD
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -120,7 +124,8 @@ ssword.onclick = function (){
         });
         mc.equip[0] = swordA
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -146,7 +151,8 @@ lsword.onclick = function (){
         });
         mc.equip[0] = swordB
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -172,7 +178,8 @@ gsword.onclick = function (){
         });
         mc.equip[0] = swordC
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -198,7 +205,8 @@ gutssword.onclick = function (){
         });
         mc.equip[0] = swordD
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         if(mc.currenthp > mc.maxhp){
             mc.currenthp === mc.maxhp
         }
@@ -217,31 +225,5 @@ gutssword.onclick = function (){
 
 
 
-//need to fix
-var hpa = document.getElementById('hpa')
-hpa.onclick = function (){
-    if( mc.gp >= healthA.gp){
-        if(mc.currenthp !== mc.maxhp){
-            mc.gp = mc.gp - healthA.gp
-            mc.currenthp = mc.currenthp + healthA.hp
-            updateNav()
-            if(mc.currenthp >= mc.maxhp){
-                mc.currenthp === mc.maxhp
-                updateNav()
-            }
-                    updateNav()
-                    console.log(mc.inventory)
-                }
-    else{
-        alert(`Youre already at full health.`)
-        }
-    }
-    else{
-        alert(`You can't afford this item`)
-    }
 
-}
-
-
-
-export{armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA}
+export{armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD}

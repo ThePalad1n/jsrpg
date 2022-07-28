@@ -11,9 +11,9 @@ class Enemy {
   }
 
 
-  const spider = new Enemy('Giant Spider', 25, 8, 10, 50, 14)
+  const spider = new Enemy('Giant Spider', 50, 8, 20, 50, 14)
   const lion = new Enemy('Lion', 55, 15, 15, 75, 35)
-  const goblin = new Enemy('Goblin', 40, 10, 10, 15, 75)
+  const goblin = new Enemy('Goblin', 50, 10, 10, 15, 75)
   const witch = new Enemy('Swamp Witch', 65, 11, 10, 15, 75)
   const golem = new Enemy('Golem', 100, 8, 10, 15, 35)
   const golemitea = new Enemy('Golemite A', 50, 4, 5, 7, 15)

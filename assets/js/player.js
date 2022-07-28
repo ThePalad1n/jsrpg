@@ -1,11 +1,12 @@
 //Character creation
 export class Character {
-    constructor(name, maxhp, currenthp, basehp, atk, baseatk, gp, level, reqexp, exp){
+    constructor(name, maxhp, currenthp, basehp, minatk, maxatk, baseatk, gp, level, reqexp, exp){
         this.name = name
         this.maxhp = maxhp
         this.currenthp = currenthp
         this.basehp = basehp
-        this.atk = atk
+        this.minatk = minatk
+        this.maxatk = maxatk
         this.baseatk = baseatk
         this.gp = gp
         this.level = level
@@ -16,6 +17,6 @@ export class Character {
 
 
   // player
-const mc = new Character('Player', 100, 80, 100, 10, 10, 1000000, 1, 15, 0)
+const mc = new Character('Player', 100, 100, 100, 5, 12, 10, 30, 1, 15, 0)
 
 export{mc}

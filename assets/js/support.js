@@ -1,4 +1,4 @@
-import {gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory,gameOver} from './game.js'
+import {mc,playerArmor,playerWeapon,playerCloak,playerHelm,gameOver} from './game.js'
 
 //========Supporting Functions begin===============
 
@@ -11,11 +11,15 @@ function removeElementsByClass(className) {
 }
 
 // =======Evasion begin=========
-function getRandomInt(max) {
+function getRandomInte(max) {
   return Math.floor(Math.random() * max);
 }
 // =======Evasion end=========
-
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
 //=======Making Buttons begin=======
 
@@ -48,6 +52,7 @@ function expUpdate() {
 
 //=======Start Navbar Elements begin ===============
 
+
 var levelStatus = document.getElementById('level-status')
 levelStatus.append(`${
     mc.level
@@ -58,10 +63,9 @@ healthStatus.append(`${
 }/${
     mc.maxhp
 }`)
+
 var attackStatus = document.getElementById('attack-status')
-attackStatus.append(`${
-    mc.atk
-}`)
+attackStatus.append(`${mc.minatk}-${mc.maxatk}`)
 var goldStatus = document.getElementById('gold-status')
 goldStatus.append(`${
     mc.gp
@@ -84,9 +88,7 @@ function updateNav() {
   }/${
       mc.maxhp
   }`)
-  attackStatus.textContent = (`Attack: ${
-      mc.atk
-  }`)
+  attackStatus.textContent = (`Attack: ${mc.minatk}-${mc.maxatk}`)
   goldStatus.textContent = (`Gold: ${
       mc.gp
   }`)
@@ -120,7 +122,8 @@ function checkLevel() {
           mc.level
       }!\n Health: +5\n Attack: +1\n`)
       mc.maxhp += 5
-      mc.atk += 1
+      mc.minatk += 1
+      mc.maxatk += 1
       return
   } else {
       return
@@ -169,6 +172,7 @@ function update() {
 
 
 export {getRandomInt}
+export {getRandomInte}
 export {makeButton}
 export {updateNav}
 export {checkLevel}

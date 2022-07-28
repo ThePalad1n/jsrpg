@@ -1,8 +1,8 @@
 import {mc} from "./player.js";
 import {spider,lion,goblin,witch,golem,golemitea,golemiteb} from "./enemies.js"
 import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA} from "./items.js";
-import {getRandomInt, makeButton, updateNav, checkLevel, update, addToInventory, expUpdate} from "./support.js";
-import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from './shop.js'
+import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory, expUpdate} from "./support.js";
+import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD} from './shop.js'
 
 export {
     gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory
@@ -22,10 +22,11 @@ mc.equip = [cw, ch, cc, ca]
 
 
 // starting variables
+
 let gameText = document.getElementById("story");
 let text = document.querySelector("#game-text");
 text.textContent = "Welcome to the Journey. Press start to begin."
-let aBlock = document.createElement('h1').appendChild(document.createElement('h1'));
+let buttoner = document.createElement('h1').appendChild(document.createElement('h1'));
 var playerHelm = document.getElementById('helm')
 playerHelm.append(`${
     mc.equip[1].name
@@ -49,7 +50,7 @@ playerWeapon.append(`${
 // initial starting menu
 function mainMenu() {
     gameText.append(text);
-    aBlock.append(makeButton('a', 'Start Game'))
+    buttoner.append(makeButton('a', 'Start Game'))
     optiona.onclick = function () {
         update()
         areaZeroA()
@@ -65,17 +66,21 @@ function mainMenu() {
 // player decides to rest
 function areaZeroA() { // Story
     text.textContent = "A large man and his Orange cat, Kitty, once lived on a secluded ranch on the outskirts of the forest.";
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'), makeButton('b', 'Skip Intro'))
     optiona.onclick = function () {
         update()
         areaZeroB();
+    }
+    optionb.onclick = function(){
+        update();
+        startGame();
     }
 
 }
 
 function areaZeroB() { // Story
     text.textContent = "He made a peaceful life for the two of them, living off the land and only having minor encounter with the local wildlife.";
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroC();
@@ -84,7 +89,7 @@ function areaZeroB() { // Story
 }
 function areaZeroC() { // Story
     text.textContent = "Until one day when the two were celebrating the Kitty's 20th birthday the unthinkable happened...";
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroD();
@@ -93,7 +98,7 @@ function areaZeroC() { // Story
 }
 function areaZeroD() { // Story
     text.textContent = "As he was returning from the kitchen with the tuna and chicken birthday cake, the door was broken open and the cat was nowhere to be found with muddy footprints a muck";
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroE();
@@ -102,7 +107,7 @@ function areaZeroD() { // Story
 }
 function areaZeroE() { // Story
     text.textContent = `"KITTY!" he screamed `;
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroF();
@@ -113,7 +118,7 @@ function areaZeroE() { // Story
 function areaZeroF() { // Story
     text.textContent = `He frantically looked around for and rushed to the door to see if he could find anything outside He looked off in the distance and saw a couple of shadowy figures running off 
     with his beloved pet`;
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroG();
@@ -122,7 +127,7 @@ function areaZeroF() { // Story
 }
 function areaZeroG() { // Story
     text.textContent = `With no hesitation he ran out the door bringing nothing with him chasing after his beloved animal. "I swear I'll do everything in my power to get you back!" `;
-    aBlock.append(makeButton('a', 'Next'))
+    buttoner.append(makeButton('a', 'Next'))
     optiona.onclick = function () {
         update()
         areaZeroH();
@@ -131,7 +136,7 @@ function areaZeroG() { // Story
 }
 function areaZeroH() { // Story
     text.textContent = `And so our adventure began on his quest to find his beloved animal will he be able to find Kitty in time or will she never be seen again`;
-    aBlock.append(makeButton('a', 'Start Your Journey'))
+    buttoner.append(makeButton('a', 'Start Your Journey'))
     optiona.onclick = function () {
         update()
         startGame();
@@ -147,7 +152,7 @@ function areaZeroH() { // Story
 function startGame() { // optionA
 
     text.textContent = (`You enter the forest where you last saw the shadowy figures. What do you want to do?`)
-    aBlock.append(makeButton('a', 'Check the forest'), makeButton('b', 'Follow the path'))
+    buttoner.append(makeButton('a', 'Check the forest'), makeButton('b', 'Follow the path'))
     optiona.onclick = function () {
         update()
         areaOneForest();
@@ -163,12 +168,11 @@ function areaOneForest() {
     text.textContent = `You begin treking through the woods and the visability gets lower and lower. It becomes so dark with think brush and trees that you are no longer able to see you own hands.
     You stop for a second and hear the sound of branches snapping.`;
     // choices
-    makeButton('a', 'Run')
+    buttoner.append(makeButton('a', 'Run'),makeButton('b', 'Investigate'))
     optiona.onclick = function () {
         update()
         areaOneClearing();
     }
-    makeButton('b', 'Investigate')
     optionb.onclick = function () {
         update()
         text.textContent = `You hold your breath staying as quiet as you can as you investigate the noise. The snapping gets louder and you notice that the noise is coming from above.
@@ -188,12 +192,11 @@ function areaOneClearing() { // Story
     over a tree root and trip on the ground. The crunching of branches is getting louder. You heard many foot steps getting closer. You get back on your feet and make it through the clearing.
     The noises are getting closer what do you do?`
     // choices
-    makeButton('a', 'Fight')
+    buttoner.append(makeButton('a', 'Fight'), makeButton('b', 'Investigate'), makeButton('c', 'Hide'))
     optiona.onclick = function () {
         update()
         areaOneFight();
     }
-    makeButton('b', 'Investigate')
     optionb.onclick = function () { // alert("You found a new weapon: Stick\n Attack Power increased by 5")
         if(mc.equip[0].atk < stick.atk){
         alert(`You found a stick!\n
@@ -210,12 +213,12 @@ function areaOneClearing() { // Story
             Item has been added to your inventory`)
         }
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.maxatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         addToInventory(stick.tag)
         update()
         areaOneFight();
     }
-    makeButton('c', 'Hide')
     optionc.onclick = function () {
         update()
         text.textContent = `You find a near by log and lay prone next to it. You hold your breath and hoping for the best.
@@ -239,18 +242,19 @@ function areaOneClearing() { // Story
 function areaOneSpiderDefeatedA() {
     text.textContent = "You successfully defeated the spider!\n What will you do next?";
     // choices
+    buttoner.append(makeButton('a', 'Go down the path'), makeButton('b', 'Rest for a bit'))
     alert(`Gold Gained: ${
         spider.gp
     }\n Exp Gained: ${
         spider.exp
     }`)
     checkLevel();
-    makeButton('a', 'Go down the path')
+
     optiona.onclick = function () {
         update()
         areaTwoPath();
     }
-    makeButton('b', 'Rest for a bit')
+
     optionb.onclick = function () {
         mc.currenthp = mc.maxhp;
         alert("You now have full health.")
@@ -264,12 +268,11 @@ function areaOneSpiderDefeatedA() {
 function areaOneSpiderDefeatedB() {
     text.textContent = "You successfully escaped the spider!";
     // choices
-    makeButton('a', 'Go down the path')
+    buttoner.append(makeButton('a', 'Go down the path'), makeButton('b', 'Rest for a bit'))
     optiona.onclick = function () {
         update()
         areaOnePath();
     }
-    makeButton('b', 'Rest for a bit')
     optionb.onclick = function () {
         update()
         areaOneRest();
@@ -294,22 +297,20 @@ function areaOneRest() { // Story
 
 // ========A1 Spider Fight begin===========
 function areaOneFight() {
-    console.log(mc.inventory)
-    console.log(mc.equip)
     let id = 3
     text.textContent = (`The ${
         spider.name
     } Attacks! \n What will you do?`)
 
     // attack
+    buttoner.append(makeButton('a', 'Attack'), makeButton('b', 'Evade'), makeButton('c', 'Flee'))
 
-    makeButton('a', 'Attack')
     optiona.onclick = function () {
         mc.currenthp = mc.currenthp - spider.atk
-        spider.hp = spider.hp - mc.atk
+        spider.hp = spider.hp - getRandomInt(mc.minatk, mc.maxatk)
         updateNav()
         text.textContent = (`You did ${
-            mc.atk
+            getRandomInt(mc.minatk, mc.maxatk)
         } damage! \n The spider now has ${
             spider.hp
         } health.\n\nThe spider attacks back dealing ${
@@ -329,13 +330,12 @@ function areaOneFight() {
 
     }
     // evade
-    makeButton('b', 'Evade')
     optionb.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= spider.evade) {
-            spider.hp = spider.hp - mc.atk;
+            spider.hp = spider.hp - getRandomInt(mc.minatk, mc.maxatk);
             text.textContent = (`You evaded successfully! And counter for ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
         } else { // enemy attacks player
             mc.currenthp = mc.currenthp - spider.atk
@@ -349,9 +349,8 @@ function areaOneFight() {
             }
         }
     }
-    makeButton('c', 'Flee')
     optionc.onclick = function () {
-        var q = getRandomInt(20)
+        var q = getRandomInte(20)
         if (q == 19) {
             spider.hp = 0;
             update()
@@ -575,10 +574,11 @@ function areaTwoSavannaABA() {
             }\ny`)
         }
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-    addToInventory(lionHide.tag)
-    checkLevel();
-    updateNav();
+        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        addToInventory(lionHide.tag)
+        checkLevel();
+        updateNav();
     makeButton('a', 'Walk back towards the hill.')
     optiona.onclick = function () {
         update()
@@ -676,7 +676,8 @@ function areaTwoHutInside() {
                     }\n`)
                 }
                 mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                 addToInventory(helmA.tag)
                 update()
         areaTwoInsideInvestigation();
@@ -899,6 +900,7 @@ function areaTwoWitchKilled() {
 // =================lion fight begin=======================================
 
 function areaTwoLionFight() {
+    let atk = getRandomInt(mc.minatk, mc.maxatk)
     let id = 4
 
     text.textContent = (`The ${
@@ -909,10 +911,10 @@ function areaTwoLionFight() {
     makeButton('a', 'Attack')
     optiona.onclick = function () {
         mc.currenthp = mc.currenthp - lion.atk
-        lion.hp = lion.hp - mc.atk
+        lion.hp = lion.hp - atk
         updateNav()
         text.textContent = (`You did ${
-            mc.atk
+            atk
         } damage! \n The lion now has ${
             lion.hp
         } health.\n\nThe lion attacks back dealing ${
@@ -932,11 +934,11 @@ function areaTwoLionFight() {
     // evade
     makeButton('b', 'Evade')
     optionb.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= lion.evade) {
-            lion.hp = lion.hp - mc.atk;
+            lion.hp = lion.hp - atk;
             text.textContent = (`You evaded successfully! And counter for ${
-                mc.atk
+                atk
             } damage! What will you do next?`)
         } else { // enemy attacks player
             mc.currenthp = mc.currenthp - lion.atk
@@ -975,7 +977,7 @@ function areaTwoGoblinFight() {
     // attack
     makeButton('a', 'Attack')
     optiona.onclick = function () {
-        var d = getRandomInt(3)
+        var d = getRandomInte(3)
         if (d == 1) {
             text.textContent = (`The goblin avoided your attack! The goblin attacks you dealing ${
                 goblin.atk
@@ -986,9 +988,9 @@ function areaTwoGoblinFight() {
             updateNav()
         } else {
             mc.currenthp = mc.currenthp - goblin.atk
-            goblin.hp = goblin.hp - mc.atk
+            goblin.hp = goblin.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The goblin now has ${
                 goblin.hp
             } health.\n\nThe goblin attacks back dealing ${
@@ -1027,7 +1029,8 @@ function areaTwoGoblinFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp = mc.gp + goblin.gp
                     mc.exp = mc.exp + goblin.exp
                     addToInventory(spear.tag)
@@ -1044,11 +1047,11 @@ function areaTwoGoblinFight() {
     // evade
     makeButton('b', 'Evade')
     optionb.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= goblin.evade) {
-            goblin.hp = goblin.hp - mc.atk;
+            goblin.hp = goblin.hp - getRandomInt(mc.minatk, mc.maxatk);
             text.textContent = (`You evaded successfully! And counter for ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
             if (goblin.hp <= 0) {
                 if(mc.equip[0].atk < spear.atk){
@@ -1082,7 +1085,8 @@ function areaTwoGoblinFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(spear.tag)
                 update()
                 areaThreeRiverGG()
@@ -1111,6 +1115,7 @@ function areaTwoGoblinFight() {
 // ============================witch fight begin==============================
 
 function areaTwoWitchFight() {
+    let atk = getRandomInt(mc.minatk, mc.maxatk)
     let id = 6
 
     text.textContent = (`The ${
@@ -1120,7 +1125,7 @@ function areaTwoWitchFight() {
     // attack
     makeButton('a', 'Attack')
     optiona.onclick = function () {
-        var d = getRandomInt(10)
+        var d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The witch avoided your attack! The witch attacks you dealing ${
                 witch.atk
@@ -1128,9 +1133,9 @@ function areaTwoWitchFight() {
             updateNav()
         } else {
             mc.currenthp = mc.currenthp - witch.atk
-            witch.hp = witch.hp - mc.atk
+            witch.hp = witch.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The witch now has ${
                 witch.hp
             } health.\n\nThe witch attacks back dealing ${
@@ -1169,7 +1174,8 @@ function areaTwoWitchFight() {
                             }\n`)
                         }
                         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                        mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                         addToInventory(knife.tag)
                 update()
                 areaTwoWitchKilled()
@@ -1183,11 +1189,11 @@ function areaTwoWitchFight() {
     // evade
     makeButton('b', 'Evade')
     optionb.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= witch.evade) {
-            witch.hp = witch.hp - mc.atk;
+            witch.hp = witch.hp - getRandomInt(mc.minatk, mc.maxatk);
             text.textContent = (`You evaded successfully! And counter for ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
             updateNav()
             if(witch.hp <= 0){
@@ -1222,7 +1228,8 @@ function areaTwoWitchFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(knife.tag)
                 update();
                 areaTwoWitchKilled()
@@ -1243,7 +1250,7 @@ function areaTwoWitchFight() {
     // flee
     makeButton('c', 'Flee')
     optionc.onclick = function () {
-        var q = getRandomInt(20)
+        var q = getRandomInte(20)
         if (q == 19) {
             witch.hp = 0;
             update()
@@ -1270,6 +1277,7 @@ function areaTwoWitchFight() {
 
 function areaTwoGolemFight() {
     let id = 7
+    let atk = getRandomInt(mc.minatk, mc.maxatk)
 
     text.textContent = (`You approach the rocks you saw from the distance when all of the sudden they start shaking. The rocks then rise in the air smashing into each other forming a ball.
     The ball gets bigger... Looks like it has arms... And legs! When everything stops. Two bright red eyes sprout and the ${
@@ -1279,7 +1287,7 @@ function areaTwoGolemFight() {
     // attack
     makeButton('a', 'Attack')
     optiona.onclick = function () {
-        var d = getRandomInt(10)
+        var d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The golem avoided your attack! The golem attacks you dealing ${
                 golem.atk
@@ -1288,9 +1296,9 @@ function areaTwoGolemFight() {
             updateNav()
         } else {
             mc.currenthp = mc.currenthp - golem.atk
-            golem.hp = golem.hp - mc.atk
+            golem.hp = golem.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The golem now has ${
                 golem.hp
             } health.\n\nThe golem attacks back dealing ${
@@ -1311,11 +1319,11 @@ function areaTwoGolemFight() {
     // evade
     makeButton('b', 'Evade')
     optionb.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= golem.evade) {
-            golem.hp = golem.hp - mc.atk;
+            golem.hp = golem.hp - getRandomInt(mc.minatk, mc.maxatk);
             text.textContent = (`You evaded successfully! And counter for ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
             updateNav()
         } else { // enemy attacks player
@@ -1334,7 +1342,7 @@ function areaTwoGolemFight() {
     // flee
     makeButton('c', 'Flee')
     optionc.onclick = function () {
-        var q = getRandomInt(30)
+        var q = getRandomInte(30)
         if (q == 29) {
             golem.hp = 0;
             update()
@@ -1365,7 +1373,7 @@ function areaTwoGolemitesEnter() {
     // attack
     makeButton('a', 'Attack Golemite A')
     optiona.onclick = function () {
-        let d = getRandomInt(10)
+        let d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The golemite avoided your attack! Golemite A attacks you dealing ${
                 golemitea.atk
@@ -1377,7 +1385,7 @@ function areaTwoGolemitesEnter() {
         } else {
 
             mc.currenthp = mc.currenthp - golemitea.atk
-            golemitea.hp = golemitea.hp - mc.atk
+            golemitea.hp = golemitea.hp - getRandomInt(mc.minatk, mc.maxatk)
             updateNav()
 
             if (golemitea.hp <= 0 && golemiteb.hp <= 0) {
@@ -1411,7 +1419,8 @@ function areaTwoGolemitesEnter() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
@@ -1419,7 +1428,7 @@ function areaTwoGolemitesEnter() {
                 areaThreeRiverG()
             } else {
                 text.textContent = (`You did ${
-                    mc.atk
+                    getRandomInt(mc.minatk, mc.maxatk)
                 } damage! \n The golemite now has ${
                     golemitea.hp
                 } health.\n\nThe golemite attacks back dealing ${
@@ -1441,7 +1450,7 @@ function areaTwoGolemitesEnter() {
     // attack
     makeButton('b', 'Attack Golemite B')
     optionb.onclick = function () {
-        let d = getRandomInt(10)
+        let d = getRandomInte(10)
 
         if (d == 1) {
             text.textContent = (`The golemite avoided your attack! Golemite A attacks you dealing ${
@@ -1454,7 +1463,7 @@ function areaTwoGolemitesEnter() {
         } else {
 
             mc.currenthp = mc.currenthp - golemiteb.atk
-            golemiteb.hp = golemiteb.hp - mc.atk
+            golemiteb.hp = golemiteb.hp - getRandomInt(mc.minatk, mc.maxatk)
             updateNav()
 
             if (golemitea.hp <= 0 && golemiteb.hp <= 0) {
@@ -1488,7 +1497,8 @@ function areaTwoGolemitesEnter() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
@@ -1496,7 +1506,7 @@ function areaTwoGolemitesEnter() {
                 areaThreeRiverG()
             } else {
                 text.textContent = (`You did ${
-                    mc.atk
+                    getRandomInt(mc.minatk, mc.maxatk)
                 } damage! \n The golemite now has ${
                     golemiteb.hp
                 } health.\n\nThe golemite attacks back dealing ${
@@ -1517,12 +1527,12 @@ function areaTwoGolemitesEnter() {
     // evade
     makeButton('c', 'Evade')
     optionc.onclick = function () {
-        var r = getRandomInt(100)
+        var r = getRandomInte(100)
         if (r <= golem.evade) {
-            golemitea.hp = golemitea.hp - mc.atk;
-            golemiteb.hp = golemiteb.hp - mc.atk;
+            golemitea.hp = golemitea.hp - getRandomInt(mc.minatk, mc.maxatk);
+            golemiteb.hp = golemiteb.hp - getRandomInt(mc.minatk, mc.maxatk);
             text.textContent = (`You evaded successfully! And counter both golemites for ${
-                mc.atk
+                getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
             updateNav()
             if (golemitea.hp && golemiteb.hp <= 0) {
@@ -1556,7 +1566,8 @@ function areaTwoGolemitesEnter() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
@@ -1578,7 +1589,7 @@ function areaTwoGolemitesEnter() {
     // flee
     makeButton('d', 'Flee')
     optiond.onclick = function () {
-        var q = getRandomInt(20)
+        var q = getRandomInte(20)
         if (q == 19) {
             golemitea.hp = 0;
             golemiteb.hp = 0;
