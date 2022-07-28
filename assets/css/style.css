@@ -74,3 +74,17 @@
     display: flex; 
     flex-direction: column-reverse;
   }
+  #image{
+    width: 10%;
+    height: 10%;
+  }
+
+  /*
+  background image {
+    width: 100%;
+    height: 400px;
+    background-image: url('img_flowers.jpg');
+    background-size: cover;
+    border: 1px solid red;
+  }
+  *?

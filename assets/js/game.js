@@ -1701,6 +1701,10 @@ function death(id) {
 function gameOver() {
     text.textContent = "GAME OVER YOU HAVE DIED";
     makeButton('a', 'GG')
+    // var img = document.createElement("img");
+    // img.src = "/assets/images/youdied.jpg";
+    // var src = document.getElementById("image");
+    // src.append(img);
     optiona.onclick = function () {
         update()
         location.reload();
