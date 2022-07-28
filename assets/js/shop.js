@@ -1,6 +1,6 @@
 import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from './items.js'
 import {mc} from './game.js'
-import {updateNav} from "./support.js";
+import {addToInventory, updateNav} from "./support.js";
 
 var larmor = document.getElementById('larmor')
 larmor.onclick = function (){
@@ -17,6 +17,7 @@ larmor.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(armorA.tag)
         console.log(mc.inventory)
     }
     else{
@@ -42,6 +43,7 @@ carmor.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(armorB.tag)
         console.log(mc.inventory)
     }
         else{
@@ -68,6 +70,7 @@ parmor.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(armorC.tag)
         console.log(mc.inventory)
     }
     else{
@@ -93,6 +96,7 @@ marmor.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(armorD.tag)
         console.log(mc.inventory)
     }
     else{
@@ -121,6 +125,7 @@ ssword.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(swordA.tag)
         console.log(mc.inventory)
     }
     else{
@@ -146,6 +151,7 @@ lsword.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(swordB.tag)
         console.log(mc.inventory)
     }
     else{
@@ -171,6 +177,7 @@ gsword.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(swordC.tag)
         console.log(mc.inventory)
     }
     else{
@@ -196,6 +203,7 @@ gutssword.onclick = function (){
             mc.currenthp === mc.maxhp
         }
         updateNav()
+        addToInventory(swordD.tag)
         console.log(mc.inventory)
     }
     else{

@@ -1,4 +1,4 @@
-import {gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm} from './game.js'
+import {gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory,gameOver} from './game.js'
 
 //========Supporting Functions begin===============
 
@@ -32,6 +32,20 @@ function makeButton(x, xx){
 
 //=======Making Buttons end ===============
 
+
+
+
+//Exp bar
+function expUpdate() {
+    var f = mc.exp
+    var g = mc.reqexp
+    var h = f/g
+    var i = document.getElementById("expstatus")
+    i.style.width = (h*100) + '%'; 
+    return
+  }
+//Exp bar end
+
 //=======Start Navbar Elements begin ===============
 
 var levelStatus = document.getElementById('level-status')
@@ -52,6 +66,7 @@ var goldStatus = document.getElementById('gold-status')
 goldStatus.append(`${
     mc.gp
 }`)
+
 var expStatus = document.getElementById('exp-status')
 expStatus.append(`${
     mc.exp
@@ -75,9 +90,8 @@ function updateNav() {
   goldStatus.textContent = (`Gold: ${
       mc.gp
   }`)
-  expStatus.textContent = (`Exp: ${
-      mc.exp
-  }`)
+  expStatus.textContent = (`Exp: ${mc.exp}/${mc.reqexp}`)
+
   playerHelm.textContent = (`Helm: ${
       mc.equip[1].name
   }`)
@@ -101,6 +115,7 @@ function checkLevel() {
   if (mc.exp > mc.reqexp) {
       mc.level = 1 + mc.level;
       mc.reqexp += 10 * mc.level
+      mc.exp = 0
       alert(`You are now level ${
           mc.level
       }!\n Health: +5\n Attack: +1\n`)
@@ -130,27 +145,24 @@ function checkHealth(){
 //=======is alive? end=====================
 
 
+//add to inventory
+function addToInventory(zzz){
+    const invin = document.getElementById(zzz);
+    invin.style.display = 'block';
+}
+
+
 //=======Start Update begin ===============
 
 function update() {
   checkHealth()
   checkLevel()
+  expUpdate()
   removeElementsByClass('btn')
   updateNav()
 }
 
 //=======Start Update end ===============
-
-
-
-
-
-
-
-
-
-
-
 
 
 //========Supporting Functions End ===============
@@ -162,4 +174,6 @@ export {updateNav}
 export {checkLevel}
 export {checkHealth}
 export {update}
+export {expUpdate}
+export {addToInventory}
 export{levelStatus,healthStatus,attackStatus,goldStatus,expStatus}

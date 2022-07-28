@@ -10,19 +10,18 @@
     <header id="head">
           <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand">Stats</a>
+              <a class="navbar-brand" id="level-status">Level:</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" id="level-status">Level:</a>
                     <a class="nav-link" id="health-status">Health:</a>
                     <a class="nav-link" id="attack-status">Attack:</a>
                     <a class="nav-link" id="gold-status">Gold:</a>
                     <a class="nav-link" id="exp-status">Exp:</a>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle x" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Shop
                       </a>
                       <ul class="dropdown-menu">
@@ -38,7 +37,7 @@
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Equipment
                       </a>
                       <ul class="dropdown-menu">
@@ -53,17 +52,21 @@
                         Inventory
                       </a>
                       <ul class="dropdown-menu">
-                        <li><button class="dropdown-item player-items" id="items" type="button"></button></li>
+                          <li><button class="dropdown-item" id="itemstick" type="button" style="display: none;">Stick</button></li>
+                          <li><button class="dropdown-item" id="itemarmorA" type="button" style="color:green; display: none;">Leather Armor</button></li>
+                          <li><button class="dropdown-item" id="itemarmorB" type="button" style="color:blue;display: none;">Chainmail Armor</button></li>
+                          <li><button class="dropdown-item" id="itemarmorC" type="button" style="color:purple;display: none;">Plate Armor</button></li>
+                          <li><button class="dropdown-item" id="itemarmorD" type="button" style="color:orange;display: none;">Mitheral Armor</button></li>
+                          <li><button class="dropdown-item" id="itemswordA" type="button" style="color:green; display: none;">Short Sword</button></li>
+                          <li><button class="dropdown-item" id="itemswordB" type="button" style="color:blue; display: none;">Long Sword</button></li>
+                          <li><button class="dropdown-item" id="itemswordC" type="button" style="color:purple; display: none;">Great Sword</button></li>
+                          <li><button class="dropdown-item" id="itemswordD" type="button" style="color:orange; display: none;">Guts Sword</button></li>
+                          <li><button class="dropdown-item" id="itemspear" type="button" style="display: none;">Spear</button></li>
+                          <li><button class="dropdown-item" id="itemlionhide" type="button" style="color:blue; display: none;">Lion Hide Cloak</button></li>
+                          <li><button class="dropdown-item" id="itemrockhelm" type="button" style="color:green; display: none;">Rock Helmet</button></li>
+                          <li><button class="dropdown-item" id="itemhelmA" type="button" style="color:green; display: none;">Leather Helmet</button></li>
+                          <li><button class="dropdown-item" id="itemknife" type="button" style="color:green; display: none;">Knife</button></li>
                       </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sell
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li><button class="dropdown-item items" id="items" type="button"></button></li>
-                      </ul>
-                    </li>
                             </li>
                         </ul>
                       </li>
@@ -71,6 +74,9 @@
               </div>
             </div>
           </nav>
+<div id="Progress_Status">
+  <div id="expstatus"></div>
+</div>
     </header>
     <body id="body">
         <div class="content">

@@ -6,9 +6,7 @@
   justify-content: center;
   align-items: center;
 }
-#body{
-  background-color: #333;
-}
+
 
 .container {
   height: auto;
@@ -79,6 +77,13 @@
     height: 10%;
   }
 
+  .nav{
+    box-shadow: 0 0 10px 2px;
+  }
+  .navbar{
+    box-shadow: 0 0 10px 2px;
+  }
+
   /*
   background image {
     width: 100%;
@@ -87,4 +92,19 @@
     background-size: cover;
     border: 1px solid red;
   }
-  *?
+  */
+
+
+  #Progress_Status {
+    width: 100%;
+    background-color: #ddd;
+  }
+    
+  #expstatus {
+    width: 1%;
+    height: 12px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+  }

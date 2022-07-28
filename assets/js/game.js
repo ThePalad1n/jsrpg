@@ -1,12 +1,13 @@
 import {mc} from "./player.js";
 import {spider,lion,goblin,witch,golem,golemitea,golemiteb} from "./enemies.js"
 import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA} from "./items.js";
-import {getRandomInt, makeButton, updateNav, checkLevel, update} from "./support.js";
+import {getRandomInt, makeButton, updateNav, checkLevel, update, addToInventory, expUpdate} from "./support.js";
 import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from './shop.js'
 
 export {
-    gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm
+    gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory
 }
+export{gameOver}
 
 //temp vars
 var cw = placeHolderWeapon
@@ -15,9 +16,9 @@ var cc = placeHolderCloak
 var ca = placeHolderArmor
 
 //Player items
-mc.inventory = []
+var inventory = []
+mc.inventory = inventory
 mc.equip = [cw, ch, cc, ca]
-
 
 
 // starting variables
@@ -210,6 +211,7 @@ function areaOneClearing() { // Story
         }
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        addToInventory(stick.tag)
         update()
         areaOneFight();
     }
@@ -574,7 +576,7 @@ function areaTwoSavannaABA() {
         }
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-
+    addToInventory(lionHide.tag)
     checkLevel();
     updateNav();
     makeButton('a', 'Walk back towards the hill.')
@@ -675,6 +677,7 @@ function areaTwoHutInside() {
                 }
                 mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                 mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                addToInventory(helmA.tag)
                 update()
         areaTwoInsideInvestigation();
             }
@@ -1027,6 +1030,7 @@ function areaTwoGoblinFight() {
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp = mc.gp + goblin.gp
                     mc.exp = mc.exp + goblin.exp
+                    addToInventory(spear.tag)
                 update()
                 areaThreeRiverGG()
             }
@@ -1079,7 +1083,7 @@ function areaTwoGoblinFight() {
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-            
+                    addToInventory(spear.tag)
                 update()
                 areaThreeRiverGG()
         } else { // enemy attacks player
@@ -1166,6 +1170,7 @@ function areaTwoWitchFight() {
                         }
                         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                         mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                        addToInventory(knife.tag)
                 update()
                 areaTwoWitchKilled()
             }
@@ -1218,6 +1223,7 @@ function areaTwoWitchFight() {
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    addToInventory(knife.tag)
                 update();
                 areaTwoWitchKilled()
             }
@@ -1408,6 +1414,7 @@ function areaTwoGolemitesEnter() {
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
+                    addToInventory(rockHelm.tag)
                 update()
                 areaThreeRiverG()
             } else {
@@ -1484,6 +1491,7 @@ function areaTwoGolemitesEnter() {
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
+                    addToInventory(rockHelm.tag)
                 update()
                 areaThreeRiverG()
             } else {
@@ -1551,6 +1559,7 @@ function areaTwoGolemitesEnter() {
                     mc.atk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
+                    addToInventory(rockHelm.tag)
                 update()
                 areaThreeRiverG()
         } else { // enemy attacks player
@@ -1645,7 +1654,7 @@ function areaThreeRiverGG() {
     }
 }
 function areaThreeRiverGGG() {
-    text.textContent = `You clench the collar and put it around your wrist. What do you want to do now?"`;
+    text.textContent = `You clench the collar and put it around your wrist. What do you want to do now?`;
     // choices
     makeButton('a', 'Go accross the river')
     optiona.onclick = function () {
@@ -1657,7 +1666,21 @@ function areaThreeRiverGGG() {
         update()
         areaTwoClearing()
     }
+
+    makeButton('c', 'Take a short rest')
+    optionc.onclick = function () {
+        if(mc.currenthp != mc.maxhp){
+        alert("You now have full health.")
+        mc.currenthp = mc.maxhp;
+        updateNav()
+        areaThreeRiverGGGG()
+        }
+        else{
+            alert("You just took a short rest!")
+        }
+    }
 }
+
 
 function areaThreeRiver() {
     text.textContent = "You wait by the river to continue your adventure. This is all I have so far. Thanks for playing!";
