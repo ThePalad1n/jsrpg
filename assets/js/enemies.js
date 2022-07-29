@@ -1,9 +1,10 @@
 //Enemy Creation
 class Enemy {
-    constructor(name, hp, atk, gp, evade, exp){
+    constructor(name, hp, minatk, maxatk, gp, evade, exp){
         this.name = name
         this.hp = hp
-        this.atk = atk
+        this.minatk = minatk
+        this.maxatk = maxatk
         this.gp = gp
         this.evade = evade
         this.exp = exp
@@ -11,13 +12,14 @@ class Enemy {
   }
 
 
-  const spider = new Enemy('Giant Spider', 50, 8, 20, 50, 14)
-  const lion = new Enemy('Lion', 55, 15, 15, 75, 35)
-  const goblin = new Enemy('Goblin', 50, 10, 10, 15, 75)
-  const witch = new Enemy('Swamp Witch', 65, 11, 10, 15, 75)
-  const golem = new Enemy('Golem', 100, 8, 10, 15, 35)
-  const golemitea = new Enemy('Golemite A', 50, 4, 5, 7, 15)
-  const golemiteb = new Enemy('Golemite B', 50, 4, 5, 7, 15)
+  const spider = new Enemy('Giant Spider', 50, 6, 10, 20, 50, 14)
+  const lion = new Enemy('Lion', 55, 8, 15, 15, 75, 35)
+  const goblin = new Enemy('Goblin', 50, 8, 13, 10, 15, 35)
+  const witch = new Enemy('Swamp Witch', 65, 10, 15, 10, 15, 35)
+  const golem = new Enemy('Golem', 100, 6, 10, 10, 15, 35)
+  const golemite = new Enemy('Golemite A', 50, 3, 5, 5, 7, 15)
+  const golemitea = new Enemy('Golemite A', 50, 3, 5, 5, 7, 15)
+  const golemiteb = new Enemy('Golemite B', 50, 3, 5, 5, 7, 15)
  
   
-export{spider,lion,goblin,witch,golem,golemitea,golemiteb}
+export{spider,lion,goblin,witch,golem,golemite,golemitea,golemiteb}

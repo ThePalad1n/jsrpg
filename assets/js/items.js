@@ -11,10 +11,10 @@ export class Item {
   }
 
 // item list
-const stick = new Item('Stick', 0, 5, 1, 'weapon', 'itemstick')
+const stick = new Item('Stick', 0, 3, 1, 'weapon', 'itemstick')
 const lionHide = new Item('Lions Hide Cloak', 20, 0, 25, 'cloak', 'itemlionhide')
-const spear = new Item('Spear', 0, 12, 10, 'weapon', 'itemspear')
-const knife = new Item('Knife', 0, 11, 10, 'weapon', 'itemknife')
+const spear = new Item('Goblin Spear', 0, 8, 10, 'weapon', 'itemspear')
+const knife = new Item('Fillet Knife', 0, 7, 10, 'weapon', 'itemknife')
 const rockHelm = new Item('Rock Helm', 20, 1, 10, 'helmet', 'itemrockhelm')
 const helmA = new Item('Leather Helm', 10, 0, 10, 'helmet', 'itemhelmA')
 
@@ -33,13 +33,21 @@ const armorC = new Item('Plate Armor', 80, 0, 250, 'armor', 'itemarmorC')
 const armorD = new Item('Mitheral Armor', 150, 0, 500, 'armor', 'itemarmorD')
 
 //weapons
-const swordA = new Item('Short Sword', 0, 15, 50, 'weapon', 'itemswordA')
-const swordB = new Item('Long Sword', 0, 30, 100, 'weapon', 'itemswordB')
-const swordC = new Item('Great Sword', 0, 45, 250, 'weapon', 'itemswordC')
-const swordD = new Item('Gut Sword', 0, 75, 500, 'weapon', 'itemswordD')
+const swordA = new Item('Short Sword', 0, 10, 50, 'weapon', 'itemswordA')
+const swordB = new Item('Long Sword', 0, 20, 100, 'weapon', 'itemswordB')
+const swordC = new Item('Great Sword', 0, 35, 250, 'weapon', 'itemswordC')
+const swordD = new Item('Gut Sword', 0, 50, 500, 'weapon', 'itemswordD')
+
+//key items
+const keyItemA = new Item('Kitty Collar', 0, 0, 1, 'key item', 'itemcatcollar')
+
+
+//comsumables
+const stoneA = new Item('Sharpening Stone', 0, 0, 1, 'consumable', 'itemsharpeningstone')
+const healthA = new Item('Small Health Potion', 50, 0, 25, 'consumable', 'itemsmallhp')
 
 
 
 
-export {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA}
-export{armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD}
+export {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,stoneA,keyItemA}
+export{armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA}

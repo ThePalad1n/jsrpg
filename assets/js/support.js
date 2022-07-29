@@ -62,6 +62,7 @@ function expUpdate() {
 
 
 
+
 //!=======Start Navbar Elements begin ===============
 //creates initial nav elements for status
 var levelStatus = document.getElementById('level-status')
@@ -154,7 +155,7 @@ function checkLevel() {
 //^needs work still have a couple neg health overflows
 //is supposed to check health after each hit to prevent overflow
 function checkHealth(){
-    if(mc.currenthp <=0){
+    if(mc.currenthp <= 0){
         gameOver()
     }
     else {
@@ -181,11 +182,12 @@ function addToInventory(zzz){
 //!=======Start Update begin ===============
 //function goes through list of what needs to be updated on page change
 function update() {
-  checkHealth()
-  checkLevel()
-  expUpdate()
-  removeElementsByClass('btn')
-  updateNav()
+    updateNav()
+    checkHealth()
+    checkLevel()
+    expUpdate()
+    removeElementsByClass('btn')
+    updateNav()
 }
 
 //!=======Start Update end ===============

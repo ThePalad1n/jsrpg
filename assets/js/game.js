@@ -15,10 +15,10 @@ Note:
 //!========= Starting Materials Begin ===========
 //Imports
 import {mc} from "./player.js";
-import {spider,lion,goblin,witch,golem,golemitea,golemiteb} from "./enemies.js"
-import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA} from "./items.js";
+import {spider,lion,goblin,witch,golem,golemite,golemitea,golemiteb} from "./enemies.js"
+import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,keyItemA,stoneA} from "./items.js";
 import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory} from "./support.js";
-import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD} from "./shop.js"
+import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from "./shop.js"
 //Exports
 export {
     gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory
@@ -239,8 +239,8 @@ function areaOneClearing() {
         //check to see if current item is better than new
         if(mc.equip[0].atk < stick.atk){
         alert(`You found a stick!\n
-        Attack: +5\n
-        Item has been equiped and added to your inventory`
+        Attack: +${stick.atk}\n
+        Item has been equiped and added to your inventory!`
         )
         //equips item to player/nav
         mc.equip[0] = stick
@@ -253,11 +253,11 @@ function areaOneClearing() {
         else{
             //strictly adds it to inventory
             alert(`You found a stick!\n
-            Item has been added to your inventory`)
+            Item has been added to your inventory!`)
         }
         //chat in player stats with new item
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         //adds item to nav
         addToInventory(stick.tag)
@@ -353,7 +353,7 @@ function areaOneFight() {
     buttoner.append(makeButton('a', 'Attack'), makeButton('b', 'Evade'), makeButton('c', 'Flee'))
 
     optiona.onclick = function () {
-        mc.currenthp = mc.currenthp - spider.atk
+        mc.currenthp = mc.currenthp - getRandomInt(spider.minatk, spider.maxatk)
         spider.hp = spider.hp - getRandomInt(mc.minatk, mc.maxatk)
         updateNav()
         text.textContent = (`You did ${
@@ -361,7 +361,7 @@ function areaOneFight() {
         } damage! \n The spider now has ${
             spider.hp
         } health.\n\nThe spider attacks back dealing ${
-            spider.atk
+        getRandomInt(spider.minatk, spider.maxatk)
         } damage.\n
         \n What is your next move?`)
         if (spider.hp <= 0) {
@@ -385,9 +385,9 @@ function areaOneFight() {
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - spider.atk
+            mc.currenthp = mc.currenthp -     getRandomInt(spider.minatk, spider.maxatk)
             text.textContent = (`Your evasion failed.\n The spider attacks you for ${
-                spider.atk
+                    getRandomInt(spider.minatk, spider.maxatk)
             } damage!\n What will you do next?`)
             console.log("You evaded unsuccessfully")
             if (mc.currenthp < 1) {
@@ -403,10 +403,8 @@ function areaOneFight() {
             update()
             areaOneSpiderDefeatedB()
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - spider.atk
-            text.textContent = (`Your escape failed.\n The spider attacks you for ${
-                spider.atk
-            } damage!\n What will you do next?`)
+            mc.currenthp = mc.currenthp - getRandomInt(spider.minatk, spider.maxatk)
+            text.textContent = (`Your escape failed.\n The spider attacks you for ${getRandomInt(spider.minatk, spider.maxatk)} damage!\n What will you do next?`)
             if (mc.currenthp < 1) { // end loop
                 update()
                 death(id);
@@ -633,7 +631,7 @@ function areaTwoSavannaABA() {
             }\ny`)
         }
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         addToInventory(lionHide.tag)
         //checks level twice
@@ -744,7 +742,7 @@ function areaTwoHutInside() {
                     }\n`)
                 }
                 mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                 mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                 addToInventory(helmA.tag)
                 update()
@@ -760,6 +758,11 @@ function areaTwoHutInside() {
             update()
             areaThreeRiver()
         }
+            makeButton('b', 'Go back to the forest.')
+            optionb.onclick = function () {
+                update()
+                areaTwoClearing()
+        }
     }
 }
 
@@ -768,18 +771,31 @@ function areaTwoHutInside() {
 function areaTwoInsideInvestigation() {
     text.textContent = (`Youre inside the hut rummaging around. You find a couple gold pieces that you stuff in your pocket. But before you have a chance to do anything else you hear a noise from 
     outside. What do you do?`)
-    
-    //^add a free opportunity attack for player
     makeButton('a', 'Supirse the creature!')
     optiona.onclick = function () {
         update()
+        text.textContent = (`You suprise the creature and attack dealing ${
+            getRandomInt(mc.minatk, mc.maxatk)
+        } damage! \n The goblin now has ${
+            goblin.hp
+        } health.\n`)
+        makeButton('c', 'Fight!')
+        optionc.onclick = function () {
+        update()
         areaTwoGoblinFight();
+        }
     }
-    //^add a free opportunity attack for goblin
     makeButton('b', 'Hide...')
     optionb.onclick = function () {
         update()
+        text.textContent = (`You try to hide from the creature. It bursts in and sees you. It attacks dealing ${
+            getRandomInt(goblin.minatk, goblin.maxatk)
+        } damage.`)
+        makeButton('c', 'Fight!')
+        optionc.onclick = function () {
+        update()
         areaTwoGoblinFight();
+        }
     }
 }
 
@@ -999,7 +1015,7 @@ function areaTwoLionFight() {
     // attack
     makeButton('a', 'Attack')
     optiona.onclick = function () {
-        mc.currenthp = mc.currenthp - lion.atk
+        mc.currenthp = mc.currenthp - getRandomInt(lion.minatk, lion.maxatk)
         lion.hp = lion.hp - getRandomInt(mc.minatk, mc.maxatk)
         updateNav()
         text.textContent = (`You did ${
@@ -1007,7 +1023,7 @@ function areaTwoLionFight() {
         } damage! \n The lion now has ${
             lion.hp
         } health.\n\nThe lion attacks back dealing ${
-            lion.atk
+            getRandomInt(lion.minatk, lion.maxatk)
         } damage.\n What is your next move?`)
         if (lion.hp <= 0) {
             mc.gp += lion.gp
@@ -1030,9 +1046,9 @@ function areaTwoLionFight() {
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - lion.atk
+            mc.currenthp = mc.currenthp - getRandomInt(lion.minatk, lion.maxatk)
             text.textContent = (`Your evasion failed.\n The lion attacks you for ${
-                lion.atk
+                getRandomInt(lion.minatk, lion.maxatk)
             } damage!\n What will you do next?`)
             updateNav()
             console.log("You evaded unsuccessfully")
@@ -1059,28 +1075,27 @@ function areaTwoGoblinFight() {
     text.textContent = (`The ${
         goblin.name
     } Attacks! \n What will you do?`)
-
     // attack
     makeButton('a', 'Attack')
     optiona.onclick = function () {
         var d = getRandomInte(3)
         if (d == 1) {
             text.textContent = (`The goblin avoided your attack! The goblin attacks you dealing ${
-                goblin.atk
+                getRandomInt(goblin.minatk, goblin.maxatk)
             } damage.\n You now have ${
                 mc.currenthp
             } health!
             \n What is your next move?`)
             updateNav()
         } else {
-            mc.currenthp = mc.currenthp - goblin.atk
+            mc.currenthp = mc.currenthp - getRandomInt(goblin.minatk, goblin.maxatk)
             goblin.hp = goblin.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The goblin now has ${
                 goblin.hp
             } health.\n\nThe goblin attacks back dealing ${
-                goblin.atk
+                getRandomInt(goblin.minatk, goblin.maxatk)
             } damage.\n What is your next move?`)
             updateNav()
             if (goblin.hp <= 0) {
@@ -1115,7 +1130,7 @@ function areaTwoGoblinFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp = mc.gp + goblin.gp
                     mc.exp = mc.exp + goblin.exp
@@ -1171,15 +1186,15 @@ function areaTwoGoblinFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(spear.tag)
                 update()
                 areaThreeRiverGG()
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - goblin.atk
+            mc.currenthp = mc.currenthp - getRandomInt(goblin.minatk, goblin.maxatk)
             text.textContent = (`Your evasion failed.\n The goblin attacks you for ${
-                goblin.atk
+                getRandomInt(goblin.minatk, goblin.maxatk)
             } damage!\n What will you do next?`)
             updateNav()
             console.log("You evaded unsuccessfully")
@@ -1201,9 +1216,7 @@ function areaTwoGoblinFight() {
 //!============================witch fight begin==============================
 
 function areaTwoWitchFight() {
-    let atk = getRandomInt(mc.minatk, mc.maxatk)
     let id = 6
-
     text.textContent = (`The ${
         witch.name
     } Attacks! \n What will you do?`)
@@ -1214,18 +1227,18 @@ function areaTwoWitchFight() {
         var d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The witch avoided your attack! The witch attacks you dealing ${
-                witch.atk
+                getRandomInt(witch.minatk, witch.maxatk)
             } damage.\n What is your next move?`)
             updateNav()
         } else {
-            mc.currenthp = mc.currenthp - witch.atk
+            mc.currenthp = mc.currenthp - getRandomInt(witch.minatk, witch.maxatk)
             witch.hp = witch.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The witch now has ${
                 witch.hp
             } health.\n\nThe witch attacks back dealing ${
-                witch.atk
+                getRandomInt(witch.minatk, witch.maxatk)
             } damage.\n What is your next move?`)
             updateNav()
             if (witch.hp <= 0) {
@@ -1260,7 +1273,7 @@ function areaTwoWitchFight() {
                             }\n`)
                         }
                         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                        mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                        mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                         mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                         addToInventory(knife.tag)
                 update()
@@ -1314,16 +1327,16 @@ function areaTwoWitchFight() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(knife.tag)
                 update();
                 areaTwoWitchKilled()
             }
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - witch.atk
+            mc.currenthp = mc.currenthp - getRandomInt(witch.minatk, witch.maxatk)
             text.textContent = (`Your evasion failed.\n The witch attacks you for ${
-                witch.atk
+                getRandomInt(witch.minatk, witch.maxatk)
             } damage!\n What will you do next?`)
             console.log("You evaded unsuccessfully")
             updateNav()
@@ -1342,9 +1355,9 @@ function areaTwoWitchFight() {
             update()
             areaTwoWitchFled()
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - witch.atk
+            mc.currenthp = mc.currenthp - getRandomInt(witch.minatk, witch.maxatk)
             text.witch = (`Your escape failed.\n The witch attacks you for ${
-                witch.atk
+                getRandomInt(witch.minatk, witch.maxatk)
             } damage!\n What will you do next?`)
             updateNav()
             if (mc.currenthp < 1) { // end loop
@@ -1367,8 +1380,6 @@ function areaTwoWitchFight() {
 
 function areaTwoGolemFight() {
     let id = 7
-    let atk = getRandomInt(mc.minatk, mc.maxatk)
-
     text.textContent = (`You approach the rocks you saw from the distance when all of the sudden they start shaking. The rocks then rise in the air smashing into each other forming a ball.
     The ball gets bigger... Looks like it has arms... And legs! When everything stops. Two bright red eyes sprout and the ${
         golem.name
@@ -1380,19 +1391,19 @@ function areaTwoGolemFight() {
         var d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The golem avoided your attack! The golem attacks you dealing ${
-                golem.atk
+                getRandomInt(golem.minatk, golem.maxatk)
             } damage.
             \n What is your next move?`)
             updateNav()
         } else {
-            mc.currenthp = mc.currenthp - golem.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golem.minatk, golem.maxatk)
             golem.hp = golem.hp - getRandomInt(mc.minatk, mc.maxatk)
             text.textContent = (`You did ${
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! \n The golem now has ${
                 golem.hp
             } health.\n\nThe golem attacks back dealing ${
-                golem.atk
+                getRandomInt(golem.minatk, golem.maxatk)
             } damage.
         \n What is your next move?`)
             updateNav()
@@ -1417,9 +1428,9 @@ function areaTwoGolemFight() {
             } damage! What will you do next?`)
             updateNav()
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - golem.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golem.minatk, golem.maxatk)
             text.textContent = (`Your evasion failed.\n The golem attacks you for ${
-                golem.atk
+                getRandomInt(golem.minatk, golem.maxatk)
             } damage!\n What will you do next?`)
             console.log("You evaded unsuccessfully")
             updateNav()
@@ -1438,9 +1449,9 @@ function areaTwoGolemFight() {
             update()
             areaThreeRiver()
         } else { // enemy attacks player
-            mc.currenthp = mc.currenthp - golem.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golem.minatk, golem.maxatk)
             text.golem = (`Your escape failed.\n The golem attacks you for ${
-                golem.atk
+                getRandomInt(golem.minatk, golem.maxatk)
             } damage!\n What will you do next?`)
             updateNav()
             if (mc.currenthp < 1) { // end loop
@@ -1459,22 +1470,21 @@ function areaTwoGolemitesEnter() {
     text.textContent = (`You defeated the ${
         golem.name
     } and it begins to violently shake. When all the sudden it splits apart into two smaller golemites! \n What will you do?`)
-
     // attack a
     makeButton('a', 'Attack Golemite A')
     optiona.onclick = function () {
         let d = getRandomInte(10)
         if (d == 1) {
             text.textContent = (`The golemite avoided your attack! Golemite A attacks you dealing ${
-                golemitea.atk
+                getRandomInt(golemitea.minatk, golemitea.maxatk)
             } damage.\n Golemite B attacks you dealing ${
-                golemiteb.atk
+                getRandomInt(golemiteb.minatk, golemiteb.maxatk)
             } damage.\n What is your next move?`)
-            mc.currenthp = mc.currenthp - golemitea.atk - golemiteb.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golemitea.minatk, golemitea.maxatk) - getRandomInt(golemiteb.minatk, golemiteb.maxatk)
             updateNav()
         } else {
 
-            mc.currenthp = mc.currenthp - golemitea.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golemitea.minatk, golemitea.maxatk)
             golemitea.hp = golemitea.hp - getRandomInt(mc.minatk, mc.maxatk)
             updateNav()
 
@@ -1485,9 +1495,9 @@ function areaTwoGolemitesEnter() {
                     }\n Exp Gained: ${
                         golemitea.exp + golemiteb.exp + golem.exp
                     }\n
-                                Item Found: ${
+                                Items Found: ${
                         rockHelm.name
-                    }\n
+                    } and 1x ${stoneA.name}\n
                                 Health: +${
                         rockHelm.hp
                     }
@@ -1495,7 +1505,8 @@ function areaTwoGolemitesEnter() {
                     mc.equip[1] = rockHelm
                     
                     mc.inventory.push({
-                        name: rockHelm.name
+                        name: rockHelm.name,
+                        name: stoneA.name
                     });
                     }
                     else{
@@ -1506,14 +1517,19 @@ function areaTwoGolemitesEnter() {
                         }\n
                                     Item Found: ${
                             rockHelm.name
-                        }\n`)
+                        }and 1x ${stoneA.name}\n`)
+                        mc.inventory.push({
+                            name: rockHelm.name,
+                            name: stoneA.name
+                        });
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
+                    addToInventory(stoneA.tag)
                 update()
                 areaThreeRiverG()
             } else {
@@ -1522,7 +1538,7 @@ function areaTwoGolemitesEnter() {
                 } damage! \n The golemite now has ${
                     golemitea.hp
                 } health.\n\nThe golemite attacks back dealing ${
-                    golemitea.atk
+                    getRandomInt(golemitea.minatk, golemitea.maxatk)
                 } damage.
                 \n What is your next move?`)
                 if (golemitea.hp <= 0) {
@@ -1544,15 +1560,15 @@ function areaTwoGolemitesEnter() {
 
         if (d == 1) {
             text.textContent = (`The golemite avoided your attack! Golemite A attacks you dealing ${
-                golemitea.atk
+                getRandomInt(golemitea.minatk, golemitea.maxatk)
             } damage.\n Golemite B attacks you dealing ${
-                golemiteb.atk
+                getRandomInt(golemiteb.minatk, golemiteb.maxatk)
             } damage.
                     \n What is your next move?`)
             updateNav()
         } else {
 
-            mc.currenthp = mc.currenthp - golemiteb.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golemiteb.minatk, golemiteb.maxatk)
             golemiteb.hp = golemiteb.hp - getRandomInt(mc.minatk, mc.maxatk)
             updateNav()
 
@@ -1587,7 +1603,7 @@ function areaTwoGolemitesEnter() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
@@ -1600,7 +1616,7 @@ function areaTwoGolemitesEnter() {
                 } damage! \n The golemite now has ${
                     golemiteb.hp
                 } health.\n\nThe golemite attacks back dealing ${
-                    golemiteb.atk
+                    getRandomInt(golemiteb.minatk, golemiteb.maxatk)
                 } damage.
                 \n What is your next move?`)
                 if (golemiteb.hp <= 0) {
@@ -1655,7 +1671,7 @@ function areaTwoGolemitesEnter() {
                         }\n`)
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-                    mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+                    mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
@@ -1663,9 +1679,9 @@ function areaTwoGolemitesEnter() {
                 update()
                 areaThreeRiverG()
         } else {
-            mc.currenthp = mc.currenthp - golemitea.atk
+            mc.currenthp = mc.currenthp - getRandomInt(golemitea.minatk, golemitea.maxatk)
             text.textContent = (`Your evasion failed.\n The golemite attacks you for ${
-                golemitea.atk
+                getRandomInt(golemitea.minatk, golemitea.maxatk)
             } damage!\n What will you do next?`)
             updateNav()
             if (mc.currenthp < 1) {
@@ -1684,9 +1700,9 @@ function areaTwoGolemitesEnter() {
             update()
             areaThreeRiver()
         } else {
-            mc.currenthp = mc.currenthp - golemite.atk
+            mc.currenthp = mc.currenthp - golemite.minatk
             text.textContent = (`Your escape failed.\n The golemite attacks you for ${
-                golemite.atk
+                golemite.minatk
             } damage!\n What will you do next?`)
             updateNav()
             if (mc.currenthp < 1) {
@@ -1750,7 +1766,6 @@ function areaThreeRiverW() {
 //after goblin encounter filler
 function areaThreeRiverGG() {
     text.textContent = `You defeat the goblin and find a collar witha bell, next to the bell there is a name tag. You filp it over and it reads the name "Kitty"`;
-    
     makeButton('a', 'Next')
     optiona.onclick = function () {
         update()
@@ -1761,7 +1776,18 @@ function areaThreeRiverGG() {
 //after filler
 function areaThreeRiverGGG() {
     text.textContent = `You clench the collar and put it around your wrist. What do you want to do now?`;
-    
+    if(mc.currenthp != mc.maxhp){
+    alert(`
+    Item Found: ${
+        keyItemA.name
+    }\n
+    Item has been added to inventory
+    `)
+    mc.inventory.push({
+        name: keyItemA.name
+    });
+    addToInventory(keyItemA.tag)
+    }
     makeButton('a', 'Go accross the river')
     optiona.onclick = function () {
         update()
@@ -1778,8 +1804,8 @@ function areaThreeRiverGGG() {
         if(mc.currenthp != mc.maxhp){
         alert("You now have full health.")
         mc.currenthp = mc.maxhp;
-        updateNav()
-        areaThreeRiverGGGG()
+        update()
+        areaThreeRiverGGG()
         }
         else{
             alert("You just took a short rest!")
@@ -1787,10 +1813,25 @@ function areaThreeRiverGGG() {
     }
 }
 
+
+//after filler
+function areaThreeRiverGGGG() {
+    text.textContent = `What do you want to do now?`;
+    buttoner.append(makeButton('a', 'Go accross the river'), makeButton('b', 'Go back to the forest'))
+    optiona.onclick = function () {
+        update()
+        areaThreeRiver()
+    }
+    optionb.onclick = function () {
+        update()
+        areaTwoClearing()
+    }
+
+}
+
 //end of game for now
 function areaThreeRiver() {
     text.textContent = "You wait by the river to continue your adventure. This is all I have so far. Thanks for playing!";
-    
     makeButton('a', 'Main Menu')
     optiona.onclick = function () {
         update()
