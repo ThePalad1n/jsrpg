@@ -18,7 +18,7 @@ import {mc} from "./player.js";
 import {spider,lion,goblin,witch,golem,golemitea,golemiteb} from "./enemies.js"
 import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA} from "./items.js";
 import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory} from "./support.js";
-
+import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD} from "./shop.js"
 //Exports
 export {
     gameText,mc,playerArmor,playerWeapon,playerCloak,playerHelm,inventory
@@ -258,7 +258,7 @@ function areaOneClearing() {
         //chat in player stats with new item
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-        mc.maxatk = mc.maxatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+        mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
         //adds item to nav
         addToInventory(stick.tag)
         update()
