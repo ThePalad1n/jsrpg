@@ -16,7 +16,7 @@ Note:
 //Imports
 import {mc} from "./player.js";
 import {spider,lion,goblin,witch,golem,golemite,golemitea,golemiteb} from "./enemies.js"
-import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,keyItemA,stoneA} from "./items.js";
+import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,keyItemA,stoneA, stickB} from "./items.js";
 import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory, restReset, hideRest, unhideRest} from "./support.js";
 import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from "./shop.js"
 //Exports
@@ -240,9 +240,7 @@ function areaOneClearing() {
         mc.equip[0] = stick
 
         //adds item to inventory
-        mc.inventory.push({
-            name: stick.name
-        });
+        mc.inventory.push(stick.name);
         }
         else{
             //strictly adds it to inventory
@@ -536,9 +534,7 @@ function areaTwoSavannaABA() {
         mc.equip[2] = lionHide
 
         //add to invin
-        mc.inventory.push({
-            name: lionHide.name
-        });
+        mc.inventory.push(lionHide.name);
         }
         else{
             alert(`Gold Gained: ${
@@ -644,9 +640,7 @@ function areaTwoHutInside() {
                 `)
                 mc.equip[1] = helmA
                 
-                mc.inventory.push({
-                    name: helmA.name
-                });
+                mc.inventory.push(helmA.name);
             }
                 else{
                     alert(`
@@ -965,9 +959,7 @@ function areaTwoGoblinFight() {
                     `)
                     mc.equip[0] = spear
                     
-                    mc.inventory.push({
-                        name: spear.name
-                    });
+                    mc.inventory.push(spear.name);
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1022,9 +1014,7 @@ function areaTwoGoblinFight() {
                     `)
                     mc.equip[0] = spear
                     
-                    mc.inventory.push({
-                        name: spear.name
-                    });
+                    mc.inventory.push(spear.name);
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1110,9 +1100,9 @@ function areaTwoWitchFight() {
                         `)
                         mc.equip[0] = knife
                         
-                        mc.inventory.push({
-                            name: knife.name
-                        });
+                        mc.inventory.push(
+                            knife.name
+                        );
                         }
                         else{
                             alert(`Gold Gained: ${
@@ -1165,9 +1155,9 @@ function areaTwoWitchFight() {
                     `)
                     mc.equip[0] = knife
                     
-                    mc.inventory.push({
-                        name: knife.name
-                    });
+                    mc.inventory.push(
+                    knife.name
+                    );
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1361,10 +1351,10 @@ function areaTwoGolemitesEnter() {
                             `)
                     mc.equip[1] = rockHelm
                     
-                    mc.inventory.push({
-                        name: rockHelm.name,
-                        name: stoneA.name
-                    });
+                    mc.inventory.push(
+                        rockHelm.name,
+                        stoneA.name
+                    );
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1375,10 +1365,10 @@ function areaTwoGolemitesEnter() {
                                     Item Found: ${
                             rockHelm.name
                         }and 1x ${stoneA.name}\n`)
-                        mc.inventory.push({
-                            name: rockHelm.name,
-                            name: stoneA.name
-                        });
+                        mc.inventory.push(
+                            rockHelm.name,
+                            stoneA.name
+                        );
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                     mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -1446,10 +1436,10 @@ function areaTwoGolemitesEnter() {
                             `)
                     mc.equip[1] = rockHelm
                     
-                    mc.inventory.push({
-                        name: rockHelm.name,
-                        name: stoneA.name
-                    });
+                    mc.inventory.push(
+                        rockHelm.name,
+                        stoneA.name
+                    );
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1460,10 +1450,10 @@ function areaTwoGolemitesEnter() {
                                     Item Found: ${
                             rockHelm.name
                         }and 1x ${stoneA.name}\n`)
-                        mc.inventory.push({
-                            name: rockHelm.name,
-                            name: stoneA.name
-                        });
+                        mc.inventory.push(
+                            rockHelm.name,
+                            stoneA.name
+                        );
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                     mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -1521,9 +1511,9 @@ function areaTwoGolemitesEnter() {
                     }
                             `)
                     mc.equip[1] = rockHelm
-                    mc.inventory.push({
-                        name: rockHelm.name
-                    });
+                    mc.inventory.push(
+                        rockHelm.name
+                    );
                     }
                     else{
                         alert(`Gold Gained: ${
@@ -1650,9 +1640,9 @@ function areaThreeRiverGGG() {
     }\n
     Item has been added to inventory
     `)
-    mc.inventory.push({
-        name: keyItemA.name
-    });
+    mc.inventory.push(
+    keyItemA.name
+    );
     addToInventory(keyItemA.tag)
     }
     optiona.onclick = function () {

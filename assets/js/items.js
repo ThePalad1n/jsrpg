@@ -48,7 +48,11 @@ const stoneA = new Item('Sharpening Stone', 0, 0, 1, 'consumable', 'itemsharpeni
 const healthA = new Item('Small Health Potion', 50, 0, 25, 'consumable', 'itemsmallhp', 'cc')
 
 
+//craftable items
+const stickB = new Item('Pointy Stick', 0, 6, 5, 'weapon', 'itempstick', 'c')
 
 
-export {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,stoneA,keyItemA}
+
+
+export {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,stoneA,keyItemA,stickB}
 export{armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA}

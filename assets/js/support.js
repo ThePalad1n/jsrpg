@@ -2,6 +2,7 @@
 
 //imports
 import {mc,playerArmor,playerWeapon,playerCloak,playerHelm,gameOver} from './game.js'
+import{checkRec} from './crafting.js'
 
 
 //!========Supporting Functions begin===============
@@ -241,6 +242,10 @@ playerCloak.classList.remove(`l`);
   longRests.textContent = (`Long Rests: ${longRest}/1`)
 
   //info
+
+  mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
+  mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
+  mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
 }
 
 //!======Update Navbar end ===============
@@ -289,10 +294,19 @@ function checkHealth(){
 //!=======Add Item to invin begin=================
 //add to inventory
 function addToInventory(zzz){
-    const invin = document.getElementById(zzz);
+    let invin = document.getElementById(zzz);
     invin.style.display = 'block';
 }
 //!=======Add Item to invin end=================
+
+
+//!=======Remove Item to invin begin=================
+//add to inventory
+function removeFromInventory(zzz){
+    let invin = document.getElementById(zzz);
+    invin.style.display = 'none';
+}
+//!=======Remove Item to invin end=================
 
 
 
@@ -311,10 +325,12 @@ function unhideRest(){
 
 
 
+
 //!=======Start Update begin ===============
 //function goes through list of what needs to be updated on page change
 function update() {
     updateNav()
+    checkRec()
     checkHealth()
     checkLevel()
     expUpdate()
@@ -341,4 +357,5 @@ export {addToInventory}
 export {restReset}
 export {hideRest}
 export {unhideRest}
+export{removeFromInventory}
 export{levelStatus,healthStatus,attackStatus,goldStatus, shortRest, longRest}

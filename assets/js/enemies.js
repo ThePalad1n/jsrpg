@@ -12,13 +12,13 @@ class Enemy {
   }
 
 
-  const spider = new Enemy('Giant Spider', 50, 8, 12, 20, 50, 14)
+  const spider = new Enemy('Giant Spider', 1, 8, 12, 20, 50, 14)
   const lion = new Enemy('Lion', 55, 8, 15, 15, 75, 35)
   const goblin = new Enemy('Goblin', 50, 8, 13, 10, 15, 20)
   const witch = new Enemy('Swamp Witch', 65, 10, 15, 10, 15, 35)
-  const golem = new Enemy('Golem', 100, 6, 10, 10, 15, 35)
-  const golemite = new Enemy('Golemite A', 50, 3, 5, 5, 7, 15)
-  const golemitea = new Enemy('Golemite A', 50, 3, 5, 5, 7, 15)
+  const golem = new Enemy('Golem', 1, 6, 10, 10, 15, 35)
+  const golemite = new Enemy('Golemite A', 1, 3, 5, 5, 7, 15)
+  const golemitea = new Enemy('Golemite A', 1, 3, 5, 5, 7, 15)
   const golemiteb = new Enemy('Golemite B', 50, 3, 5, 5, 7, 15)
 
   //future enemies

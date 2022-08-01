@@ -16,9 +16,9 @@ larmor.onclick = function (){
         //deduct gold
         mc.gp = mc.gp - armorA.gp
         //add to inventory
-        mc.inventory.push({
-            name: armorA.name
-        });
+        mc.inventory.push(
+            armorA.name
+        );
         //equip item
         mc.equip[3] = armorA
         //adjust stats
@@ -49,9 +49,9 @@ carmor.onclick = function (){
     if( mc.gp >= armorB.gp){
         if(mc.equip[3].hp < armorB.hp){
         mc.gp = mc.gp - armorA.gp
-        mc.inventory.push({
-            name: armorB.name
-        });
+        mc.inventory.push(
+            armorB.name
+        );
         mc.equip[3] = armorB
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -77,9 +77,9 @@ parmor.onclick = function (){
     if( mc.gp >= armorC.gp){
         if(mc.equip[3].hp < armorC.hp){
         mc.gp = mc.gp - armorC.gp
-        mc.inventory.push({
-            name: armorC.name
-        });
+        mc.inventory.push(
+            armorC.name
+        );
         mc.equip[3] = armorC
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -104,9 +104,9 @@ marmor.onclick = function (){
     if( mc.gp >= armorD.gp){
         if(mc.equip[3].hp < armorD.hp){
         mc.gp = mc.gp - armorD.gp
-        mc.inventory.push({
-            name: armorD.name
-        });
+        mc.inventory.push(
+            armorD.name
+        );
         mc.equip[3] = armorD
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -134,9 +134,9 @@ ssword.onclick = function (){
     if( mc.gp >= swordA.gp){
         if(mc.equip[0].atk < swordA.atk){
         mc.gp = mc.gp - swordA.gp
-        mc.inventory.push({
-            name: swordA.name
-        });
+        mc.inventory.push(
+            swordA.name
+        );
         mc.equip[0] = swordA
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -161,9 +161,9 @@ lsword.onclick = function (){
     if( mc.gp >= swordB.gp){
         if(mc.equip[0].atk < swordB.atk){
         mc.gp = mc.gp - swordB.gp
-        mc.inventory.push({
-            name: swordB.name
-        });
+        mc.inventory.push(
+            swordB.name
+        );
         mc.equip[0] = swordB
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -188,9 +188,9 @@ gsword.onclick = function (){
     if( mc.gp >= swordC.gp){
         if(mc.equip[0].atk < swordC.atk){
         mc.gp = mc.gp - swordC.gp
-        mc.inventory.push({
-            name: swordC.name
-        });
+        mc.inventory.push(
+            swordC.name
+        );
         mc.equip[0] = swordC
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -215,9 +215,9 @@ gutssword.onclick = function (){
     if( mc.gp >= swordD.gp){
         if(mc.equip[0].atk < swordD.atk){
         mc.gp = mc.gp - swordD.gp
-        mc.inventory.push({
-            name: swordD.name
-        });
+        mc.inventory.push(
+            swordD.name
+        );
         mc.equip[0] = swordD
         mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk

@@ -17,6 +17,6 @@ export class Character {
 
 
   // player
-const mc = new Character('Player', 100, 100, 100, 1, 10, 10, 3000, 1, 15, 0)
+const mc = new Character('Player', 100, 100, 100, 1, 1000, 10, 3000, 1, 15, 0)
 
 export{mc}
