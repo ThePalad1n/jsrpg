@@ -23,6 +23,14 @@ Just download => unzip => run loacally.
 
 - [ ] Additional areas | more flushed story
 
+    - [ ] Golem areas
+
+    - [X] Fix healing areas
+
+    - [ ] Expand area 3
+
+    - [ ] Add more story overlay
+ 
 - [ ] Add minigames and mini fights
 
 - [ ] Add crafting system
