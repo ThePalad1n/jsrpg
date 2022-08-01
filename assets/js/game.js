@@ -1437,9 +1437,9 @@ function areaTwoGolemitesEnter() {
                     }\n Exp Gained: ${
                         golemitea.exp + golemiteb.exp + golem.exp
                     }\n
-                                Item Found: ${
+                                Items Found: ${
                         rockHelm.name
-                    }\n
+                    } and 1x ${stoneA.name}\n
                                 Health: +${
                         rockHelm.hp
                     }
@@ -1447,7 +1447,8 @@ function areaTwoGolemitesEnter() {
                     mc.equip[1] = rockHelm
                     
                     mc.inventory.push({
-                        name: rockHelm.name
+                        name: rockHelm.name,
+                        name: stoneA.name
                     });
                     }
                     else{
