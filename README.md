@@ -15,22 +15,24 @@ Just download => unzip => run loacally.
 
 ## Todo
 
-- Additional areas | more flushed story
+- [ ] Additional areas | more flushed story
 
-- Cut down on code size with better modularization
+- [ ] Cut down on code size with better modularization
 
-- Add minigames and mini fights
+- [ ] Add minigames and mini fights
 
-- Add crafting system
+- [ ] Add crafting system
 
-- Add ability to sell items to shop
+- [ ] Add ability to sell items to shop
 
-- Add ability to scrap items for crafting materials
+- [ ] Add ability to scrap items for crafting materials
 
-- Add endgame and a BBEG
+- [ ] Add endgame and a BBEG
 
-- Rarity for equipped items
+- [ ] Rarity for equipped items
 
-- Unique death scenes and possibility for 'revival blessing'
+- [ ] Unique death scenes and possibility for 'revival blessing'
 
-- And more
+- [x] And info/help section
+
+- [x] Changed healing to short/long rest system

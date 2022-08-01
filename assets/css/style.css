@@ -33,7 +33,7 @@
 
 
 .btn:hover {
-  border-color: black;
+  border-color: white;
 }
 
 .header {
@@ -59,7 +59,6 @@
   position: absolute;
   left: 100%;
   top: -7px;
-  background-color: #333;
   }
   .dropdown-menu .dropdown-submenu-left {
   right: 100%;
@@ -95,7 +94,7 @@
   */
 
 
-  #Levelings_Status {
+  #Leveling_Status {
     width: 100%;
     background-color: #ddd;
   }
@@ -110,18 +109,53 @@
   }
   
 
-  .c{
-    color: green
+  .uc{ 
+    color: green !important
   }
 
   .r{
-    color: blue
+    color: blue !important
   }
 
   .e{
-    color: purple
+    color: purple !important
   }
 
   .l{
-    color: orange
+    color: orange !important
   }
+
+  .k{
+    color: red !important;
+  }
+  
+  .c{
+    color: brown !important
+  }
+
+
+
+
+
+
+  .dropdown-menu li {
+    position: relative;
+    }
+    .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+    }
+    .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    }
+    .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+    }
+    
+    .dropdown-hover:hover>.dropdown-menu {
+    display: inline-block;
+    }
+    

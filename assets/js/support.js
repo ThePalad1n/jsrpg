@@ -47,22 +47,6 @@ function makeButton(x, xx){
 //!=======Making Buttons end ===============
 
 
-
-//!========Exp bar Begin=======================
-//Exp bar update
-function expUpdate() {
-    var f = mc.exp
-    var g = mc.reqexp
-    var h = f/g
-    var i = document.getElementById("expstatus")
-    i.style.width = (h*100) + '%'; 
-    return
-  }
-//!========Exp bar end=======================
-
-
-
-
 //!=======Start Navbar Elements begin ===============
 //creates initial nav elements for status
 var levelStatus = document.getElementById('level-status')
@@ -87,7 +71,79 @@ var expStatus = document.getElementById('exp-status')
 expStatus.append(`${
     mc.exp
 }`)
+
+var shortRests = document.getElementById('srest')
+shortRests.append(`${
+    shortRest
+}`)
+var longRests = document.getElementById('lrest')
+longRests.append(`${
+    longRest
+}`)
 //!======Start Navbar Elements end ===============
+
+
+//!========Exp bar Begin=======================
+//Exp bar update
+function expUpdate() {
+    var f = mc.exp
+    var g = mc.reqexp
+    var h = f/g
+    var i = document.getElementById("expstatus")
+    i.style.width = (h*100) + '%'; 
+    return
+  }
+//!========Exp bar end=======================
+
+
+//!========Rests Begin===================
+var shortRest = 3
+var longRest = 1
+
+
+
+shortRests.onclick = function () {
+    if (shortRest > 0){
+    if (mc.currenthp != mc.maxhp) {
+        let z = Math.floor(Math.random() * 5);
+        var heal = z * 4 + mc.level
+        alert(`You decide to take a short rest, you regain ${heal} health and feel a little more refreshed.`)
+        mc.currenthp += heal;
+        shortRest = shortRest - 1
+        if (mc.currenthp > mc.maxhp) {
+            mc.currenthp === mc.maxhp
+        }
+    } else {
+        alert(`There is no need to rest you are at full health.`)
+    }
+}
+else{
+    alert(`You cant short rest for a while`)
+}
+    updateNav()
+}
+
+longRests.onclick = function () {
+    if(longRest > 0){
+    if (mc.currenthp != mc.maxhp) {
+        alert(`You decide to take a long rest, you regain full health and feel well rested.`)
+        mc.currenthp = mc.maxhp
+        if (mc.currenthp > mc.maxhp) {
+            mc.currenthp === mc.maxhp
+        }
+        shortRest = 3
+        longRest = 0
+    } else {
+        alert(`There is no need to rest you are at full health.`)
+    }
+}
+else{
+    alert(`You cant long rest for a while`)
+}
+    updateNav()
+}
+
+//!=======Rests End========================
 
 
 
@@ -122,6 +178,13 @@ function updateNav() {
   playerWeapon.textContent = (`Weapon: ${
       mc.equip[0].name
   }`)
+
+
+  //rests
+  shortRests.textContent = (`Short Rests: ${shortRest}/3`)
+  longRests.textContent = (`Long Rests: ${longRest}/1`)
+
+  //info
 }
 
 //!======Update Navbar end ===============
@@ -206,4 +269,4 @@ export {checkHealth}
 export {update}
 export {expUpdate}
 export {addToInventory}
-export{levelStatus,healthStatus,attackStatus,goldStatus,expStatus}
+export{levelStatus,healthStatus,attackStatus,goldStatus,expStatus, shortRest, longRest}
