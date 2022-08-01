@@ -110,27 +110,31 @@
   
 
   .uc{ 
-    color: green !important
+    color: green !important;
   }
 
   .r{
-    color: blue !important
+    color: blue !important;
   }
 
   .e{
-    color: purple !important
+    color: purple !important;
   }
 
   .l{
-    color: orange !important
+    color: orange !important;
   }
 
   .k{
     color: red !important;
   }
   
+  .cc{
+    color: brown !important;
+  }
+    
   .c{
-    color: brown !important
+    color: black !important;
   }
 
 

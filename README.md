@@ -41,7 +41,7 @@ Just download => unzip => run loacally.
 
 - [ ] Add endgame and a BBEG
 
-- [ ] Rarity for equipped items
+- [x] Rarity for equipped items
 
 - [x] Fixed github io issues
 

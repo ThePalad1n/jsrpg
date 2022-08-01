@@ -179,18 +179,61 @@ function updateNav() {
 
 
   //updates the players equip
+ 
+//player helm equip
+playerHelm.classList.remove(`c`);
+playerHelm.classList.remove(`uc`);
+playerHelm.classList.remove(`r`);
+playerHelm.classList.remove(`e`);
+playerHelm.classList.remove(`l`);
+  playerHelm.classList.remove(`${mc.equip[1].rarity}`);
   playerHelm.textContent = (`Helm: ${
-      mc.equip[1].name
+    mc.equip[1].name
   }`)
+  //playerHelm.classList.add(`dropdown-item`);
+  playerHelm.classList.add(`${mc.equip[1].rarity}`);
+
+//player armor equip
+playerArmor.classList.remove(`c`);
+playerArmor.classList.remove(`uc`);
+playerArmor.classList.remove(`r`);
+playerArmor.classList.remove(`e`);
+playerArmor.classList.remove(`l`);
+  playerArmor.classList.remove(`${mc.equip[3].rarity}`);
   playerArmor.textContent = (`Armor: ${
       mc.equip[3].name
   }`)
+  //playerArmor.classList.add(`dropdown-item`);
+  playerArmor.classList.add(`${mc.equip[3].rarity}`);
+
+
+//player cloak equip
+playerCloak.classList.remove(`c`);
+playerCloak.classList.remove(`uc`);
+playerCloak.classList.remove(`r`);
+playerCloak.classList.remove(`e`);
+playerCloak.classList.remove(`l`);
+  playerCloak.classList.remove(`${mc.equip[2].rarity}`);
   playerCloak.textContent = (`Cloak: ${
       mc.equip[2].name
   }`)
+  //playerCloak.classList.add(`dropdown-item`);
+  playerCloak.classList.add(`${mc.equip[2].rarity}`);
+
+
+
+//player weapon equip
+  //playerWeapon.classList.remove(`dropdown-item`);
+  playerWeapon.classList.remove(`c`);
+  playerWeapon.classList.remove(`uc`);
+  playerWeapon.classList.remove(`r`);
+  playerWeapon.classList.remove(`e`);
+  playerWeapon.classList.remove(`l`);
   playerWeapon.textContent = (`Weapon: ${
       mc.equip[0].name
   }`)
+  //playerWeapon.classList.add(`dropdown-item`);
+  playerWeapon.classList.add(`${mc.equip[0].rarity}`);
 
 
   //rests
