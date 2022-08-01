@@ -1458,7 +1458,11 @@ function areaTwoGolemitesEnter() {
                         }\n
                                     Item Found: ${
                             rockHelm.name
-                        }\n`)
+                        }and 1x ${stoneA.name}\n`)
+                        mc.inventory.push({
+                            name: rockHelm.name,
+                            name: stoneA.name
+                        });
                     }
                     mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
                     mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
@@ -1466,6 +1470,7 @@ function areaTwoGolemitesEnter() {
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
+                    addToInventory(stoneA.tag)
                     unhideRest()
                 update()
                 areaThreeRiverG()
