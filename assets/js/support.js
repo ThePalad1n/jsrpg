@@ -6,6 +6,7 @@ import {mc,playerArmor,playerWeapon,playerCloak,playerHelm,gameOver} from './gam
 
 //!========Supporting Functions begin===============
 
+//!=======Remove button begin===========
 // removes old set of buttons
 function removeElementsByClass(className) {
     const elements = document.getElementsByClassName(className);
@@ -13,6 +14,9 @@ function removeElementsByClass(className) {
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
+//!========Remove button end=============
+
+
 
 //!=======Evasion begin=========
 //generates random number for enemy evasion
@@ -20,6 +24,7 @@ function getRandomInte(max) {
   return Math.floor(Math.random() * max);
 }
 //!=======Evasion end=========
+
 
 
 //!=========Attack Range begin=========
@@ -47,6 +52,7 @@ function makeButton(x, xx){
 //!=======Making Buttons end ===============
 
 
+
 //!=======Start Navbar Elements begin ===============
 //creates initial nav elements for status
 var levelStatus = document.getElementById('level-status')
@@ -67,11 +73,6 @@ goldStatus.append(`${
     mc.gp
 }`)
 
-var expStatus = document.getElementById('exp-status')
-expStatus.append(`${
-    mc.exp
-}`)
-
 var shortRests = document.getElementById('srest')
 shortRests.append(`${
     shortRest
@@ -81,6 +82,7 @@ longRests.append(`${
     longRest
 }`)
 //!======Start Navbar Elements end ===============
+
 
 
 //!========Exp bar Begin=======================
@@ -96,12 +98,14 @@ function expUpdate() {
 //!========Exp bar end=======================
 
 
+
 //!========Rests Begin===================
+//types of rests
 var shortRest = 3
 var longRest = 1
 
 
-
+//when a short rest is taken
 shortRests.onclick = function () {
     if (shortRest > 0){
     if (mc.currenthp != mc.maxhp) {
@@ -123,6 +127,7 @@ else{
     updateNav()
 }
 
+//when a long rest is taken
 longRests.onclick = function () {
     if(longRest > 0){
     if (mc.currenthp != mc.maxhp) {
@@ -143,6 +148,15 @@ else{
     updateNav()
 }
 
+
+//When a new area is entered the rests are reset with a little text blurb and alert
+function restReset(){
+    shortRest = 3
+    longRest = 1
+    alert(`You now are at full health.`)
+    mc.currenthp = mc.maxhp
+    updateNav()
+}
 //!=======Rests End========================
 
 
@@ -162,7 +176,6 @@ function updateNav() {
   goldStatus.textContent = (`Gold: ${
       mc.gp
   }`)
-  expStatus.textContent = (`Exp: ${mc.exp}/${mc.reqexp}`)
 
 
   //updates the players equip
@@ -240,6 +253,19 @@ function addToInventory(zzz){
 
 
 
+//!======= Rest Nav begin=================
+//hide rest nav
+function hideRest(){
+    const restee = document.getElementById('restee');
+    restee.style.display = 'none';
+}
+//unhide rest nav
+function unhideRest(){
+    const restee = document.getElementById('restee');
+    restee.style.display = 'block';
+}
+//!======= Rest Nav end=================
+
 
 
 //!=======Start Update begin ===============
@@ -269,4 +295,7 @@ export {checkHealth}
 export {update}
 export {expUpdate}
 export {addToInventory}
-export{levelStatus,healthStatus,attackStatus,goldStatus,expStatus, shortRest, longRest}
+export {restReset}
+export {hideRest}
+export {unhideRest}
+export{levelStatus,healthStatus,attackStatus,goldStatus, shortRest, longRest}

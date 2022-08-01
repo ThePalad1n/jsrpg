@@ -12,7 +12,7 @@ class Enemy {
   }
 
 
-  const spider = new Enemy('Giant Spider', 50, 6, 10, 20, 50, 14)
+  const spider = new Enemy('Giant Spider', 50, 20, 25, 20, 50, 14)
   const lion = new Enemy('Lion', 55, 8, 15, 15, 75, 35)
   const goblin = new Enemy('Goblin', 50, 8, 13, 10, 15, 20)
   const witch = new Enemy('Swamp Witch', 65, 10, 15, 10, 15, 35)

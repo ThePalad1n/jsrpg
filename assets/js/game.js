@@ -17,7 +17,7 @@ Note:
 import {mc} from "./player.js";
 import {spider,lion,goblin,witch,golem,golemite,golemitea,golemiteb} from "./enemies.js"
 import {placeHolderArmor,placeHolderCloak,placeHolderWeapon,placeHolderHelm,stick,lionHide,spear,knife,rockHelm,helmA,keyItemA,stoneA} from "./items.js";
-import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory} from "./support.js";
+import {getRandomInt, getRandomInte, makeButton, updateNav, checkLevel, update, addToInventory, restReset, hideRest, unhideRest} from "./support.js";
 import {armorA,armorB,armorC,armorD,swordA,swordB,swordC,swordD,healthA} from "./shop.js"
 //Exports
 export {
@@ -212,16 +212,10 @@ function areaOneForest() {
     }
     optionb.onclick = function () {
         update()
-        text.textContent = `You hold your breath staying as quiet as you can as you investigate the noise. The snapping gets louder and you notice that the noise is coming from above.
-        A thick smile begins to fall on your shoulder as you hear a loud chattering next to your ear. You turn to look as your head is crushed between the mandibles of a large spider.`;
-        makeButton('ded', 'Accept Fate')
-        optionded.onclick = function () {
-            update()
-            let id = 1;
-            death(1);
+        death(1);
         }
     }
-}
+
 
 // Player runs out of woods away from noise
 function areaOneClearing() { 
@@ -266,27 +260,15 @@ function areaOneClearing() {
     }
     optionc.onclick = function () {
         update()
-        text.textContent = `You find a near by log and lay prone next to it. You hold your breath and hoping for the best.
-		The foot steps get louder as you hear something push through the clearing. Then silence.
-		A few momments pass and you hear nothing so you decide to take a peek. You see that the there is nothing around.
-		You let out a sigh of relieve when something sticks to the back of your head. You go to feel what it is when you are suddenly dragged into the woods by your head.
-		You are then dragged into a tree and before you can react and are encased in a web, a sticky coffin of sorts.
-		You try to scream for help when for feel a stabbing pain in your stomache. Slowly fading away in a blissful sleep...`
-
-        makeButton('ded', 'Accept Fate')
-        optionded.onclick = function () {
-            update()
-            let id = 2;
-            death(2);
+        death(2);
         }
     }
-}
 
 
 // player defeats the spider
 function areaOneSpiderDefeatedA() {
     text.textContent = "You successfully defeated the spider!\n What will you do next?";
-    buttoner.append(makeButton('a', 'Go down the path'), makeButton('b', 'Rest for a bit'))
+    buttoner.append(makeButton('a', 'Go down the path'))
     alert(`Gold Gained: ${
         spider.gp
     }\n Exp Gained: ${
@@ -298,43 +280,18 @@ function areaOneSpiderDefeatedA() {
         update()
         areaTwoPath();
     }
-
-    //heal option, usually occurs after every boss fight
-    optionb.onclick = function () {
-        //heals player
-        mc.currenthp = mc.maxhp;
-        alert("You now have full health.")
-        //updates nav twice for healthbar
-        updateNav()
-        update()
-        areaOneRest();
-    }
 }
 
 // player escapes the spider using flee thus no rewards
 function areaOneSpiderDefeatedB() {
     text.textContent = "You successfully escaped the spider!";
-    buttoner.append(makeButton('a', 'Go down the path'), makeButton('b', 'Rest for a bit'))
+    buttoner.append(makeButton('a', 'Go down the path'))
     optiona.onclick = function () {
         update()
         areaOnePath();
     }
-    optionb.onclick = function () {
-        update()
-        areaOneRest();
-    }
 }
 
-
-// player decides to rest after combat
-function areaOneRest() { 
-    text.textContent = "You recovered from your fight with the spider.";
-    makeButton('a', 'Go down the path')
-    optiona.onclick = function () {
-        update()
-        areaTwoPath();
-    }
-}
 
 //!===============Area 1 end====================
 //!===========================================================================================
@@ -344,6 +301,7 @@ function areaOneRest() {
 //!===========================================================================================
 //!===============A1 Spider Fight begin===========
 function areaOneFight() {
+    hideRest()
     let id = 3
     text.textContent = (`The ${
         spider.name
@@ -368,6 +326,7 @@ function areaOneFight() {
             mc.gp += spider.gp
             mc.exp += spider.exp
             update()
+            unhideRest()
             areaOneSpiderDefeatedA()
         }
         if (mc.currenthp < 1) {
@@ -384,6 +343,7 @@ function areaOneFight() {
             text.textContent = (`You evaded successfully! And counter for ${
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
+            //^if spider health below zero adv
         } else { // enemy attacks player
             mc.currenthp = mc.currenthp -     getRandomInt(spider.minatk, spider.maxatk)
             text.textContent = (`Your evasion failed.\n The spider attacks you for ${
@@ -437,11 +397,8 @@ function areaTwoPath() {
         update()
         areaTwoInvestigateA();
     }
-    makeButton('c', 'Rest')
-    optionc.onclick = function () {
-        update()
-        areaTwoRest();
-    }
+    restReset()
+    alert(`Your rests are now avalible`)
 }
 
 // enter the clearing for the first time
@@ -490,43 +447,6 @@ function areaTwoInvestigateA() {
     }
 }
 //!===============Area 2 INVESTIGATIONS end=================================
-//!===========================================================================================
-
-
-
-//!===========================================================================================
-//!===============Area 2 SAVANNA begin=================================
-// player decides to rest and will recover full health
-function areaTwoRest() {
-    text.textContent = (`You take short rest at the edge of the woods what would you like to do?`)
-    alert("You now have full health.")
-    mc.currenthp = mc.maxhp;
-    
-    makeButton('a', 'Walk out into the clearing')
-    optiona.onclick = function () {
-        update()
-        areaTwoClearing();
-    }
-    makeButton('b', 'Investigate')
-    optionb.onclick = function () {
-        update()
-        areaTwoInvestigateA();
-    }
-}
-
-// player decides to rest after lion fight
-function areaTwoRestB() {
-    text.textContent = (`You take short rest in the savanna. What would you like to do?`)
-    alert("You now have full health.")
-    mc.currenthp = mc.maxhp;
-    
-    makeButton('a', 'Walk back towards the hill.')
-    optiona.onclick = function () {
-        update()
-        areaTwoSavannaC();
-    }
-}
-//!===============Area 2 RESTs end=================================
 //!===========================================================================================
 
 
@@ -648,13 +568,6 @@ function areaTwoSavannaABA() {
         update()
         areaTwoClearing();
     }
-    makeButton('c', 'Take a short rest')
-    optionc.onclick = function () {
-        alert("You now have full health.")
-        mc.currenthp = mc.maxhp;
-        update()
-        areaTwoRestB();
-    }
 }
 
 //hut investigation
@@ -756,12 +669,7 @@ function areaTwoHutInside() {
             makeButton('a', 'Go back outside.')
             optiona.onclick = function () {
             update()
-            areaThreeRiver()
-        }
-            makeButton('b', 'Go back to the forest.')
-            optionb.onclick = function () {
-                update()
-                areaTwoClearing()
+            areaThreeRiverGGGG
         }
     }
 }
@@ -771,7 +679,7 @@ function areaTwoHutInside() {
 function areaTwoInsideInvestigation() {
     text.textContent = (`Youre inside the hut rummaging around. You find a couple gold pieces that you stuff in your pocket. But before you have a chance to do anything else you hear a noise from 
     outside. What do you do?`)
-    makeButton('a', 'Supirse the creature!')
+    buttoner.append(makeButton('a', 'Supirse the creature!'),makeButton('b', 'Hide...'))
     optiona.onclick = function () {
         update()
         text.textContent = (`You suprise the creature and attack dealing ${
@@ -785,7 +693,6 @@ function areaTwoInsideInvestigation() {
         areaTwoGoblinFight();
         }
     }
-    makeButton('b', 'Hide...')
     optionb.onclick = function () {
         update()
         text.textContent = (`You try to hide from the creature. It bursts in and sees you. It attacks dealing ${
@@ -805,7 +712,6 @@ function areaTwoHutOutside() {
         if(goblin.hp > 0){
         text.textContent = (`Youre looking around the outside of the house for anything of possible use. When suddenly a goblin appears infront of you. He is rambling swinging his spear above his head. 
         He seems upset. What will you do?`)
-        
         makeButton('a', 'Fight!')
         optiona.onclick = function () {
             update()
@@ -814,13 +720,11 @@ function areaTwoHutOutside() {
         }
         else{
             text.textContent = (`Not really any other clues or materials to gather here should probably push forward.`)
-            
-            makeButton('a', 'Go across river')
+            buttoner.append(makeButton('a', 'Go across river'),makeButton('b', 'Go back to forest'))
             optiona.onclick = function () {
                 update()
                 areaThreeRiver();
             }
-            makeButton('b', 'Go back to forest')
             optionb.onclick = function () {
                 update()
                 areaTwoClearing();
@@ -839,7 +743,6 @@ function areaTwoHutOutside() {
 function areaTwoSwampA() {
     text.textContent = (`You follow the tree line around the savanna. You notice that a pugnant smell is beginning to fill the air. The trees are getting thinner and the ground begins to feel damp.
     What would you like to do?`)
-    
     makeButton('a', 'Continue through the thinning woods.')
     optiona.onclick = function () {
         update()
@@ -851,14 +754,12 @@ function areaTwoSwampA() {
 function areaTwoSwampB() {
     text.textContent = (`You keep pushing on, holding your nose, when you encounter a swamp. There is a little home propped up above the water. Smoke billowing above out of the chimney.
      what would you like to do?`)
-    
-    makeButton('a', 'Investigate the swamp')
+     buttoner.append(makeButton('a', 'Investigate the swamp'),makeButton('b', 'Investigate the home'))
     optiona.onclick = function () {
         update()
         areaTwoSwampC();
 
     }
-    makeButton('b', 'Investigate the home')
     optionb.onclick = function () {
         update()
         areaTwoWitchHutA();
@@ -870,22 +771,19 @@ function areaTwoSwampC() {
     text.textContent = (`You look around for what might be causing this smell and find several piles of skin scattered around the swamp near this swamp home. No evidence of bones or organs, 
     just pile and piles of skin. They vary from animals to humans to everythiong in between. As you are investigating you hear a cackling from the swamp home.
     what would you like to do?`)
-    
-    makeButton('a', 'Investigate the house')
+    buttoner.append(makeButton('a', 'Investigate the house'),makeButton('b', 'Ignore it'))
     optiona.onclick = function () {
         update()
         areaTwoWitchHutA();
 
     }
-    makeButton('b', 'Ignore it')
     optionb.onclick = function () {
         update()
         text.textContent = `You continue your investigation. But then your vision starts to blur. Your try rubbing your eyes but it doesnt seem to be working. When suddenly you pass out.`;
-
         makeButton('ded', 'Continue')
         optionded.onclick = function () {
             update()
-            areaTwoWitchDeathB()
+            death(7);
         }
 
     }
@@ -894,13 +792,11 @@ function areaTwoSwampC() {
 function areaTwoWitchHutA() {
     text.textContent = (`You approach the hut as you drudge through a purplish water. You get to the base and climb a later up. You notice the door is open and hear a faint voice of what appears to
     be an old lady. What do you want to do?`)
-    
-    makeButton('a', `Ask "Who is there?"`)
+    buttoner.append( makeButton('a', `Ask "Who is there?"`),makeButton('b', "Burst in and attack the woman."))
     optiona.onclick = function () {
         update()
         areaTwoWitchHutB();
     }
-    makeButton('b', "Burst in and attack the woman.")
     optionb.onclick = function () {
         update()
         areaTwoWitchFight();
@@ -910,17 +806,11 @@ function areaTwoWitchHutA() {
 // player enters the hut
 function areaTwoWitchHutB() {
     text.textContent = (`You ask "Who is there?" Then for a couple moments there is no reply. Shortly after you hear. "Just a troubled old lady, would you mind coming in and helping me with something.`)
-    
-    makeButton('a', 'Go in and help her.')
+    buttoner.append(makeButton('a', 'Go in and help her.'), makeButton('b', "Go in and attack the woman."))
     optiona.onclick = function () {
         update()
-        makeButton('ded', 'Continue')
-        optionded.onclick = function () {
-            update()
-            areaTwoWitchDeathA()
+        death(6);
         }
-    }
-    makeButton('b', "Go in and attack the woman.")
     optionb.onclick = function () {
         update()
         areaTwoWitchFight();
@@ -928,49 +818,8 @@ function areaTwoWitchHutB() {
 }
 
 
-
-//!===========================================================================================
-//!===============Witch Battle Outcome begin=================================
-// one of two witch death scenes
-function areaTwoWitchDeathA() {
-    text.textContent = (`You walk into the home and are immediately stabbed in the gut with a large knife. Youre too stunned to react as you start coughing up blood. You try to remove the knife but
-    she has an extremely tight hold. "Shh shh shh" she says as she drives the knife a little deeper and twists it. Blood is pooring out of your stomach. You try to stay consious but then everything 
-    fades to black.`)
-    makeButton('ded', 'Continue')
-    optionded.onclick = function () {
-        update()
-        let id = 6;
-        death(6);
-    }
-}
-
-// the other of two witch death scensns
-function areaTwoWitchDeathB() {
-    text.textContent = (`You awake suddenly. Youre in some room. You try to get up but you cant. Your arms and legs are bound, mouth muzzled. As you try to scream you hear a voice. 
-    "Tisk Tisk you shouldn't have been playing in my swamp." A plump and decrepid witch stands over you. She is holding a large knife. "Now be a good boy as I get my pound of flesh." Muffled
-    screams fill the swamp and youre slowly skinned alive.`)
-    makeButton('ded', 'Continue')
-    optionded.onclick = function () {
-        update()
-        let id = 6;
-        death(6);
-    }
-}
-
-//!===============Witch  Battle Outcome end=================================
-//!===========================================================================================
-
-
-
-
-
-
-//!===========================================================================================
-//!===============Witch Death Scene end=================================
-
 function areaTwoWitchFled() {
     text.textContent = "You escape the witches hut and run away throught the swamp.";
-    
     makeButton('a', 'Keep Running')
     optiona.onclick = function () {
         update()
@@ -980,7 +829,6 @@ function areaTwoWitchFled() {
 
 function areaTwoWitchKilled() {
     text.textContent = "You kill the horid witch as you see the room is litered with bones and flesh. Nothing really left for you here.";
-    
     makeButton('a', 'Exit Hut')
     optiona.onclick = function () {
         update()
@@ -989,8 +837,6 @@ function areaTwoWitchKilled() {
 }
 //!===============Area 2 SWAMP end =================================
 //!===========================================================================================
-
-
 
 
 
@@ -1008,6 +854,7 @@ function areaTwoWitchKilled() {
 //!=================lion fight begin=======================================
 function areaTwoLionFight() {
     //getRandomInt(mc.minatk, mc.maxatk) calculates damage range
+    hideRest()
     let id = 4
     text.textContent = (`The ${
         lion.name
@@ -1028,6 +875,7 @@ function areaTwoLionFight() {
         if (lion.hp <= 0) {
             mc.gp += lion.gp
             mc.exp += lion.exp
+            unhideRest()
             update();
             areaTwoSavannaABA();
         }
@@ -1045,6 +893,7 @@ function areaTwoLionFight() {
             text.textContent = (`You evaded successfully! And counter for ${
                 getRandomInt(mc.minatk, mc.maxatk)
             } damage! What will you do next?`)
+            //^add adv if the enemy dies
         } else { // enemy attacks player
             mc.currenthp = mc.currenthp - getRandomInt(lion.minatk, lion.maxatk)
             text.textContent = (`Your evasion failed.\n The lion attacks you for ${
@@ -1071,6 +920,7 @@ function areaTwoLionFight() {
 //!===========================================================================================
 //!============================Goblin fight begin==============================
 function areaTwoGoblinFight() {
+    hideRest()
     let id = 5
     text.textContent = (`The ${
         goblin.name
@@ -1135,8 +985,9 @@ function areaTwoGoblinFight() {
                     mc.gp = mc.gp + goblin.gp
                     mc.exp = mc.exp + goblin.exp
                     addToInventory(spear.tag)
-                update()
-                areaThreeRiverGG()
+                    unhideRest()
+                    update()
+                    areaThreeRiverGG()
             }
             if (mc.currenthp < 1) {
                 update()
@@ -1189,7 +1040,8 @@ function areaTwoGoblinFight() {
                     mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(spear.tag)
-                update()
+                    unhideRest()
+                    update()
                 areaThreeRiverGG()
         } else { // enemy attacks player
             mc.currenthp = mc.currenthp - getRandomInt(goblin.minatk, goblin.maxatk)
@@ -1216,7 +1068,7 @@ function areaTwoGoblinFight() {
 //!============================witch fight begin==============================
 
 function areaTwoWitchFight() {
-    let id = 6
+    hideRest()
     text.textContent = (`The ${
         witch.name
     } Attacks! \n What will you do?`)
@@ -1276,11 +1128,12 @@ function areaTwoWitchFight() {
                         mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                         mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                         addToInventory(knife.tag)
-                update()
-                areaTwoWitchKilled()
+                        unhideRest()
+                        update()
+                        areaTwoWitchKilled()
             }
             if (mc.currenthp < 1) {
-                death(id);
+                death(8);
             }
 
         }
@@ -1330,6 +1183,7 @@ function areaTwoWitchFight() {
                     mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
                     addToInventory(knife.tag)
+                    unhideRest()
                 update();
                 areaTwoWitchKilled()
             }
@@ -1342,7 +1196,7 @@ function areaTwoWitchFight() {
             updateNav()
             if (mc.currenthp < 1) {
                 update()
-                death(id);
+                death(8);
             }
         }
     }
@@ -1352,6 +1206,7 @@ function areaTwoWitchFight() {
         var q = getRandomInte(20)
         if (q == 19) {
             witch.hp = 0;
+            unhideRest()
             update()
             areaTwoWitchFled()
         } else { // enemy attacks player
@@ -1361,7 +1216,7 @@ function areaTwoWitchFight() {
             } damage!\n What will you do next?`)
             updateNav()
             if (mc.currenthp < 1) { // end loop
-                death(id);
+                death(8);
             }
         }
 
@@ -1369,7 +1224,7 @@ function areaTwoWitchFight() {
     }
 }
 
-//!============================Witch fight begin==============================
+//!============================Witch fight End==============================
 //!===========================================================================================
 
 
@@ -1379,7 +1234,8 @@ function areaTwoWitchFight() {
 //!============================Golem fight begin==============================
 
 function areaTwoGolemFight() {
-    let id = 7
+    hideRest()
+    let id = 8
     text.textContent = (`You approach the rocks you saw from the distance when all of the sudden they start shaking. The rocks then rise in the air smashing into each other forming a ball.
     The ball gets bigger... Looks like it has arms... And legs! When everything stops. Two bright red eyes sprout and the ${
         golem.name
@@ -1408,6 +1264,7 @@ function areaTwoGolemFight() {
         \n What is your next move?`)
             updateNav()
             if (golem.hp <= 0) {
+                
                 update()
                 areaTwoGolemitesEnter()
             }
@@ -1446,6 +1303,7 @@ function areaTwoGolemFight() {
         var q = getRandomInte(30)
         if (q == 29) {
             golem.hp = 0;
+            unhideRest()
             update()
             areaThreeRiver()
         } else { // enemy attacks player
@@ -1465,8 +1323,7 @@ function areaTwoGolemFight() {
 
 
 function areaTwoGolemitesEnter() {
-    let id = 8
-
+    let id = 9
     text.textContent = (`You defeated the ${
         golem.name
     } and it begins to violently shake. When all the sudden it splits apart into two smaller golemites! \n What will you do?`)
@@ -1530,6 +1387,7 @@ function areaTwoGolemitesEnter() {
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
                     addToInventory(stoneA.tag)
+                    unhideRest()
                 update()
                 areaThreeRiverG()
             } else {
@@ -1608,6 +1466,7 @@ function areaTwoGolemitesEnter() {
                     mc.gp += golemitea.gp + golem.gp + golemiteb.gp
                     mc.exp += golemitea.exp + golem.exp + golemiteb.exp
                     addToInventory(rockHelm.tag)
+                    unhideRest()
                 update()
                 areaThreeRiverG()
             } else {
@@ -1697,6 +1556,7 @@ function areaTwoGolemitesEnter() {
         if (q == 19) {
             golemitea.hp = 0;
             golemiteb.hp = 0;
+            unhideRest()
             update()
             areaThreeRiver()
         } else {
@@ -1776,6 +1636,7 @@ function areaThreeRiverGG() {
 //after filler
 function areaThreeRiverGGG() {
     text.textContent = `You clench the collar and put it around your wrist. What do you want to do now?`;
+    buttoner.append(makeButton('a', 'Go across the river'), makeButton('b', 'Go back to the forest'))
     if(mc.currenthp != mc.maxhp){
     alert(`
     Item Found: ${
@@ -1788,28 +1649,13 @@ function areaThreeRiverGGG() {
     });
     addToInventory(keyItemA.tag)
     }
-    makeButton('a', 'Go accross the river')
     optiona.onclick = function () {
         update()
         areaThreeRiver()
     }
-    makeButton('b', 'Go back to the forest')
     optionb.onclick = function () {
         update()
         areaTwoClearing()
-    }
-
-    makeButton('c', 'Take a short rest')
-    optionc.onclick = function () {
-        if(mc.currenthp != mc.maxhp){
-        alert("You now have full health.")
-        mc.currenthp = mc.maxhp;
-        update()
-        areaThreeRiverGGG()
-        }
-        else{
-            alert("You just took a short rest!")
-        }
     }
 }
 
@@ -1817,7 +1663,7 @@ function areaThreeRiverGGG() {
 //after filler
 function areaThreeRiverGGGG() {
     text.textContent = `What do you want to do now?`;
-    buttoner.append(makeButton('a', 'Go accross the river'), makeButton('b', 'Go back to the forest'))
+    buttoner.append(makeButton('a', 'Go across the river'), makeButton('b', 'Go back to the forest'))
     optiona.onclick = function () {
         update()
         areaThreeRiver()
@@ -1853,22 +1699,115 @@ function areaThreeRiver() {
 //^add different death cases and possibly a chance of revival
 function death(id) {
     switch (id) { // hide death
-        case 1: gameOver()
+        case 1: 
+            text.textContent = `You hold your breath staying as quiet as you can as you investigate the noise. The snapping gets louder and you notice that the noise is coming from above.
+            A thick smile begins to fall on your shoulder as you hear a loud chattering next to your ear. You turn to look as your head is crushed between the mandibles of a large spider.`;
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
-        case 2: gameOver()
+        case 2: 
+            text.textContent = `You find a near by log and lay prone next to it. You hold your breath and hoping for the best.
+            The foot steps get louder as you hear something push through the clearing. Then silence.
+            A few momments pass and you hear nothing so you decide to take a peek. You see that the there is nothing around.
+            You let out a sigh of relieve when something sticks to the back of your head. You go to feel what it is when you are suddenly dragged into the woods by your head.
+            You are then dragged into a tree and before you can react and are encased in a web, a sticky coffin of sorts.
+            You try to scream for help when for feel a stabbing pain in your stomache. Slowly fading away in a blissful sleep...`
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
-        case 3: gameOver()
+        case 3:
+            update()
+            let i = 4
+            let x = Math.floor(Math.random() * 10);
+            if(x < i){
+                text.textContent = `As you fight this large arachnid it catches you by suprise and shoots a well time web binding your hands. Unable to defend yourself, you attempt to break free.
+                Youre successful in your attempt and divert the next attack.`
+                buttoner.append(makeButton('a', 'Fight again'))
+                optiona.onclick = function () {
+                    mc.currenthp = 25
+                    update()
+                    areaOneFight()
+                    }
+                }
+            else{
+                text.textContent = `As you fight this large arachnid it catches you by suprise and shoots a well time web binding your hands. Unable to defend yourself, you attempt to break free.
+                But you are just unable to do it. As you struggle to break free, the spider gets ahold of you and begins wrapping you in a web. You try to scream for help when for feel a stabbing
+                pain in your stomache. Slowly fading away in a blissful sleep...`
+                buttoner.append(makeButton('a', 'Accept Fate'))
+                optiona.onclick = function () {
+                    update()
+                    gameOver()
+            }
+        }
             break;
-        case 4: gameOver()
+        case 4:
+            update()
+            text.textContent = `As you go to attack the lion it lunges on top of you, pinning you to the ground. You struggle and struggle but you can't get free. It bites down on your neck, 
+            removing it from your body. Everything fades to black.`
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
-        case 5: gameOver()
+        case 5:
+            update() 
+        text.textContent = `As the battle heats up the goblin surprisingly throws his spear at you. Too shocked to react you try to deflect but fail. The spear pierces you through the chest. He begins
+        snickering as you collapse to your knees gushing blood out of your chest. As he approaches you he comes over and steals your coin pouch. He then puts a collar in the bag as your world fades to black.`
+        buttoner.append(makeButton('a', 'Accept Fate'))
+        optiona.onclick = function () {
+            update()
+            gameOver()
+        }
             break;
-        case 6: gameOver()
+        case 6:
+            update()
+            text.textContent = (`You walk into the home and are immediately stabbed in the gut with a large knife. Youre too stunned to react as you start coughing up blood. You try to remove the knife but
+        she has an extremely tight hold. "Shh shh shh" she says as she drives the knife a little deeper and twists it. Blood is pooring out of your stomach. You try to stay consious but then everything 
+        fades to black.`)
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
-        case 7: gameOver()
+        case 7:
+            update()
+            text.textContent = (`You awake suddenly. Youre in some room. You try to get up but you cant. Your arms and legs are bound, mouth muzzled. As you try to scream you hear a voice. 
+        "Tisk Tisk you shouldn't have been playing in my swamp." A plump and decrepid witch stands over you. She is holding a large knife. "Now be a good boy as I get my pound of flesh." Muffled
+        screams fill the swamp and youre slowly skinned alive.`)
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
-        case 8: gameOver()
+        case 8:
+            update()
+            text.textContent = `You approach the Golem to make a mighty attack. As you do its large rocky fist comes from above. You arent able to avoid it in time as it crushes you. Yours legs
+            and arms are now broken, and youre having difficulty breathing. The Golem continues smashing until your body lies there motionless.`
+            buttoner.append(makeButton('a', 'Accept Fate'))
+            optiona.onclick = function () {
+                update()
+                gameOver()
+            }
             break;
+            case 9:
+                update()
+                text.textContent = `A golemite catches you off guard and sweeps your legs out from under you. As you attempt to get up, it gives you no time. The golemite body slams you into the hard
+                rocky ground. The wind leave your chest as it pumbles you until you are mush.`
+                buttoner.append(makeButton('a', 'Accept Fate'))
+                optiona.onclick = function () {
+                    update()
+                    gameOver()
+                }
+                break;
         default:
             // code block
     }

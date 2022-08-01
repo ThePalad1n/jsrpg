@@ -15,9 +15,13 @@ Just download => unzip => run loacally.
 
 ## Todo
 
-- [ ] Additional areas | more flushed story
+- [x] And info/help section
 
-- [ ] Cut down on code size with better modularization
+- [x] Changed healing to short/long rest system
+
+- [X] Unique death scenes and possibility for 'revival blessing'
+
+- [ ] Additional areas | more flushed story
 
 - [ ] Add minigames and mini fights
 
@@ -31,8 +35,4 @@ Just download => unzip => run loacally.
 
 - [ ] Rarity for equipped items
 
-- [ ] Unique death scenes and possibility for 'revival blessing'
 
-- [x] And info/help section
-
-- [x] Changed healing to short/long rest system
