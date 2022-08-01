@@ -21,7 +21,7 @@ class Enemy {
   const golemitea = new Enemy('Golemite A', 50, 3, 5, 5, 7, 15)
   const golemiteb = new Enemy('Golemite B', 50, 3, 5, 5, 7, 15)
 
-  /*
+  //future enemies
   const skeletona = new Enemy('Skeleton Grunt', 35, 8, 12, 10, 50, 15)
   const skeletonb = new Enemy('Skeleton Grunt', 35, 8, 12, 10, 50, 15)
   const skeletonc = new Enemy('Giant Skeleton', 65, 10, 14, 10, 30, 25)
@@ -30,6 +30,6 @@ class Enemy {
   const goblinb = new Enemy('Goblin Grunt', 50, 8, 13, 10, 45, 20)
   const goblinc = new Enemy('Goblin Archer', 40, 9, 14, 10, 45, 20)
   const hobgob = new Enemy('Hobgoblin', 70, 12, 15, 100, 40, 70)
-  */
+
   
 export{spider,lion,goblin,witch,golem,golemite,golemitea,golemiteb}
