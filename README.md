@@ -13,10 +13,9 @@ Just download => unzip => run loacally.
 
 
 
-
 ## Todo
 
-- Additional areas
+- Additional areas | more flushed story
 
 - Cut down on code size with better modularization
 
@@ -29,5 +28,9 @@ Just download => unzip => run loacally.
 - Add ability to scrap items for crafting materials
 
 - Add endgame and a BBEG
+
+- Rarity for equipped items
+
+- Unique death scenes and possibility for 'revival blessing'
 
 - And more
