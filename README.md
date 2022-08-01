@@ -35,4 +35,6 @@ Just download => unzip => run loacally.
 
 - [ ] Rarity for equipped items
 
+- [x] Fixed github io issues
+
 
