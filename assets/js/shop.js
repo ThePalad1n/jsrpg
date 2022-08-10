@@ -244,6 +244,7 @@ hpA.onclick = function (){
     if( mc.gp >= healthA.gp){
         if(mc.currenthp < mc.maxhp){
             mc.currenthp = mc.currenthp + 50;
+            mc.gp = mc.gp - healthA.gp;
             if(mc.currenthp > mc.maxhp){
                 mc.currenthp = mc.maxhp
                 updateNav()
