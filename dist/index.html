@@ -1,0 +1,2192 @@
+<html>
+    <head>
+        <style>*,*:before,*:after{box-sizing:border-box}.body{justify-content:center;align-items:center}.container{height:auto;width:800px;max-width:80%;background-color:#fff;padding:10px;border-radius:5px;box-shadow:0 0 10px 2px}.btn{background-color:#d3e9f3;border:1px solid hsl(200,100%,30%);border-radius:5px;padding:5px 10px;color:#000;display:grid;grid-template-columns:repeat(3,auto);gap:10px;margin-top:20px;outline:#333}.btn:hover{border-color:#fff}.header{border:1px solid black;width:75%;margin:5px auto}.content{text-align:center;padding:50px}.contentBox{border:1px solid black;width:20%;display:inline-block;box-sizing:border-box}#story{display:flex;flex-direction:column-reverse}#image{width:10%;height:10%}.nav,.navbar{box-shadow:0 0 10px 2px}#Leveling_Status{width:100%;background-color:#ddd}#expstatus{width:1%;height:12px;background-color:#4caf50;text-align:center;line-height:32px;color:#000}.uc{color:green!important}.r{color:#00f!important}.e{color:purple!important}.l{color:orange!important}.k{color:red!important}.cc{color:brown!important}.c{color:#000!important}.dropdown-menu li{position:relative}.dropdown-menu .dropdown-submenu{display:none;position:absolute;left:100%;top:-7px}.dropdown-menu .dropdown-submenu-left{right:100%;left:auto}.dropdown-menu>li:hover>.dropdown-submenu{display:block}.dropdown-hover:hover>.dropdown-menu{display:inline-block}
+</style>
+        <!-- CSS only -->
+        <link         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script>global = window;  var __bfs__=function(){"use strict";function t(t,r){return r.forEach((function(r){r&&"string"!=typeof r&&!Array.isArray(r)&&Object.keys(r).forEach((function(e){if("default"!==e&&!(e in t)){var n=Object.getOwnPropertyDescriptor(r,e);Object.defineProperty(t,e,n.get?n:{enumerable:!0,get:function(){return r[e]}})}}))})),Object.freeze(t)}var r=[],e=[],n="undefined"!=typeof Uint8Array?Uint8Array:Array,o=!1;function i(){o=!0;for(var t="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",n=0,i=t.length;n<i;++n)r[n]=t[n],e[t.charCodeAt(n)]=n;e["-".charCodeAt(0)]=62,e["_".charCodeAt(0)]=63}function s(t,e,n){for(var o,i,s=[],u=e;u<n;u+=3)o=(t[u]<<16)+(t[u+1]<<8)+t[u+2],s.push(r[(i=o)>>18&63]+r[i>>12&63]+r[i>>6&63]+r[63&i]);return s.join("")}function u(t){var e;o||i();for(var n=t.length,u=n%3,a="",f=[],c=0,p=n-u;c<p;c+=16383)f.push(s(t,c,c+16383>p?p:c+16383));return 1===u?(e=t[n-1],a+=r[e>>2],a+=r[e<<4&63],a+="=="):2===u&&(e=(t[n-2]<<8)+t[n-1],a+=r[e>>10],a+=r[e>>4&63],a+=r[e<<2&63],a+="="),f.push(a),f.join("")}function a(t,r,e,n,o){var i,s,u=8*o-n-1,a=(1<<u)-1,f=a>>1,c=-7,p=e?o-1:0,h=e?-1:1,l=t[r+p];for(p+=h,i=l&(1<<-c)-1,l>>=-c,c+=u;c>0;i=256*i+t[r+p],p+=h,c-=8);for(s=i&(1<<-c)-1,i>>=-c,c+=n;c>0;s=256*s+t[r+p],p+=h,c-=8);if(0===i)i=1-f;else{if(i===a)return s?NaN:1/0*(l?-1:1);s+=Math.pow(2,n),i-=f}return(l?-1:1)*s*Math.pow(2,i-n)}function f(t,r,e,n,o,i){var s,u,a,f=8*i-o-1,c=(1<<f)-1,p=c>>1,h=23===o?Math.pow(2,-24)-Math.pow(2,-77):0,l=n?0:i-1,y=n?1:-1,d=r<0||0===r&&1/r<0?1:0;for(r=Math.abs(r),isNaN(r)||r===1/0?(u=isNaN(r)?1:0,s=c):(s=Math.floor(Math.log(r)/Math.LN2),r*(a=Math.pow(2,-s))<1&&(s--,a*=2),(r+=s+p>=1?h/a:h*Math.pow(2,1-p))*a>=2&&(s++,a/=2),s+p>=c?(u=0,s=c):s+p>=1?(u=(r*a-1)*Math.pow(2,o),s+=p):(u=r*Math.pow(2,p-1)*Math.pow(2,o),s=0));o>=8;t[e+l]=255&u,l+=y,u/=256,o-=8);for(s=s<<o|u,f+=o;f>0;t[e+l]=255&s,l+=y,s/=256,f-=8);t[e+l-y]|=128*d}var c={}.toString,p=Array.isArray||function(t){return"[object Array]"==c.call(t)};d.TYPED_ARRAY_SUPPORT=void 0===global.TYPED_ARRAY_SUPPORT||global.TYPED_ARRAY_SUPPORT;var h=l();function l(){return d.TYPED_ARRAY_SUPPORT?2147483647:1073741823}function y(t,r){if(l()<r)throw new RangeError("Invalid typed array length");return d.TYPED_ARRAY_SUPPORT?(t=new Uint8Array(r)).__proto__=d.prototype:(null===t&&(t=new d(r)),t.length=r),t}function d(t,r,e){if(!(d.TYPED_ARRAY_SUPPORT||this instanceof d))return new d(t,r,e);if("number"==typeof t){if("string"==typeof r)throw new Error("If encoding is specified then the first argument must be a string");return m(this,t)}return E(this,t,r,e)}function E(t,r,e,n){if("number"==typeof r)throw new TypeError('"value" argument must not be a number');return"undefined"!=typeof ArrayBuffer&&r instanceof ArrayBuffer?function(t,r,e,n){if(r.byteLength,e<0||r.byteLength<e)throw new RangeError("'offset' is out of bounds");if(r.byteLength<e+(n||0))throw new RangeError("'length' is out of bounds");r=void 0===e&&void 0===n?new Uint8Array(r):void 0===n?new Uint8Array(r,e):new Uint8Array(r,e,n);d.TYPED_ARRAY_SUPPORT?(t=r).__proto__=d.prototype:t=w(t,r);return t}(t,r,e,n):"string"==typeof r?function(t,r,e){"string"==typeof e&&""!==e||(e="utf8");if(!d.isEncoding(e))throw new TypeError('"encoding" must be a valid string encoding');var n=0|b(r,e),o=(t=y(t,n)).write(r,e);o!==n&&(t=t.slice(0,o));return t}(t,r,e):function(t,r){if(S(r)){var e=0|v(r.length);return 0===(t=y(t,e)).length||r.copy(t,0,0,e),t}if(r){if("undefined"!=typeof ArrayBuffer&&r.buffer instanceof ArrayBuffer||"length"in r)return"number"!=typeof r.length||(n=r.length)!=n?y(t,0):w(t,r);if("Buffer"===r.type&&p(r.data))return w(t,r.data)}var n;throw new TypeError("First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.")}(t,r)}function g(t){if("number"!=typeof t)throw new TypeError('"size" argument must be a number');if(t<0)throw new RangeError('"size" argument must not be negative')}function m(t,r){if(g(r),t=y(t,r<0?0:0|v(r)),!d.TYPED_ARRAY_SUPPORT)for(var e=0;e<r;++e)t[e]=0;return t}function w(t,r){var e=r.length<0?0:0|v(r.length);t=y(t,e);for(var n=0;n<e;n+=1)t[n]=255&r[n];return t}function v(t){if(t>=l())throw new RangeError("Attempt to allocate Buffer larger than maximum size: 0x"+l().toString(16)+" bytes");return 0|t}function S(t){return!(null==t||!t._isBuffer)}function b(t,r){if(S(t))return t.length;if("undefined"!=typeof ArrayBuffer&&"function"==typeof ArrayBuffer.isView&&(ArrayBuffer.isView(t)||t instanceof ArrayBuffer))return t.byteLength;"string"!=typeof t&&(t=""+t);var e=t.length;if(0===e)return 0;for(var n=!1;;)switch(r){case"ascii":case"latin1":case"binary":return e;case"utf8":case"utf-8":case void 0:return H(t).length;case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":return 2*e;case"hex":return e>>>1;case"base64":return q(t).length;default:if(n)return H(t).length;r=(""+r).toLowerCase(),n=!0}}function A(t,r,e){var n=!1;if((void 0===r||r<0)&&(r=0),r>this.length)return"";if((void 0===e||e>this.length)&&(e=this.length),e<=0)return"";if((e>>>=0)<=(r>>>=0))return"";for(t||(t="utf8");;)switch(t){case"hex":return U(this,r,e);case"utf8":case"utf-8":return D(this,r,e);case"ascii":return B(this,r,e);case"latin1":case"binary":return k(this,r,e);case"base64":return L(this,r,e);case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":return x(this,r,e);default:if(n)throw new TypeError("Unknown encoding: "+t);t=(t+"").toLowerCase(),n=!0}}function T(t,r,e){var n=t[r];t[r]=t[e],t[e]=n}function _(t,r,e,n,o){if(0===t.length)return-1;if("string"==typeof e?(n=e,e=0):e>2147483647?e=2147483647:e<-2147483648&&(e=-2147483648),e=+e,isNaN(e)&&(e=o?0:t.length-1),e<0&&(e=t.length+e),e>=t.length){if(o)return-1;e=t.length-1}else if(e<0){if(!o)return-1;e=0}if("string"==typeof r&&(r=d.from(r,n)),S(r))return 0===r.length?-1:O(t,r,e,n,o);if("number"==typeof r)return r&=255,d.TYPED_ARRAY_SUPPORT&&"function"==typeof Uint8Array.prototype.indexOf?o?Uint8Array.prototype.indexOf.call(t,r,e):Uint8Array.prototype.lastIndexOf.call(t,r,e):O(t,[r],e,n,o);throw new TypeError("val must be string, number or Buffer")}function O(t,r,e,n,o){var i,s=1,u=t.length,a=r.length;if(void 0!==n&&("ucs2"===(n=String(n).toLowerCase())||"ucs-2"===n||"utf16le"===n||"utf-16le"===n)){if(t.length<2||r.length<2)return-1;s=2,u/=2,a/=2,e/=2}function f(t,r){return 1===s?t[r]:t.readUInt16BE(r*s)}if(o){var c=-1;for(i=e;i<u;i++)if(f(t,i)===f(r,-1===c?0:i-c)){if(-1===c&&(c=i),i-c+1===a)return c*s}else-1!==c&&(i-=i-c),c=-1}else for(e+a>u&&(e=u-a),i=e;i>=0;i--){for(var p=!0,h=0;h<a;h++)if(f(t,i+h)!==f(r,h)){p=!1;break}if(p)return i}return-1}function F(t,r,e,n){e=Number(e)||0;var o=t.length-e;n?(n=Number(n))>o&&(n=o):n=o;var i=r.length;if(i%2!=0)throw new TypeError("Invalid hex string");n>i/2&&(n=i/2);for(var s=0;s<n;++s){var u=parseInt(r.substr(2*s,2),16);if(isNaN(u))return s;t[e+s]=u}return s}function N(t,r,e,n){return G(H(r,t.length-e),t,e,n)}function I(t,r,e,n){return G(function(t){for(var r=[],e=0;e<t.length;++e)r.push(255&t.charCodeAt(e));return r}(r),t,e,n)}function P(t,r,e,n){return I(t,r,e,n)}function C(t,r,e,n){return G(q(r),t,e,n)}function R(t,r,e,n){return G(function(t,r){for(var e,n,o,i=[],s=0;s<t.length&&!((r-=2)<0);++s)e=t.charCodeAt(s),n=e>>8,o=e%256,i.push(o),i.push(n);return i}(r,t.length-e),t,e,n)}function L(t,r,e){return 0===r&&e===t.length?u(t):u(t.slice(r,e))}function D(t,r,e){e=Math.min(t.length,e);for(var n=[],o=r;o<e;){var i,s,u,a,f=t[o],c=null,p=f>239?4:f>223?3:f>191?2:1;if(o+p<=e)switch(p){case 1:f<128&&(c=f);break;case 2:128==(192&(i=t[o+1]))&&(a=(31&f)<<6|63&i)>127&&(c=a);break;case 3:i=t[o+1],s=t[o+2],128==(192&i)&&128==(192&s)&&(a=(15&f)<<12|(63&i)<<6|63&s)>2047&&(a<55296||a>57343)&&(c=a);break;case 4:i=t[o+1],s=t[o+2],u=t[o+3],128==(192&i)&&128==(192&s)&&128==(192&u)&&(a=(15&f)<<18|(63&i)<<12|(63&s)<<6|63&u)>65535&&a<1114112&&(c=a)}null===c?(c=65533,p=1):c>65535&&(c-=65536,n.push(c>>>10&1023|55296),c=56320|1023&c),n.push(c),o+=p}return function(t){var r=t.length;if(r<=4096)return String.fromCharCode.apply(String,t);var e="",n=0;for(;n<r;)e+=String.fromCharCode.apply(String,t.slice(n,n+=4096));return e}(n)}d.poolSize=8192,d._augment=function(t){return t.__proto__=d.prototype,t},d.from=function(t,r,e){return E(null,t,r,e)},d.TYPED_ARRAY_SUPPORT&&(d.prototype.__proto__=Uint8Array.prototype,d.__proto__=Uint8Array),d.alloc=function(t,r,e){return function(t,r,e,n){return g(r),r<=0?y(t,r):void 0!==e?"string"==typeof n?y(t,r).fill(e,n):y(t,r).fill(e):y(t,r)}(null,t,r,e)},d.allocUnsafe=function(t){return m(null,t)},d.allocUnsafeSlow=function(t){return m(null,t)},d.isBuffer=$,d.compare=function(t,r){if(!S(t)||!S(r))throw new TypeError("Arguments must be Buffers");if(t===r)return 0;for(var e=t.length,n=r.length,o=0,i=Math.min(e,n);o<i;++o)if(t[o]!==r[o]){e=t[o],n=r[o];break}return e<n?-1:n<e?1:0},d.isEncoding=function(t){switch(String(t).toLowerCase()){case"hex":case"utf8":case"utf-8":case"ascii":case"latin1":case"binary":case"base64":case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":return!0;default:return!1}},d.concat=function(t,r){if(!p(t))throw new TypeError('"list" argument must be an Array of Buffers');if(0===t.length)return d.alloc(0);var e;if(void 0===r)for(r=0,e=0;e<t.length;++e)r+=t[e].length;var n=d.allocUnsafe(r),o=0;for(e=0;e<t.length;++e){var i=t[e];if(!S(i))throw new TypeError('"list" argument must be an Array of Buffers');i.copy(n,o),o+=i.length}return n},d.byteLength=b,d.prototype._isBuffer=!0,d.prototype.swap16=function(){var t=this.length;if(t%2!=0)throw new RangeError("Buffer size must be a multiple of 16-bits");for(var r=0;r<t;r+=2)T(this,r,r+1);return this},d.prototype.swap32=function(){var t=this.length;if(t%4!=0)throw new RangeError("Buffer size must be a multiple of 32-bits");for(var r=0;r<t;r+=4)T(this,r,r+3),T(this,r+1,r+2);return this},d.prototype.swap64=function(){var t=this.length;if(t%8!=0)throw new RangeError("Buffer size must be a multiple of 64-bits");for(var r=0;r<t;r+=8)T(this,r,r+7),T(this,r+1,r+6),T(this,r+2,r+5),T(this,r+3,r+4);return this},d.prototype.toString=function(){var t=0|this.length;return 0===t?"":0===arguments.length?D(this,0,t):A.apply(this,arguments)},d.prototype.equals=function(t){if(!S(t))throw new TypeError("Argument must be a Buffer");return this===t||0===d.compare(this,t)},d.prototype.inspect=function(){var t="";return this.length>0&&(t=this.toString("hex",0,50).match(/.{2}/g).join(" "),this.length>50&&(t+=" ... ")),"<Buffer "+t+">"},d.prototype.compare=function(t,r,e,n,o){if(!S(t))throw new TypeError("Argument must be a Buffer");if(void 0===r&&(r=0),void 0===e&&(e=t?t.length:0),void 0===n&&(n=0),void 0===o&&(o=this.length),r<0||e>t.length||n<0||o>this.length)throw new RangeError("out of range index");if(n>=o&&r>=e)return 0;if(n>=o)return-1;if(r>=e)return 1;if(this===t)return 0;for(var i=(o>>>=0)-(n>>>=0),s=(e>>>=0)-(r>>>=0),u=Math.min(i,s),a=this.slice(n,o),f=t.slice(r,e),c=0;c<u;++c)if(a[c]!==f[c]){i=a[c],s=f[c];break}return i<s?-1:s<i?1:0},d.prototype.includes=function(t,r,e){return-1!==this.indexOf(t,r,e)},d.prototype.indexOf=function(t,r,e){return _(this,t,r,e,!0)},d.prototype.lastIndexOf=function(t,r,e){return _(this,t,r,e,!1)},d.prototype.write=function(t,r,e,n){if(void 0===r)n="utf8",e=this.length,r=0;else if(void 0===e&&"string"==typeof r)n=r,e=this.length,r=0;else{if(!isFinite(r))throw new Error("Buffer.write(string, encoding, offset[, length]) is no longer supported");r|=0,isFinite(e)?(e|=0,void 0===n&&(n="utf8")):(n=e,e=void 0)}var o=this.length-r;if((void 0===e||e>o)&&(e=o),t.length>0&&(e<0||r<0)||r>this.length)throw new RangeError("Attempt to write outside buffer bounds");n||(n="utf8");for(var i=!1;;)switch(n){case"hex":return F(this,t,r,e);case"utf8":case"utf-8":return N(this,t,r,e);case"ascii":return I(this,t,r,e);case"latin1":case"binary":return P(this,t,r,e);case"base64":return C(this,t,r,e);case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":return R(this,t,r,e);default:if(i)throw new TypeError("Unknown encoding: "+n);n=(""+n).toLowerCase(),i=!0}},d.prototype.toJSON=function(){return{type:"Buffer",data:Array.prototype.slice.call(this._arr||this,0)}};function B(t,r,e){var n="";e=Math.min(t.length,e);for(var o=r;o<e;++o)n+=String.fromCharCode(127&t[o]);return n}function k(t,r,e){var n="";e=Math.min(t.length,e);for(var o=r;o<e;++o)n+=String.fromCharCode(t[o]);return n}function U(t,r,e){var n=t.length;(!r||r<0)&&(r=0),(!e||e<0||e>n)&&(e=n);for(var o="",i=r;i<e;++i)o+=J(t[i]);return o}function x(t,r,e){for(var n=t.slice(r,e),o="",i=0;i<n.length;i+=2)o+=String.fromCharCode(n[i]+256*n[i+1]);return o}function M(t,r,e){if(t%1!=0||t<0)throw new RangeError("offset is not uint");if(t+r>e)throw new RangeError("Trying to access beyond buffer length")}function Y(t,r,e,n,o,i){if(!S(t))throw new TypeError('"buffer" argument must be a Buffer instance');if(r>o||r<i)throw new RangeError('"value" argument is out of bounds');if(e+n>t.length)throw new RangeError("Index out of range")}function j(t,r,e,n){r<0&&(r=65535+r+1);for(var o=0,i=Math.min(t.length-e,2);o<i;++o)t[e+o]=(r&255<<8*(n?o:1-o))>>>8*(n?o:1-o)}function V(t,r,e,n){r<0&&(r=4294967295+r+1);for(var o=0,i=Math.min(t.length-e,4);o<i;++o)t[e+o]=r>>>8*(n?o:3-o)&255}function z(t,r,e,n,o,i){if(e+n>t.length)throw new RangeError("Index out of range");if(e<0)throw new RangeError("Index out of range")}function W(t,r,e,n,o){return o||z(t,0,e,4),f(t,r,e,n,23,4),e+4}function X(t,r,e,n,o){return o||z(t,0,e,8),f(t,r,e,n,52,8),e+8}d.prototype.slice=function(t,r){var e,n=this.length;if((t=~~t)<0?(t+=n)<0&&(t=0):t>n&&(t=n),(r=void 0===r?n:~~r)<0?(r+=n)<0&&(r=0):r>n&&(r=n),r<t&&(r=t),d.TYPED_ARRAY_SUPPORT)(e=this.subarray(t,r)).__proto__=d.prototype;else{var o=r-t;e=new d(o,void 0);for(var i=0;i<o;++i)e[i]=this[i+t]}return e},d.prototype.readUIntLE=function(t,r,e){t|=0,r|=0,e||M(t,r,this.length);for(var n=this[t],o=1,i=0;++i<r&&(o*=256);)n+=this[t+i]*o;return n},d.prototype.readUIntBE=function(t,r,e){t|=0,r|=0,e||M(t,r,this.length);for(var n=this[t+--r],o=1;r>0&&(o*=256);)n+=this[t+--r]*o;return n},d.prototype.readUInt8=function(t,r){return r||M(t,1,this.length),this[t]},d.prototype.readUInt16LE=function(t,r){return r||M(t,2,this.length),this[t]|this[t+1]<<8},d.prototype.readUInt16BE=function(t,r){return r||M(t,2,this.length),this[t]<<8|this[t+1]},d.prototype.readUInt32LE=function(t,r){return r||M(t,4,this.length),(this[t]|this[t+1]<<8|this[t+2]<<16)+16777216*this[t+3]},d.prototype.readUInt32BE=function(t,r){return r||M(t,4,this.length),16777216*this[t]+(this[t+1]<<16|this[t+2]<<8|this[t+3])},d.prototype.readIntLE=function(t,r,e){t|=0,r|=0,e||M(t,r,this.length);for(var n=this[t],o=1,i=0;++i<r&&(o*=256);)n+=this[t+i]*o;return n>=(o*=128)&&(n-=Math.pow(2,8*r)),n},d.prototype.readIntBE=function(t,r,e){t|=0,r|=0,e||M(t,r,this.length);for(var n=r,o=1,i=this[t+--n];n>0&&(o*=256);)i+=this[t+--n]*o;return i>=(o*=128)&&(i-=Math.pow(2,8*r)),i},d.prototype.readInt8=function(t,r){return r||M(t,1,this.length),128&this[t]?-1*(255-this[t]+1):this[t]},d.prototype.readInt16LE=function(t,r){r||M(t,2,this.length);var e=this[t]|this[t+1]<<8;return 32768&e?4294901760|e:e},d.prototype.readInt16BE=function(t,r){r||M(t,2,this.length);var e=this[t+1]|this[t]<<8;return 32768&e?4294901760|e:e},d.prototype.readInt32LE=function(t,r){return r||M(t,4,this.length),this[t]|this[t+1]<<8|this[t+2]<<16|this[t+3]<<24},d.prototype.readInt32BE=function(t,r){return r||M(t,4,this.length),this[t]<<24|this[t+1]<<16|this[t+2]<<8|this[t+3]},d.prototype.readFloatLE=function(t,r){return r||M(t,4,this.length),a(this,t,!0,23,4)},d.prototype.readFloatBE=function(t,r){return r||M(t,4,this.length),a(this,t,!1,23,4)},d.prototype.readDoubleLE=function(t,r){return r||M(t,8,this.length),a(this,t,!0,52,8)},d.prototype.readDoubleBE=function(t,r){return r||M(t,8,this.length),a(this,t,!1,52,8)},d.prototype.writeUIntLE=function(t,r,e,n){(t=+t,r|=0,e|=0,n)||Y(this,t,r,e,Math.pow(2,8*e)-1,0);var o=1,i=0;for(this[r]=255&t;++i<e&&(o*=256);)this[r+i]=t/o&255;return r+e},d.prototype.writeUIntBE=function(t,r,e,n){(t=+t,r|=0,e|=0,n)||Y(this,t,r,e,Math.pow(2,8*e)-1,0);var o=e-1,i=1;for(this[r+o]=255&t;--o>=0&&(i*=256);)this[r+o]=t/i&255;return r+e},d.prototype.writeUInt8=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,1,255,0),d.TYPED_ARRAY_SUPPORT||(t=Math.floor(t)),this[r]=255&t,r+1},d.prototype.writeUInt16LE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,2,65535,0),d.TYPED_ARRAY_SUPPORT?(this[r]=255&t,this[r+1]=t>>>8):j(this,t,r,!0),r+2},d.prototype.writeUInt16BE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,2,65535,0),d.TYPED_ARRAY_SUPPORT?(this[r]=t>>>8,this[r+1]=255&t):j(this,t,r,!1),r+2},d.prototype.writeUInt32LE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,4,4294967295,0),d.TYPED_ARRAY_SUPPORT?(this[r+3]=t>>>24,this[r+2]=t>>>16,this[r+1]=t>>>8,this[r]=255&t):V(this,t,r,!0),r+4},d.prototype.writeUInt32BE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,4,4294967295,0),d.TYPED_ARRAY_SUPPORT?(this[r]=t>>>24,this[r+1]=t>>>16,this[r+2]=t>>>8,this[r+3]=255&t):V(this,t,r,!1),r+4},d.prototype.writeIntLE=function(t,r,e,n){if(t=+t,r|=0,!n){var o=Math.pow(2,8*e-1);Y(this,t,r,e,o-1,-o)}var i=0,s=1,u=0;for(this[r]=255&t;++i<e&&(s*=256);)t<0&&0===u&&0!==this[r+i-1]&&(u=1),this[r+i]=(t/s>>0)-u&255;return r+e},d.prototype.writeIntBE=function(t,r,e,n){if(t=+t,r|=0,!n){var o=Math.pow(2,8*e-1);Y(this,t,r,e,o-1,-o)}var i=e-1,s=1,u=0;for(this[r+i]=255&t;--i>=0&&(s*=256);)t<0&&0===u&&0!==this[r+i+1]&&(u=1),this[r+i]=(t/s>>0)-u&255;return r+e},d.prototype.writeInt8=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,1,127,-128),d.TYPED_ARRAY_SUPPORT||(t=Math.floor(t)),t<0&&(t=255+t+1),this[r]=255&t,r+1},d.prototype.writeInt16LE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,2,32767,-32768),d.TYPED_ARRAY_SUPPORT?(this[r]=255&t,this[r+1]=t>>>8):j(this,t,r,!0),r+2},d.prototype.writeInt16BE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,2,32767,-32768),d.TYPED_ARRAY_SUPPORT?(this[r]=t>>>8,this[r+1]=255&t):j(this,t,r,!1),r+2},d.prototype.writeInt32LE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,4,2147483647,-2147483648),d.TYPED_ARRAY_SUPPORT?(this[r]=255&t,this[r+1]=t>>>8,this[r+2]=t>>>16,this[r+3]=t>>>24):V(this,t,r,!0),r+4},d.prototype.writeInt32BE=function(t,r,e){return t=+t,r|=0,e||Y(this,t,r,4,2147483647,-2147483648),t<0&&(t=4294967295+t+1),d.TYPED_ARRAY_SUPPORT?(this[r]=t>>>24,this[r+1]=t>>>16,this[r+2]=t>>>8,this[r+3]=255&t):V(this,t,r,!1),r+4},d.prototype.writeFloatLE=function(t,r,e){return W(this,t,r,!0,e)},d.prototype.writeFloatBE=function(t,r,e){return W(this,t,r,!1,e)},d.prototype.writeDoubleLE=function(t,r,e){return X(this,t,r,!0,e)},d.prototype.writeDoubleBE=function(t,r,e){return X(this,t,r,!1,e)},d.prototype.copy=function(t,r,e,n){if(e||(e=0),n||0===n||(n=this.length),r>=t.length&&(r=t.length),r||(r=0),n>0&&n<e&&(n=e),n===e)return 0;if(0===t.length||0===this.length)return 0;if(r<0)throw new RangeError("targetStart out of bounds");if(e<0||e>=this.length)throw new RangeError("sourceStart out of bounds");if(n<0)throw new RangeError("sourceEnd out of bounds");n>this.length&&(n=this.length),t.length-r<n-e&&(n=t.length-r+e);var o,i=n-e;if(this===t&&e<r&&r<n)for(o=i-1;o>=0;--o)t[o+r]=this[o+e];else if(i<1e3||!d.TYPED_ARRAY_SUPPORT)for(o=0;o<i;++o)t[o+r]=this[o+e];else Uint8Array.prototype.set.call(t,this.subarray(e,e+i),r);return i},d.prototype.fill=function(t,r,e,n){if("string"==typeof t){if("string"==typeof r?(n=r,r=0,e=this.length):"string"==typeof e&&(n=e,e=this.length),1===t.length){var o=t.charCodeAt(0);o<256&&(t=o)}if(void 0!==n&&"string"!=typeof n)throw new TypeError("encoding must be a string");if("string"==typeof n&&!d.isEncoding(n))throw new TypeError("Unknown encoding: "+n)}else"number"==typeof t&&(t&=255);if(r<0||this.length<r||this.length<e)throw new RangeError("Out of range index");if(e<=r)return this;var i;if(r>>>=0,e=void 0===e?this.length:e>>>0,t||(t=0),"number"==typeof t)for(i=r;i<e;++i)this[i]=t;else{var s=S(t)?t:H(new d(t,n).toString()),u=s.length;for(i=0;i<e-r;++i)this[i+r]=s[i%u]}return this};var K=/[^+\/0-9A-Za-z-_]/g;function J(t){return t<16?"0"+t.toString(16):t.toString(16)}function H(t,r){var e;r=r||1/0;for(var n=t.length,o=null,i=[],s=0;s<n;++s){if((e=t.charCodeAt(s))>55295&&e<57344){if(!o){if(e>56319){(r-=3)>-1&&i.push(239,191,189);continue}if(s+1===n){(r-=3)>-1&&i.push(239,191,189);continue}o=e;continue}if(e<56320){(r-=3)>-1&&i.push(239,191,189),o=e;continue}e=65536+(o-55296<<10|e-56320)}else o&&(r-=3)>-1&&i.push(239,191,189);if(o=null,e<128){if((r-=1)<0)break;i.push(e)}else if(e<2048){if((r-=2)<0)break;i.push(e>>6|192,63&e|128)}else if(e<65536){if((r-=3)<0)break;i.push(e>>12|224,e>>6&63|128,63&e|128)}else{if(!(e<1114112))throw new Error("Invalid code point");if((r-=4)<0)break;i.push(e>>18|240,e>>12&63|128,e>>6&63|128,63&e|128)}}return i}function q(t){return function(t){var r,s,u,a,f,c;o||i();var p=t.length;if(p%4>0)throw new Error("Invalid string. Length must be a multiple of 4");f="="===t[p-2]?2:"="===t[p-1]?1:0,c=new n(3*p/4-f),u=f>0?p-4:p;var h=0;for(r=0,s=0;r<u;r+=4,s+=3)a=e[t.charCodeAt(r)]<<18|e[t.charCodeAt(r+1)]<<12|e[t.charCodeAt(r+2)]<<6|e[t.charCodeAt(r+3)],c[h++]=a>>16&255,c[h++]=a>>8&255,c[h++]=255&a;return 2===f?(a=e[t.charCodeAt(r)]<<2|e[t.charCodeAt(r+1)]>>4,c[h++]=255&a):1===f&&(a=e[t.charCodeAt(r)]<<10|e[t.charCodeAt(r+1)]<<4|e[t.charCodeAt(r+2)]>>2,c[h++]=a>>8&255,c[h++]=255&a),c}(function(t){if((t=function(t){return t.trim?t.trim():t.replace(/^\s+|\s+$/g,"")}(t).replace(K,"")).length<2)return"";for(;t.length%4!=0;)t+="=";return t}(t))}function G(t,r,e,n){for(var o=0;o<n&&!(o+e>=r.length||o>=t.length);++o)r[o+e]=t[o];return o}function $(t){return null!=t&&(!!t._isBuffer||Z(t)||function(t){return"function"==typeof t.readFloatLE&&"function"==typeof t.slice&&Z(t.slice(0,0))}(t))}function Z(t){return!!t.constructor&&"function"==typeof t.constructor.isBuffer&&t.constructor.isBuffer(t)}var Q=Object.freeze({__proto__:null,INSPECT_MAX_BYTES:50,kMaxLength:h,Buffer:d,SlowBuffer:function(t){return+t!=t&&(t=0),d.alloc(+t)},isBuffer:$});function tt(){}function rt(){rt.init.call(this)}function et(t){return void 0===t._maxListeners?rt.defaultMaxListeners:t._maxListeners}function nt(t,r,e){if(r)t.call(e);else for(var n=t.length,o=pt(t,n),i=0;i<n;++i)o[i].call(e)}function ot(t,r,e,n){if(r)t.call(e,n);else for(var o=t.length,i=pt(t,o),s=0;s<o;++s)i[s].call(e,n)}function it(t,r,e,n,o){if(r)t.call(e,n,o);else for(var i=t.length,s=pt(t,i),u=0;u<i;++u)s[u].call(e,n,o)}function st(t,r,e,n,o,i){if(r)t.call(e,n,o,i);else for(var s=t.length,u=pt(t,s),a=0;a<s;++a)u[a].call(e,n,o,i)}function ut(t,r,e,n){if(r)t.apply(e,n);else for(var o=t.length,i=pt(t,o),s=0;s<o;++s)i[s].apply(e,n)}function at(t,r,e,n){var o,i,s,u;if("function"!=typeof e)throw new TypeError('"listener" argument must be a function');if((i=t._events)?(i.newListener&&(t.emit("newListener",r,e.listener?e.listener:e),i=t._events),s=i[r]):(i=t._events=new tt,t._eventsCount=0),s){if("function"==typeof s?s=i[r]=n?[e,s]:[s,e]:n?s.unshift(e):s.push(e),!s.warned&&(o=et(t))&&o>0&&s.length>o){s.warned=!0;var a=new Error("Possible EventEmitter memory leak detected. "+s.length+" "+r+" listeners added. Use emitter.setMaxListeners() to increase limit");a.name="MaxListenersExceededWarning",a.emitter=t,a.type=r,a.count=s.length,u=a,"function"==typeof console.warn?console.warn(u):console.log(u)}}else s=i[r]=e,++t._eventsCount;return t}function ft(t,r,e){var n=!1;function o(){t.removeListener(r,o),n||(n=!0,e.apply(t,arguments))}return o.listener=e,o}function ct(t){var r=this._events;if(r){var e=r[t];if("function"==typeof e)return 1;if(e)return e.length}return 0}function pt(t,r){for(var e=new Array(r);r--;)e[r]=t[r];return e}function ht(t,r){for(var e=0,n=t.length-1;n>=0;n--){var o=t[n];"."===o?t.splice(n,1):".."===o?(t.splice(n,1),e++):e&&(t.splice(n,1),e--)}if(r)for(;e--;e)t.unshift("..");return t}tt.prototype=Object.create(null),rt.EventEmitter=rt,rt.usingDomains=!1,rt.prototype.domain=void 0,rt.prototype._events=void 0,rt.prototype._maxListeners=void 0,rt.defaultMaxListeners=10,rt.init=function(){this.domain=null,rt.usingDomains&&(void 0).active,this._events&&this._events!==Object.getPrototypeOf(this)._events||(this._events=new tt,this._eventsCount=0),this._maxListeners=this._maxListeners||void 0},rt.prototype.setMaxListeners=function(t){if("number"!=typeof t||t<0||isNaN(t))throw new TypeError('"n" argument must be a positive number');return this._maxListeners=t,this},rt.prototype.getMaxListeners=function(){return et(this)},rt.prototype.emit=function(t){var r,e,n,o,i,s,u,a="error"===t;if(s=this._events)a=a&&null==s.error;else if(!a)return!1;if(u=this.domain,a){if(r=arguments[1],!u){if(r instanceof Error)throw r;var f=new Error('Uncaught, unspecified "error" event. ('+r+")");throw f.context=r,f}return r||(r=new Error('Uncaught, unspecified "error" event')),r.domainEmitter=this,r.domain=u,r.domainThrown=!1,u.emit("error",r),!1}if(!(e=s[t]))return!1;var c="function"==typeof e;switch(n=arguments.length){case 1:nt(e,c,this);break;case 2:ot(e,c,this,arguments[1]);break;case 3:it(e,c,this,arguments[1],arguments[2]);break;case 4:st(e,c,this,arguments[1],arguments[2],arguments[3]);break;default:for(o=new Array(n-1),i=1;i<n;i++)o[i-1]=arguments[i];ut(e,c,this,o)}return!0},rt.prototype.addListener=function(t,r){return at(this,t,r,!1)},rt.prototype.on=rt.prototype.addListener,rt.prototype.prependListener=function(t,r){return at(this,t,r,!0)},rt.prototype.once=function(t,r){if("function"!=typeof r)throw new TypeError('"listener" argument must be a function');return this.on(t,ft(this,t,r)),this},rt.prototype.prependOnceListener=function(t,r){if("function"!=typeof r)throw new TypeError('"listener" argument must be a function');return this.prependListener(t,ft(this,t,r)),this},rt.prototype.removeListener=function(t,r){var e,n,o,i,s;if("function"!=typeof r)throw new TypeError('"listener" argument must be a function');if(!(n=this._events))return this;if(!(e=n[t]))return this;if(e===r||e.listener&&e.listener===r)0==--this._eventsCount?this._events=new tt:(delete n[t],n.removeListener&&this.emit("removeListener",t,e.listener||r));else if("function"!=typeof e){for(o=-1,i=e.length;i-- >0;)if(e[i]===r||e[i].listener&&e[i].listener===r){s=e[i].listener,o=i;break}if(o<0)return this;if(1===e.length){if(e[0]=void 0,0==--this._eventsCount)return this._events=new tt,this;delete n[t]}else!function(t,r){for(var e=r,n=e+1,o=t.length;n<o;e+=1,n+=1)t[e]=t[n];t.pop()}(e,o);n.removeListener&&this.emit("removeListener",t,s||r)}return this},rt.prototype.removeAllListeners=function(t){var r,e;if(!(e=this._events))return this;if(!e.removeListener)return 0===arguments.length?(this._events=new tt,this._eventsCount=0):e[t]&&(0==--this._eventsCount?this._events=new tt:delete e[t]),this;if(0===arguments.length){for(var n,o=Object.keys(e),i=0;i<o.length;++i)"removeListener"!==(n=o[i])&&this.removeAllListeners(n);return this.removeAllListeners("removeListener"),this._events=new tt,this._eventsCount=0,this}if("function"==typeof(r=e[t]))this.removeListener(t,r);else if(r)do{this.removeListener(t,r[r.length-1])}while(r[0]);return this},rt.prototype.listeners=function(t){var r,e=this._events;return e&&(r=e[t])?"function"==typeof r?[r.listener||r]:function(t){for(var r=new Array(t.length),e=0;e<r.length;++e)r[e]=t[e].listener||t[e];return r}(r):[]},rt.listenerCount=function(t,r){return"function"==typeof t.listenerCount?t.listenerCount(r):ct.call(t,r)},rt.prototype.listenerCount=ct,rt.prototype.eventNames=function(){return this._eventsCount>0?Reflect.ownKeys(this._events):[]};var lt=/^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/,yt=function(t){return lt.exec(t).slice(1)};function dt(){for(var t="",r=!1,e=arguments.length-1;e>=-1&&!r;e--){var n=e>=0?arguments[e]:"/";if("string"!=typeof n)throw new TypeError("Arguments to path.resolve must be strings");n&&(t=n+"/"+t,r="/"===n.charAt(0))}return(r?"/":"")+(t=ht(Tt(t.split("/"),(function(t){return!!t})),!r).join("/"))||"."}function Et(t){var r=gt(t),e="/"===_t(t,-1);return(t=ht(Tt(t.split("/"),(function(t){return!!t})),!r).join("/"))||r||(t="."),t&&e&&(t+="/"),(r?"/":"")+t}function gt(t){return"/"===t.charAt(0)}function mt(){var t=Array.prototype.slice.call(arguments,0);return Et(Tt(t,(function(t,r){if("string"!=typeof t)throw new TypeError("Arguments to path.join must be strings");return t})).join("/"))}function wt(t,r){function e(t){for(var r=0;r<t.length&&""===t[r];r++);for(var e=t.length-1;e>=0&&""===t[e];e--);return r>e?[]:t.slice(r,e-r+1)}t=dt(t).substr(1),r=dt(r).substr(1);for(var n=e(t.split("/")),o=e(r.split("/")),i=Math.min(n.length,o.length),s=i,u=0;u<i;u++)if(n[u]!==o[u]){s=u;break}var a=[];for(u=s;u<n.length;u++)a.push("..");return(a=a.concat(o.slice(s))).join("/")}function vt(t){var r=yt(t),e=r[0],n=r[1];return e||n?(n&&(n=n.substr(0,n.length-1)),e+n):"."}function St(t,r){var e=yt(t)[2];return r&&e.substr(-1*r.length)===r&&(e=e.substr(0,e.length-r.length)),e}function bt(t){return yt(t)[3]}var At={extname:bt,basename:St,dirname:vt,sep:"/",delimiter:":",relative:wt,join:mt,isAbsolute:gt,normalize:Et,resolve:dt};function Tt(t,r){if(t.filter)return t.filter(r);for(var e=[],n=0;n<t.length;n++)r(t[n],n,t)&&e.push(t[n]);return e}var _t="b"==="ab".substr(-1)?function(t,r,e){return t.substr(r,e)}:function(t,r,e){return r<0&&(r=t.length+r),t.substr(r,e)},Ot=Object.freeze({__proto__:null,resolve:dt,normalize:Et,isAbsolute:gt,join:mt,relative:wt,sep:"/",delimiter:":",dirname:vt,basename:St,extname:bt,default:At});function Ft(){throw new Error("setTimeout has not been defined")}function Nt(){throw new Error("clearTimeout has not been defined")}var It=Ft,Pt=Nt;function Ct(t){if(It===setTimeout)return setTimeout(t,0);if((It===Ft||!It)&&setTimeout)return It=setTimeout,setTimeout(t,0);try{return It(t,0)}catch(r){try{return It.call(null,t,0)}catch(r){return It.call(this,t,0)}}}"function"==typeof global.setTimeout&&(It=setTimeout),"function"==typeof global.clearTimeout&&(Pt=clearTimeout);var Rt,Lt=[],Dt=!1,Bt=-1;function kt(){Dt&&Rt&&(Dt=!1,Rt.length?Lt=Rt.concat(Lt):Bt=-1,Lt.length&&Ut())}function Ut(){if(!Dt){var t=Ct(kt);Dt=!0;for(var r=Lt.length;r;){for(Rt=Lt,Lt=[];++Bt<r;)Rt&&Rt[Bt].run();Bt=-1,r=Lt.length}Rt=null,Dt=!1,function(t){if(Pt===clearTimeout)return clearTimeout(t);if((Pt===Nt||!Pt)&&clearTimeout)return Pt=clearTimeout,clearTimeout(t);try{Pt(t)}catch(r){try{return Pt.call(null,t)}catch(r){return Pt.call(this,t)}}}(t)}}function xt(t){var r=new Array(arguments.length-1);if(arguments.length>1)for(var e=1;e<arguments.length;e++)r[e-1]=arguments[e];Lt.push(new Mt(t,r)),1!==Lt.length||Dt||Ct(Ut)}function Mt(t,r){this.fun=t,this.array=r}Mt.prototype.run=function(){this.fun.apply(null,this.array)};var Yt={},jt=[],Vt={},zt={},Wt={};function Xt(){}var Kt=Xt,Jt=Xt,Ht=Xt,qt=Xt,Gt=Xt,$t=Xt,Zt=Xt;function Qt(t){throw new Error("process.binding is not supported")}function tr(){return"/"}function rr(t){throw new Error("process.chdir is not supported")}function er(){return 0}var nr=global.performance||{},or=nr.now||nr.mozNow||nr.msNow||nr.oNow||nr.webkitNow||function(){return(new Date).getTime()};function ir(t){var r=.001*or.call(nr),e=Math.floor(r),n=Math.floor(r%1*1e9);return t&&(e-=t[0],(n-=t[1])<0&&(e--,n+=1e9)),[e,n]}var sr=new Date;function ur(){return(new Date-sr)/1e3}var ar={nextTick:xt,title:"browser",browser:!0,env:Yt,argv:jt,version:"",versions:Vt,on:Kt,addListener:Jt,once:Ht,off:qt,removeListener:Gt,removeAllListeners:$t,emit:Zt,binding:Qt,cwd:tr,chdir:rr,umask:er,hrtime:ir,platform:"browser",release:zt,config:Wt,uptime:ur},fr=Object.freeze({__proto__:null,nextTick:xt,title:"browser",platform:"browser",browser:!0,env:Yt,argv:jt,version:"",versions:Vt,release:zt,config:Wt,on:Kt,addListener:Jt,once:Ht,off:qt,removeListener:Gt,removeAllListeners:$t,emit:Zt,binding:Qt,cwd:tr,chdir:rr,umask:er,hrtime:ir,uptime:ur,default:ar}),cr="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function pr(t){return t&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")?t.default:t}function hr(t,r,e){return t(e={path:r,exports:{},require:function(t,r){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==r&&e.path)}},e.exports),e.exports}var lr=hr((function(t,r){var e,n,o=cr&&cr.__extends||(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])},function(t,r){function n(){this.constructor=t}e(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)});r.__esModule=!0,function(t){t[t.EPERM=1]="EPERM",t[t.ENOENT=2]="ENOENT",t[t.EIO=5]="EIO",t[t.EBADF=9]="EBADF",t[t.EACCES=13]="EACCES",t[t.EBUSY=16]="EBUSY",t[t.EEXIST=17]="EEXIST",t[t.ENOTDIR=20]="ENOTDIR",t[t.EISDIR=21]="EISDIR",t[t.EINVAL=22]="EINVAL",t[t.EFBIG=27]="EFBIG",t[t.ENOSPC=28]="ENOSPC",t[t.EROFS=30]="EROFS",t[t.ENOTEMPTY=39]="ENOTEMPTY",t[t.ENOTSUP=95]="ENOTSUP"}(n=r.ErrorCode||(r.ErrorCode={})),r.ErrorStrings={},r.ErrorStrings[n.EPERM]="Operation not permitted.",r.ErrorStrings[n.ENOENT]="No such file or directory.",r.ErrorStrings[n.EIO]="Input/output error.",r.ErrorStrings[n.EBADF]="Bad file descriptor.",r.ErrorStrings[n.EACCES]="Permission denied.",r.ErrorStrings[n.EBUSY]="Resource busy or locked.",r.ErrorStrings[n.EEXIST]="File exists.",r.ErrorStrings[n.ENOTDIR]="File is not a directory.",r.ErrorStrings[n.EISDIR]="File is a directory.",r.ErrorStrings[n.EINVAL]="Invalid argument.",r.ErrorStrings[n.EFBIG]="File is too big.",r.ErrorStrings[n.ENOSPC]="No space left on disk.",r.ErrorStrings[n.EROFS]="Cannot modify a read-only file system.",r.ErrorStrings[n.ENOTEMPTY]="Directory is not empty.",r.ErrorStrings[n.ENOTSUP]="Operation is not supported.";var i=function(t){function e(e,o,i){void 0===o&&(o=r.ErrorStrings[e]);var s=t.call(this,o)||this;return s.syscall="",s.errno=e,s.code=n[e],s.path=i,s.stack=(new Error).stack,s.message="Error: "+s.code+": "+o+(s.path?", '"+s.path+"'":""),s}return o(e,t),e.fromJSON=function(t){var r=new e(0);return r.errno=t.errno,r.code=t.code,r.path=t.path,r.stack=t.stack,r.message=t.message,r},e.fromBuffer=function(t,r){return void 0===r&&(r=0),e.fromJSON(JSON.parse(t.toString("utf8",r+4,r+4+t.readUInt32LE(r))))},e.FileError=function(t,n){return new e(t,r.ErrorStrings[t],n)},e.ENOENT=function(t){return this.FileError(n.ENOENT,t)},e.EEXIST=function(t){return this.FileError(n.EEXIST,t)},e.EISDIR=function(t){return this.FileError(n.EISDIR,t)},e.ENOTDIR=function(t){return this.FileError(n.ENOTDIR,t)},e.EPERM=function(t){return this.FileError(n.EPERM,t)},e.ENOTEMPTY=function(t){return this.FileError(n.ENOTEMPTY,t)},e.prototype.toString=function(){return this.message},e.prototype.toJSON=function(){return{errno:this.errno,code:this.code,path:this.path,stack:this.stack,message:this.message}},e.prototype.writeToBuffer=function(t,r){void 0===t&&(t=Buffer.alloc(this.bufferSize())),void 0===r&&(r=0);var e=t.write(JSON.stringify(this.toJSON()),r+4);return t.writeUInt32LE(e,r),t},e.prototype.bufferSize=function(){return 4+Buffer.byteLength(JSON.stringify(this.toJSON()))},e}(Error);r.ApiError=i}));pr(lr);var yr=lr.ErrorCode;lr.ErrorStrings;var dr=lr.ApiError,Er=hr((function(t,r){var e;r.__esModule=!0,function(t){t[t.NOP=0]="NOP",t[t.THROW_EXCEPTION=1]="THROW_EXCEPTION",t[t.TRUNCATE_FILE=2]="TRUNCATE_FILE",t[t.CREATE_FILE=3]="CREATE_FILE"}(e=r.ActionType||(r.ActionType={}));var n=function(){function t(r){if(this.flagStr=r,t.validFlagStrs.indexOf(r)<0)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid flag: "+r)}return t.getFileFlag=function(r){return t.flagCache.hasOwnProperty(r)?t.flagCache[r]:t.flagCache[r]=new t(r)},t.prototype.getFlagString=function(){return this.flagStr},t.prototype.isReadable=function(){return-1!==this.flagStr.indexOf("r")||-1!==this.flagStr.indexOf("+")},t.prototype.isWriteable=function(){return-1!==this.flagStr.indexOf("w")||-1!==this.flagStr.indexOf("a")||-1!==this.flagStr.indexOf("+")},t.prototype.isTruncating=function(){return-1!==this.flagStr.indexOf("w")},t.prototype.isAppendable=function(){return-1!==this.flagStr.indexOf("a")},t.prototype.isSynchronous=function(){return-1!==this.flagStr.indexOf("s")},t.prototype.isExclusive=function(){return-1!==this.flagStr.indexOf("x")},t.prototype.pathExistsAction=function(){return this.isExclusive()?e.THROW_EXCEPTION:this.isTruncating()?e.TRUNCATE_FILE:e.NOP},t.prototype.pathNotExistsAction=function(){return(this.isWriteable()||this.isAppendable())&&"r+"!==this.flagStr?e.CREATE_FILE:e.THROW_EXCEPTION},t}();n.flagCache={},n.validFlagStrs=["r","r+","rs","rs+","w","wx","w+","wx+","a","ax","a+","ax+"],r.FileFlag=n}));pr(Er),Er.ActionType,Er.FileFlag;var gr=hr((function(t,r){function e(t,r,e,n,o){return t<r||e<r?t>e?e+1:t+1:n===o?r:r+1}r.__esModule=!0,r.default=function(t,r){if(t===r)return 0;if(t.length>r.length){var n=t;t=r,r=n}for(var o=t.length,i=r.length;o>0&&t.charCodeAt(o-1)===r.charCodeAt(i-1);)o--,i--;for(var s=0;s<o&&t.charCodeAt(s)===r.charCodeAt(s);)s++;if(i-=s,0===(o-=s)||1===i)return i;for(var u,a,f,c,p,h=new Array(o<<1),l=0;l<o;)h[o+l]=t.charCodeAt(s+l),h[l]=++l;for(u=0;u+3<i;){var y=r.charCodeAt(s+(a=u)),d=r.charCodeAt(s+(f=u+1)),E=r.charCodeAt(s+(c=u+2)),g=r.charCodeAt(s+(p=u+3)),m=u+=4;for(l=0;l<o;){var w=h[o+l];a=e(S=h[l],a,f,y,w),f=e(a,f,c,d,w),c=e(f,c,p,E,w),m=e(c,p,m,g,w),h[l++]=m,p=c,c=f,f=a,a=S}}for(var v=0;u<i;){y=r.charCodeAt(s+(a=u));v=++u;for(l=0;l<o;l++){var S=h[l];h[l]=v=S<a||v<a?S>v?v+1:S+1:y===h[o+l]?a:a+1,a=S}}return v}}));pr(gr);var mr=hr((function(t,r){function e(t){return t instanceof Uint8Array?t:new Uint8Array(t)}function n(t){return t instanceof Buffer?t:0===t.byteOffset&&t.byteLength===t.buffer.byteLength?o(t.buffer):Buffer.from(t.buffer,t.byteOffset,t.byteLength)}function o(t){return Buffer.from(t)}r.__esModule=!0,r.deprecationMessage=function(t,r,e){t&&console.warn("["+r+"] Direct file system constructor usage is deprecated for this file system, and will be removed in the next major version. Please use the '"+r+".Create("+JSON.stringify(e)+", callback)' method instead. See https://github.com/jvilk/BrowserFS/issues/176 for more details.")},r.isIE="undefined"!=typeof navigator&&!(!/(msie) ([\w.]+)/.exec(navigator.userAgent.toLowerCase())&&-1===navigator.userAgent.indexOf("Trident")),r.isWebWorker="undefined"==typeof window,r.fail=function(){throw new Error("BFS has reached an impossible code path; please file a bug.")},r.mkdirpSync=function t(r,e,n){n.existsSync(r)||(t(At.dirname(r),e,n),n.mkdirSync(r,e))},r.buffer2ArrayBuffer=function(t){var r=e(t),n=r.byteOffset,o=r.byteLength;return 0===n&&o===r.buffer.byteLength?r.buffer:r.buffer.slice(n,n+o)},r.buffer2Uint8array=e,r.arrayish2Buffer=function(t){return t instanceof Buffer?t:t instanceof Uint8Array?n(t):Buffer.from(t)},r.uint8Array2Buffer=n,r.arrayBuffer2Buffer=o,r.copyingSlice=function(t,r,o){if(void 0===r&&(r=0),void 0===o&&(o=t.length),r<0||o<0||o>t.length||r>o)throw new TypeError("Invalid slice bounds on buffer of length "+t.length+": ["+r+", "+o+"]");if(0===t.length)return s();var i=e(t),u=t[0],a=(u+1)%255;return t[0]=a,i[0]===a?(i[0]=u,n(i.slice(r,o))):(t[0]=u,n(i.subarray(r,o)))};var i=null;function s(){return i||(i=Buffer.alloc(0))}r.emptyBuffer=s,r.bufferValidator=function(t,r){Buffer.isBuffer(t)?r():r(new lr.ApiError(lr.ErrorCode.EINVAL,"option must be a Buffer."))},r.checkOptions=function(t,r,e){var n=t.Options,o=t.Name,i=0,s=!1,u=!1;function a(t){s||(t&&(s=!0,e(t)),0===--i&&u&&e())}var f=function(t){if(n.hasOwnProperty(t)){var u=n[t],f=r[t];if(null==f){if(!u.optional){var c=Object.keys(r).filter((function(t){return!(t in n)})).map((function(r){return{str:r,distance:gr.default(t,r)}})).filter((function(t){return t.distance<5})).sort((function(t,r){return t.distance-r.distance}));return s?{value:void 0}:(s=!0,{value:e(new lr.ApiError(lr.ErrorCode.EINVAL,"["+o+"] Required option '"+t+"' not provided."+(c.length>0?" You provided unrecognized option '"+c[0].str+"'; perhaps you meant to type '"+t+"'.":"")+"\nOption description: "+u.description))})}}else{if(!(Array.isArray(u.type)?-1!==u.type.indexOf(typeof f):typeof f===u.type))return s?{value:void 0}:(s=!0,{value:e(new lr.ApiError(lr.ErrorCode.EINVAL,"["+o+"] Value provided for option "+t+" is not the proper type. Expected "+(Array.isArray(u.type)?"one of {"+u.type.join(", ")+"}":u.type)+", but received "+typeof f+"\nOption description: "+u.description))});u.validator&&(i++,u.validator(f,a))}}};for(var c in n){var p=f(c);if("object"==typeof p)return p.value}u=!0,0!==i||s||e()}}));pr(mr),mr.deprecationMessage,mr.isIE,mr.isWebWorker,mr.fail,mr.mkdirpSync,mr.buffer2ArrayBuffer,mr.buffer2Uint8array,mr.arrayish2Buffer,mr.uint8Array2Buffer,mr.arrayBuffer2Buffer,mr.copyingSlice,mr.emptyBuffer,mr.bufferValidator,mr.checkOptions;var wr=hr((function(t,r){var e,n=cr&&cr.__extends||(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])},function(t,r){function n(){this.constructor=t}e(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)});r.__esModule=!0;var o=function(){function t(){}return t.prototype.supportsLinks=function(){return!1},t.prototype.diskSpace=function(t,r){r(0,0)},t.prototype.openFile=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.createFile=function(t,r,e,n){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.open=function(t,r,e,n){var o=this;this.stat(t,!1,(function(i,s){if(i)switch(r.pathNotExistsAction()){case Er.ActionType.CREATE_FILE:return o.stat(At.dirname(t),!1,(function(i,s){i?n(i):s&&!s.isDirectory()?n(lr.ApiError.ENOTDIR(At.dirname(t))):o.createFile(t,r,e,n)}));case Er.ActionType.THROW_EXCEPTION:return n(lr.ApiError.ENOENT(t));default:return n(new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid FileFlag object."))}else{if(s&&s.isDirectory())return n(lr.ApiError.EISDIR(t));switch(r.pathExistsAction()){case Er.ActionType.THROW_EXCEPTION:return n(lr.ApiError.EEXIST(t));case Er.ActionType.TRUNCATE_FILE:return o.openFile(t,r,(function(t,r){t?n(t):r?r.truncate(0,(function(){r.sync((function(){n(null,r)}))})):mr.fail()}));case Er.ActionType.NOP:return o.openFile(t,r,n);default:return n(new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid FileFlag object."))}}}))},t.prototype.rename=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.renameSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.stat=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.statSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.openFileSync=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.createFileSync=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.openSync=function(t,r,e){var n;try{n=this.statSync(t,!1)}catch(n){switch(r.pathNotExistsAction()){case Er.ActionType.CREATE_FILE:if(!this.statSync(At.dirname(t),!1).isDirectory())throw lr.ApiError.ENOTDIR(At.dirname(t));return this.createFileSync(t,r,e);case Er.ActionType.THROW_EXCEPTION:throw lr.ApiError.ENOENT(t);default:throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid FileFlag object.")}}if(n.isDirectory())throw lr.ApiError.EISDIR(t);switch(r.pathExistsAction()){case Er.ActionType.THROW_EXCEPTION:throw lr.ApiError.EEXIST(t);case Er.ActionType.TRUNCATE_FILE:return this.unlinkSync(t),this.createFileSync(t,r,n.mode);case Er.ActionType.NOP:return this.openFileSync(t,r,e);default:throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid FileFlag object.")}},t.prototype.unlink=function(t,r){r(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.unlinkSync=function(t){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.rmdir=function(t,r){r(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.rmdirSync=function(t){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.mkdir=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.mkdirSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.readdir=function(t,r){r(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.readdirSync=function(t){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.exists=function(t,r){this.stat(t,null,(function(t){r(!t)}))},t.prototype.existsSync=function(t){try{return this.statSync(t,!0),!0}catch(t){return!1}},t.prototype.realpath=function(t,r,e){if(this.supportsLinks())for(var n=t.split(At.sep),o=0;o<n.length;o++){var i=n.slice(0,o+1);n[o]=At.join.apply(null,i)}else this.exists(t,(function(r){r?e(null,t):e(lr.ApiError.ENOENT(t))}))},t.prototype.realpathSync=function(t,r){if(this.supportsLinks()){for(var e=t.split(At.sep),n=0;n<e.length;n++){var o=e.slice(0,n+1);e[n]=At.join.apply(At,o)}return e.join(At.sep)}if(this.existsSync(t))return t;throw lr.ApiError.ENOENT(t)},t.prototype.truncate=function(t,r,e){this.open(t,Er.FileFlag.getFileFlag("r+"),420,(function(t,n){if(t)return e(t);n.truncate(r,(function(t){n.close((function(r){e(t||r)}))}))}))},t.prototype.truncateSync=function(t,r){var e=this.openSync(t,Er.FileFlag.getFileFlag("r+"),420);try{e.truncateSync(r)}catch(t){throw t}finally{e.closeSync()}},t.prototype.readFile=function(t,r,e,n){var o=n;this.open(t,e,420,(function(t,e){if(t)return n(t);n=function(t,r){e.close((function(e){return t||(t=e),o(t,r)}))},e.stat((function(t,o){if(t)return n(t);var i=Buffer.alloc(o.size);e.read(i,0,o.size,0,(function(t){if(t)return n(t);if(null===r)return n(t,i);try{n(null,i.toString(r))}catch(t){n(t)}}))}))}))},t.prototype.readFileSync=function(t,r,e){var n=this.openSync(t,e,420);try{var o=n.statSync(),i=Buffer.alloc(o.size);return n.readSync(i,0,o.size,0),n.closeSync(),null===r?i:i.toString(r)}finally{n.closeSync()}},t.prototype.writeFile=function(t,r,e,n,o,i){var s=i;this.open(t,n,420,(function(t,n){if(t)return i(t);i=function(t){n.close((function(r){s(t||r)}))};try{"string"==typeof r&&(r=Buffer.from(r,e))}catch(t){return i(t)}n.write(r,0,r.length,0,i)}))},t.prototype.writeFileSync=function(t,r,e,n,o){var i=this.openSync(t,n,o);try{"string"==typeof r&&(r=Buffer.from(r,e)),i.writeSync(r,0,r.length,0)}finally{i.closeSync()}},t.prototype.appendFile=function(t,r,e,n,o,i){var s=i;this.open(t,n,o,(function(t,n){if(t)return i(t);i=function(t){n.close((function(r){s(t||r)}))},"string"==typeof r&&(r=Buffer.from(r,e)),n.write(r,0,r.length,null,i)}))},t.prototype.appendFileSync=function(t,r,e,n,o){var i=this.openSync(t,n,o);try{"string"==typeof r&&(r=Buffer.from(r,e)),i.writeSync(r,0,r.length,null)}finally{i.closeSync()}},t.prototype.chmod=function(t,r,e,n){n(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.chmodSync=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.chown=function(t,r,e,n,o){o(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.chownSync=function(t,r,e,n){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.utimes=function(t,r,e,n){n(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.utimesSync=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.link=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.linkSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.symlink=function(t,r,e,n){n(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.symlinkSync=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.readlink=function(t,r){r(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.readlinkSync=function(t){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t}();r.BaseFileSystem=o;var i=function(t){function r(){return null!==t&&t.apply(this,arguments)||this}return n(r,t),r.prototype.supportsSynch=function(){return!0},r.prototype.rename=function(t,r,e){try{this.renameSync(t,r),e()}catch(t){e(t)}},r.prototype.stat=function(t,r,e){try{e(null,this.statSync(t,r))}catch(t){e(t)}},r.prototype.open=function(t,r,e,n){try{n(null,this.openSync(t,r,e))}catch(t){n(t)}},r.prototype.unlink=function(t,r){try{this.unlinkSync(t),r()}catch(t){r(t)}},r.prototype.rmdir=function(t,r){try{this.rmdirSync(t),r()}catch(t){r(t)}},r.prototype.mkdir=function(t,r,e){try{this.mkdirSync(t,r),e()}catch(t){e(t)}},r.prototype.readdir=function(t,r){try{r(null,this.readdirSync(t))}catch(t){r(t)}},r.prototype.chmod=function(t,r,e,n){try{this.chmodSync(t,r,e),n()}catch(t){n(t)}},r.prototype.chown=function(t,r,e,n,o){try{this.chownSync(t,r,e,n),o()}catch(t){o(t)}},r.prototype.utimes=function(t,r,e,n){try{this.utimesSync(t,r,e),n()}catch(t){n(t)}},r.prototype.link=function(t,r,e){try{this.linkSync(t,r),e()}catch(t){e(t)}},r.prototype.symlink=function(t,r,e,n){try{this.symlinkSync(t,r,e),n()}catch(t){n(t)}},r.prototype.readlink=function(t,r){try{r(null,this.readlinkSync(t))}catch(t){r(t)}},r}(o);r.SynchronousFileSystem=i}));pr(wr),wr.BaseFileSystem;var vr=wr.SynchronousFileSystem,Sr=hr((function(t,r){var e;r.__esModule=!0,function(t){t[t.FILE=32768]="FILE",t[t.DIRECTORY=16384]="DIRECTORY",t[t.SYMLINK=40960]="SYMLINK"}(e=r.FileType||(r.FileType={}));var n=function(){function t(t,r,n,o,i,s){if(void 0===o&&(o=new Date),void 0===i&&(i=new Date),void 0===s&&(s=new Date),this.size=r,this.atime=o,this.mtime=i,this.ctime=s,this.dev=0,this.ino=0,this.rdev=0,this.nlink=1,this.blksize=4096,this.uid=0,this.gid=0,this.birthtime=new Date(0),this.fileData=null,n)this.mode=n;else switch(t){case e.FILE:this.mode=420;break;case e.DIRECTORY:default:this.mode=511}this.blocks=Math.ceil(r/512),this.mode<4096&&(this.mode|=t)}return t.fromBuffer=function(r){var e=r.readUInt32LE(0),n=r.readUInt32LE(4),o=r.readDoubleLE(8),i=r.readDoubleLE(16),s=r.readDoubleLE(24);return new t(61440&n,e,4095&n,new Date(o),new Date(i),new Date(s))},t.prototype.toBuffer=function(){var t=Buffer.alloc(32);return t.writeUInt32LE(this.size,0),t.writeUInt32LE(this.mode,4),t.writeDoubleLE(this.atime.getTime(),8),t.writeDoubleLE(this.mtime.getTime(),16),t.writeDoubleLE(this.ctime.getTime(),24),t},t.prototype.clone=function(){return new t(61440&this.mode,this.size,4095&this.mode,this.atime,this.mtime,this.ctime)},t.prototype.isFile=function(){return(61440&this.mode)===e.FILE},t.prototype.isDirectory=function(){return(61440&this.mode)===e.DIRECTORY},t.prototype.isSymbolicLink=function(){return(61440&this.mode)===e.SYMLINK},t.prototype.chmod=function(t){this.mode=61440&this.mode|t},t.prototype.isSocket=function(){return!1},t.prototype.isBlockDevice=function(){return!1},t.prototype.isCharacterDevice=function(){return!1},t.prototype.isFIFO=function(){return!1},t}();r.default=n})),br=pr(Sr),Ar=Sr.FileType,Tr=hr((function(t,r){r.__esModule=!0;var e=function(){function t(t,r,e,n,o,i){this.id=t,this.size=r,this.mode=e,this.atime=n,this.mtime=o,this.ctime=i}return t.fromBuffer=function(r){if(void 0===r)throw new Error("NO");return new t(r.toString("ascii",30),r.readUInt32LE(0),r.readUInt16LE(4),r.readDoubleLE(6),r.readDoubleLE(14),r.readDoubleLE(22))},t.prototype.toStats=function(){return new Sr.default((61440&this.mode)===Sr.FileType.DIRECTORY?Sr.FileType.DIRECTORY:Sr.FileType.FILE,this.size,this.mode,new Date(this.atime),new Date(this.mtime),new Date(this.ctime))},t.prototype.getSize=function(){return 30+this.id.length},t.prototype.toBuffer=function(t){return void 0===t&&(t=Buffer.alloc(this.getSize())),t.writeUInt32LE(this.size,0),t.writeUInt16LE(this.mode,4),t.writeDoubleLE(this.atime,6),t.writeDoubleLE(this.mtime,14),t.writeDoubleLE(this.ctime,22),t.write(this.id,30,this.id.length,"ascii"),t},t.prototype.update=function(t){var r=!1;this.size!==t.size&&(this.size=t.size,r=!0),this.mode!==t.mode&&(this.mode=t.mode,r=!0);var e=t.atime.getTime();this.atime!==e&&(this.atime=e,r=!0);var n=t.mtime.getTime();this.mtime!==n&&(this.mtime=n,r=!0);var o=t.ctime.getTime();return this.ctime!==o&&(this.ctime=o,r=!0),r},t.prototype.isFile=function(){return(61440&this.mode)===Sr.FileType.FILE},t.prototype.isDirectory=function(){return(61440&this.mode)===Sr.FileType.DIRECTORY},t}();r.default=e}));pr(Tr);var _r=hr((function(t,r){r.__esModule=!0;var e=function(){function t(){}return t.prototype.sync=function(t){t(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.syncSync=function(){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.datasync=function(t){this.sync(t)},t.prototype.datasyncSync=function(){return this.syncSync()},t.prototype.chown=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.chownSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.chmod=function(t,r){r(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.chmodSync=function(t){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.utimes=function(t,r,e){e(new lr.ApiError(lr.ErrorCode.ENOTSUP))},t.prototype.utimesSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t}();r.BaseFile=e}));pr(_r),_r.BaseFile;var Or=hr((function(t,r){r.__esModule=!0;var e=At,n=function(t,r){return t};function o(t){if(t)return t;throw new lr.ApiError(lr.ErrorCode.EIO,"Initialize BrowserFS with a file system using BrowserFS.initialize(filesystem)")}function i(t,r){switch(typeof t){case"number":return t;case"string":var e=parseInt(t,8);return isNaN(e)?r:e;default:return r}}function s(t){if(t instanceof Date)return t;if("number"==typeof t)return new Date(1e3*t);throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid time.")}function u(t){if(t.indexOf("\0")>=0)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Path must be a string without null bytes.");if(""===t)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Path must not be empty.");return e.resolve(t)}function a(t,r,e,n){switch(typeof t){case"object":return{encoding:void 0!==t.encoding?t.encoding:r,flag:void 0!==t.flag?t.flag:e,mode:i(t.mode,n)};case"string":return{encoding:t,flag:e,mode:n};default:return{encoding:r,flag:e,mode:n}}}function f(){}var c=function(){function t(){this.F_OK=0,this.R_OK=4,this.W_OK=2,this.X_OK=1,this.root=null,this.fdMap={},this.nextFd=100}return t.prototype.initialize=function(t){if(!t.constructor.isAvailable())throw new lr.ApiError(lr.ErrorCode.EINVAL,"Tried to instantiate BrowserFS with an unavailable file system.");return this.root=t},t.prototype._toUnixTimestamp=function(t){if("number"==typeof t)return t;if(t instanceof Date)return t.getTime()/1e3;throw new Error("Cannot parse time: "+t)},t.prototype.getRootFS=function(){return this.root?this.root:null},t.prototype.rename=function(t,r,e){void 0===e&&(e=f);var i=n(e,1);try{o(this.root).rename(u(t),u(r),i)}catch(t){i(t)}},t.prototype.renameSync=function(t,r){o(this.root).renameSync(u(t),u(r))},t.prototype.exists=function(t,r){void 0===r&&(r=f);var e=n(r,1);try{return o(this.root).exists(u(t),e)}catch(t){return e(!1)}},t.prototype.existsSync=function(t){try{return o(this.root).existsSync(u(t))}catch(t){return!1}},t.prototype.stat=function(t,r){void 0===r&&(r=f);var e=n(r,2);try{return o(this.root).stat(u(t),!1,e)}catch(t){return e(t)}},t.prototype.statSync=function(t){return o(this.root).statSync(u(t),!1)},t.prototype.lstat=function(t,r){void 0===r&&(r=f);var e=n(r,2);try{return o(this.root).stat(u(t),!0,e)}catch(t){return e(t)}},t.prototype.lstatSync=function(t){return o(this.root).statSync(u(t),!0)},t.prototype.truncate=function(t,r,e){void 0===r&&(r=0),void 0===e&&(e=f);var i=0;"function"==typeof r?e=r:"number"==typeof r&&(i=r);var s=n(e,1);try{if(i<0)throw new lr.ApiError(lr.ErrorCode.EINVAL);return o(this.root).truncate(u(t),i,s)}catch(t){return s(t)}},t.prototype.truncateSync=function(t,r){if(void 0===r&&(r=0),r<0)throw new lr.ApiError(lr.ErrorCode.EINVAL);return o(this.root).truncateSync(u(t),r)},t.prototype.unlink=function(t,r){void 0===r&&(r=f);var e=n(r,1);try{return o(this.root).unlink(u(t),e)}catch(t){return e(t)}},t.prototype.unlinkSync=function(t){return o(this.root).unlinkSync(u(t))},t.prototype.open=function(t,r,e,s){var a=this;void 0===s&&(s=f);var c=i(e,420),p=n(s="function"==typeof e?e:s,2);try{o(this.root).open(u(t),Er.FileFlag.getFileFlag(r),c,(function(t,r){r?p(t,a.getFdForFile(r)):p(t)}))}catch(t){p(t)}},t.prototype.openSync=function(t,r,e){return void 0===e&&(e=420),this.getFdForFile(o(this.root).openSync(u(t),Er.FileFlag.getFileFlag(r),i(e,420)))},t.prototype.readFile=function(t,r,e){void 0===r&&(r={}),void 0===e&&(e=f);var i=a(r,null,"r",null),s=n(e="function"==typeof r?r:e,2);try{var c=Er.FileFlag.getFileFlag(i.flag);return c.isReadable()?o(this.root).readFile(u(t),i.encoding,c,s):s(new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to readFile must allow for reading."))}catch(t){return s(t)}},t.prototype.readFileSync=function(t,r){void 0===r&&(r={});var e=a(r,null,"r",null),n=Er.FileFlag.getFileFlag(e.flag);if(!n.isReadable())throw new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to readFile must allow for reading.");return o(this.root).readFileSync(u(t),e.encoding,n)},t.prototype.writeFile=function(t,r,e,i){void 0===e&&(e={}),void 0===i&&(i=f);var s=a(e,"utf8","w",420),c=n(i="function"==typeof e?e:i,1);try{var p=Er.FileFlag.getFileFlag(s.flag);return p.isWriteable()?o(this.root).writeFile(u(t),r,s.encoding,p,s.mode,c):c(new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to writeFile must allow for writing."))}catch(t){return c(t)}},t.prototype.writeFileSync=function(t,r,e){var n=a(e,"utf8","w",420),i=Er.FileFlag.getFileFlag(n.flag);if(!i.isWriteable())throw new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to writeFile must allow for writing.");return o(this.root).writeFileSync(u(t),r,n.encoding,i,n.mode)},t.prototype.appendFile=function(t,r,e,i){void 0===i&&(i=f);var s=a(e,"utf8","a",420),c=n(i="function"==typeof e?e:i,1);try{var p=Er.FileFlag.getFileFlag(s.flag);if(!p.isAppendable())return c(new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to appendFile must allow for appending."));o(this.root).appendFile(u(t),r,s.encoding,p,s.mode,c)}catch(t){c(t)}},t.prototype.appendFileSync=function(t,r,e){var n=a(e,"utf8","a",420),i=Er.FileFlag.getFileFlag(n.flag);if(!i.isAppendable())throw new lr.ApiError(lr.ErrorCode.EINVAL,"Flag passed to appendFile must allow for appending.");return o(this.root).appendFileSync(u(t),r,n.encoding,i,n.mode)},t.prototype.fstat=function(t,r){void 0===r&&(r=f);var e=n(r,2);try{this.fd2file(t).stat(e)}catch(t){e(t)}},t.prototype.fstatSync=function(t){return this.fd2file(t).statSync()},t.prototype.close=function(t,r){var e=this;void 0===r&&(r=f);var o=n(r,1);try{this.fd2file(t).close((function(r){r||e.closeFd(t),o(r)}))}catch(t){o(t)}},t.prototype.closeSync=function(t){this.fd2file(t).closeSync(),this.closeFd(t)},t.prototype.ftruncate=function(t,r,e){void 0===e&&(e=f);var o="number"==typeof r?r:0,i=n(e="function"==typeof r?r:e,1);try{var s=this.fd2file(t);if(o<0)throw new lr.ApiError(lr.ErrorCode.EINVAL);s.truncate(o,i)}catch(t){i(t)}},t.prototype.ftruncateSync=function(t,r){void 0===r&&(r=0);var e=this.fd2file(t);if(r<0)throw new lr.ApiError(lr.ErrorCode.EINVAL);e.truncateSync(r)},t.prototype.fsync=function(t,r){void 0===r&&(r=f);var e=n(r,1);try{this.fd2file(t).sync(e)}catch(t){e(t)}},t.prototype.fsyncSync=function(t){this.fd2file(t).syncSync()},t.prototype.fdatasync=function(t,r){void 0===r&&(r=f);var e=n(r,1);try{this.fd2file(t).datasync(e)}catch(t){e(t)}},t.prototype.fdatasyncSync=function(t){this.fd2file(t).datasyncSync()},t.prototype.write=function(t,r,e,o,i,s){void 0===s&&(s=f);var u,a,c,p=null;if("string"==typeof r){var h="utf8";switch(typeof e){case"function":s=e;break;case"number":p=e,h="string"==typeof o?o:"utf8",s="function"==typeof i?i:s;break;default:return(s="function"==typeof o?o:"function"==typeof i?i:s)(new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid arguments."))}a=0,c=(u=Buffer.from(r,h)).length}else u=r,a=e,c=o,p="number"==typeof i?i:null,s="function"==typeof i?i:s;var l=n(s,3);try{var y=this.fd2file(t);null==p&&(p=y.getPos()),y.write(u,a,c,p,l)}catch(t){l(t)}},t.prototype.writeSync=function(t,r,e,n,o){var i,s,u,a=0;if("string"==typeof r){u="number"==typeof e?e:null;var f="string"==typeof n?n:"utf8";a=0,s=(i=Buffer.from(r,f)).length}else i=r,a=e,s=n,u="number"==typeof o?o:null;var c=this.fd2file(t);return null==u&&(u=c.getPos()),c.writeSync(i,a,s,u)},t.prototype.read=function(t,r,e,o,i,s){var u,a,c,p,h;if(void 0===s&&(s=f),"number"==typeof r){c=r,u=e;var l=o;s="function"==typeof i?i:s,a=0,p=Buffer.alloc(c),h=n((function(t,r,e){if(t)return s(t);s(t,e.toString(l),r)}),3)}else p=r,a=e,c=o,u=i,h=n(s,3);try{var y=this.fd2file(t);null==u&&(u=y.getPos()),y.read(p,a,c,u,h)}catch(t){h(t)}},t.prototype.readSync=function(t,r,e,n,o){var i,s,u,a,f=!1,c="utf8";"number"==typeof r?(u=r,a=e,c=n,s=0,i=Buffer.alloc(u),f=!0):(i=r,s=e,u=n,a=o);var p=this.fd2file(t);null==a&&(a=p.getPos());var h=p.readSync(i,s,u,a);return f?[i.toString(c),h]:h},t.prototype.fchown=function(t,r,e,o){void 0===o&&(o=f);var i=n(o,1);try{this.fd2file(t).chown(r,e,i)}catch(t){i(t)}},t.prototype.fchownSync=function(t,r,e){this.fd2file(t).chownSync(r,e)},t.prototype.fchmod=function(t,r,e){var o=n(e,1);try{var i="string"==typeof r?parseInt(r,8):r;this.fd2file(t).chmod(i,o)}catch(t){o(t)}},t.prototype.fchmodSync=function(t,r){var e="string"==typeof r?parseInt(r,8):r;this.fd2file(t).chmodSync(e)},t.prototype.futimes=function(t,r,e,o){void 0===o&&(o=f);var i=n(o,1);try{var s=this.fd2file(t);"number"==typeof r&&(r=new Date(1e3*r)),"number"==typeof e&&(e=new Date(1e3*e)),s.utimes(r,e,i)}catch(t){i(t)}},t.prototype.futimesSync=function(t,r,e){this.fd2file(t).utimesSync(s(r),s(e))},t.prototype.rmdir=function(t,r){void 0===r&&(r=f);var e=n(r,1);try{t=u(t),o(this.root).rmdir(t,e)}catch(t){e(t)}},t.prototype.rmdirSync=function(t){return t=u(t),o(this.root).rmdirSync(t)},t.prototype.mkdir=function(t,r,e){void 0===e&&(e=f),"function"==typeof r&&(e=r,r=511);var i=n(e,1);try{t=u(t),o(this.root).mkdir(t,r,i)}catch(t){i(t)}},t.prototype.mkdirSync=function(t,r){o(this.root).mkdirSync(u(t),i(r,511))},t.prototype.readdir=function(t,r){void 0===r&&(r=f);var e=n(r,2);try{t=u(t),o(this.root).readdir(t,e)}catch(t){e(t)}},t.prototype.readdirSync=function(t){return t=u(t),o(this.root).readdirSync(t)},t.prototype.link=function(t,r,e){void 0===e&&(e=f);var i=n(e,1);try{t=u(t),r=u(r),o(this.root).link(t,r,i)}catch(t){i(t)}},t.prototype.linkSync=function(t,r){return t=u(t),r=u(r),o(this.root).linkSync(t,r)},t.prototype.symlink=function(t,r,e,i){void 0===i&&(i=f);var s="string"==typeof e?e:"file",a=n(i="function"==typeof e?e:i,1);try{if("file"!==s&&"dir"!==s)return a(new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid type: "+s));t=u(t),r=u(r),o(this.root).symlink(t,r,s,a)}catch(t){a(t)}},t.prototype.symlinkSync=function(t,r,e){if(e){if("file"!==e&&"dir"!==e)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid type: "+e)}else e="file";return t=u(t),r=u(r),o(this.root).symlinkSync(t,r,e)},t.prototype.readlink=function(t,r){void 0===r&&(r=f);var e=n(r,2);try{t=u(t),o(this.root).readlink(t,e)}catch(t){e(t)}},t.prototype.readlinkSync=function(t){return t=u(t),o(this.root).readlinkSync(t)},t.prototype.chown=function(t,r,e,i){void 0===i&&(i=f);var s=n(i,1);try{t=u(t),o(this.root).chown(t,!1,r,e,s)}catch(t){s(t)}},t.prototype.chownSync=function(t,r,e){t=u(t),o(this.root).chownSync(t,!1,r,e)},t.prototype.lchown=function(t,r,e,i){void 0===i&&(i=f);var s=n(i,1);try{t=u(t),o(this.root).chown(t,!0,r,e,s)}catch(t){s(t)}},t.prototype.lchownSync=function(t,r,e){t=u(t),o(this.root).chownSync(t,!0,r,e)},t.prototype.chmod=function(t,r,e){void 0===e&&(e=f);var s=n(e,1);try{var a=i(r,-1);if(a<0)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid mode.");o(this.root).chmod(u(t),!1,a,s)}catch(t){s(t)}},t.prototype.chmodSync=function(t,r){var e=i(r,-1);if(e<0)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid mode.");t=u(t),o(this.root).chmodSync(t,!1,e)},t.prototype.lchmod=function(t,r,e){void 0===e&&(e=f);var s=n(e,1);try{var a=i(r,-1);if(a<0)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid mode.");o(this.root).chmod(u(t),!0,a,s)}catch(t){s(t)}},t.prototype.lchmodSync=function(t,r){var e=i(r,-1);if(e<1)throw new lr.ApiError(lr.ErrorCode.EINVAL,"Invalid mode.");o(this.root).chmodSync(u(t),!0,e)},t.prototype.utimes=function(t,r,e,i){void 0===i&&(i=f);var a=n(i,1);try{o(this.root).utimes(u(t),s(r),s(e),a)}catch(t){a(t)}},t.prototype.utimesSync=function(t,r,e){o(this.root).utimesSync(u(t),s(r),s(e))},t.prototype.realpath=function(t,r,e){void 0===e&&(e=f);var i="object"==typeof r?r:{},s=n(e="function"==typeof r?r:f,2);try{t=u(t),o(this.root).realpath(t,i,s)}catch(t){s(t)}},t.prototype.realpathSync=function(t,r){return void 0===r&&(r={}),t=u(t),o(this.root).realpathSync(t,r)},t.prototype.watchFile=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.unwatchFile=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.watch=function(t,r,e){return"function"==typeof r?o(this.root).watch(u(t),r):o(this.root).watch(u(t),r,e)},t.prototype.access=function(t,r,e){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.accessSync=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.createReadStream=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.createWriteStream=function(t,r){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},t.prototype.wrapCallbacks=function(t){n=t},t.prototype.getFdForFile=function(t){var r=this.nextFd++;return this.fdMap[r]=t,r},t.prototype.fd2file=function(t){var r=this.fdMap[t];if(r)return r;throw new lr.ApiError(lr.ErrorCode.EBADF,"Invalid file descriptor.")},t.prototype.closeFd=function(t){delete this.fdMap[t]},t}();c.Stats=Sr.default,r.default=c})),Fr=pr(Or),Nr=hr((function(t,r){r.__esModule=!0;var e=new Or.default,n={},o=Or.default.prototype;Object.keys(o).forEach((function(t){"function"==typeof e[t]?n[t]=function(){return e[t].apply(e,arguments)}:n[t]=e[t]})),n.changeFSModule=function(t){e=t},n.getFSModule=function(){return e},n.FS=Or.default,r.default=n})),Ir=pr(Nr),Pr=hr((function(t,r){var e,n=cr&&cr.__extends||(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])},function(t,r){function n(){this.constructor=t}e(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)});r.__esModule=!0;var o=function(t){function r(r,e,n,o,i){var s=t.call(this)||this;if(s._pos=0,s._dirty=!1,s._fs=r,s._path=e,s._flag=n,s._stat=o,s._buffer=i||mr.emptyBuffer(),s._stat.size!==s._buffer.length&&s._flag.isReadable())throw new Error("Invalid buffer: Buffer is "+s._buffer.length+" long, yet Stats object specifies that file is "+s._stat.size+" long.");return s}return n(r,t),r.prototype.getBuffer=function(){return this._buffer},r.prototype.getStats=function(){return this._stat},r.prototype.getFlag=function(){return this._flag},r.prototype.getPath=function(){return this._path},r.prototype.getPos=function(){return this._flag.isAppendable()?this._stat.size:this._pos},r.prototype.advancePos=function(t){return this._pos+=t},r.prototype.setPos=function(t){return this._pos=t},r.prototype.sync=function(t){try{this.syncSync(),t()}catch(r){t(r)}},r.prototype.syncSync=function(){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},r.prototype.close=function(t){try{this.closeSync(),t()}catch(r){t(r)}},r.prototype.closeSync=function(){throw new lr.ApiError(lr.ErrorCode.ENOTSUP)},r.prototype.stat=function(t){try{t(null,this._stat.clone())}catch(r){t(r)}},r.prototype.statSync=function(){return this._stat.clone()},r.prototype.truncate=function(t,r){try{this.truncateSync(t),this._flag.isSynchronous()&&!Nr.default.getRootFS().supportsSynch()&&this.sync(r),r()}catch(t){return r(t)}},r.prototype.truncateSync=function(t){if(this._dirty=!0,!this._flag.isWriteable())throw new lr.ApiError(lr.ErrorCode.EPERM,"File not opened with a writeable mode.");if(this._stat.mtime=new Date,t>this._buffer.length){var r=Buffer.alloc(t-this._buffer.length,0);return this.writeSync(r,0,r.length,this._buffer.length),void(this._flag.isSynchronous()&&Nr.default.getRootFS().supportsSynch()&&this.syncSync())}this._stat.size=t;var e=Buffer.alloc(t);this._buffer.copy(e,0,0,t),this._buffer=e,this._flag.isSynchronous()&&Nr.default.getRootFS().supportsSynch()&&this.syncSync()},r.prototype.write=function(t,r,e,n,o){try{o(null,this.writeSync(t,r,e,n),t)}catch(t){o(t)}},r.prototype.writeSync=function(t,r,e,n){if(this._dirty=!0,null==n&&(n=this.getPos()),!this._flag.isWriteable())throw new lr.ApiError(lr.ErrorCode.EPERM,"File not opened with a writeable mode.");var o=n+e;if(o>this._stat.size&&(this._stat.size=o,o>this._buffer.length)){var i=Buffer.alloc(o);this._buffer.copy(i),this._buffer=i}var s=t.copy(this._buffer,n,r,r+e);return this._stat.mtime=new Date,this._flag.isSynchronous()?(this.syncSync(),s):(this.setPos(n+s),s)},r.prototype.read=function(t,r,e,n,o){try{o(null,this.readSync(t,r,e,n),t)}catch(t){o(t)}},r.prototype.readSync=function(t,r,e,n){if(!this._flag.isReadable())throw new lr.ApiError(lr.ErrorCode.EPERM,"File not opened with a readable mode.");null==n&&(n=this.getPos()),n+e>this._stat.size&&(e=this._stat.size-n);var o=this._buffer.copy(t,r,n,n+e);return this._stat.atime=new Date,this._pos=n+e,o},r.prototype.chmod=function(t,r){try{this.chmodSync(t),r()}catch(t){r(t)}},r.prototype.chmodSync=function(t){if(!this._fs.supportsProps())throw new lr.ApiError(lr.ErrorCode.ENOTSUP);this._dirty=!0,this._stat.chmod(t),this.syncSync()},r.prototype.isDirty=function(){return this._dirty},r.prototype.resetDirty=function(){this._dirty=!1},r}(_r.BaseFile);r.default=o;var i=function(t){function r(r,e,n,o,i){return t.call(this,r,e,n,o,i)||this}return n(r,t),r.prototype.sync=function(t){t()},r.prototype.syncSync=function(){},r.prototype.close=function(t){t()},r.prototype.closeSync=function(){},r}(o);r.NoSyncFile=i})),Cr=pr(Pr);Pr.NoSyncFile;var Rr=hr((function(t,r){var e,n=cr&&cr.__extends||(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])},function(t,r){function n(){this.constructor=t}e(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)});r.__esModule=!0;var o=null;function i(){return o||(o=Buffer.from("{}"))}function s(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(t){var r=16*Math.random()|0;return("x"===t?r:3&r|8).toString(16)}))}function u(t,r){return!t||(r(t),!1)}function a(t,r,e){return!t||(r.abort((function(){e(t)})),!1)}var f=function(){function t(t){this.store=t,this.originalData={},this.modifiedKeys=[]}return t.prototype.get=function(t){var r=this.store.get(t);return this.stashOldValue(t,r),r},t.prototype.put=function(t,r,e){return this.markModified(t),this.store.put(t,r,e)},t.prototype.del=function(t){this.markModified(t),this.store.del(t)},t.prototype.commit=function(){},t.prototype.abort=function(){for(var t=0,r=this.modifiedKeys;t<r.length;t++){var e=r[t],n=this.originalData[e];n?this.store.put(e,n,!0):this.store.del(e)}},t.prototype.stashOldValue=function(t,r){this.originalData.hasOwnProperty(t)||(this.originalData[t]=r)},t.prototype.markModified=function(t){-1===this.modifiedKeys.indexOf(t)&&(this.modifiedKeys.push(t),this.originalData.hasOwnProperty(t)||(this.originalData[t]=this.store.get(t)))},t}();r.SimpleSyncRWTransaction=f;var c=function(t){function r(r,e,n,o,i){return t.call(this,r,e,n,o,i)||this}return n(r,t),r.prototype.syncSync=function(){this.isDirty()&&(this._fs._syncSync(this.getPath(),this.getBuffer(),this.getStats()),this.resetDirty())},r.prototype.closeSync=function(){this.syncSync()},r}(Pr.default);r.SyncKeyValueFile=c;var p=function(t){function r(r){var e=t.call(this)||this;return e.store=r.store,e.makeRootDirectory(),e}return n(r,t),r.isAvailable=function(){return!0},r.prototype.getName=function(){return this.store.name()},r.prototype.isReadOnly=function(){return!1},r.prototype.supportsSymlinks=function(){return!1},r.prototype.supportsProps=function(){return!1},r.prototype.supportsSynch=function(){return!0},r.prototype.empty=function(){this.store.clear(),this.makeRootDirectory()},r.prototype.renameSync=function(t,r){var e=this.store.beginTransaction("readwrite"),n=At.dirname(t),o=At.basename(t),i=At.dirname(r),s=At.basename(r),u=this.findINode(e,n),a=this.getDirListing(e,n,u);if(!a[o])throw lr.ApiError.ENOENT(t);var f,c,p=a[o];if(delete a[o],0===(i+"/").indexOf(t+"/"))throw new lr.ApiError(lr.ErrorCode.EBUSY,n);if(i===n?(f=u,c=a):(f=this.findINode(e,i),c=this.getDirListing(e,i,f)),c[s]){var h=this.getINode(e,r,c[s]);if(!h.isFile())throw lr.ApiError.EPERM(r);try{e.del(h.id),e.del(c[s])}catch(t){throw e.abort(),t}}c[s]=p;try{e.put(u.id,Buffer.from(JSON.stringify(a)),!0),e.put(f.id,Buffer.from(JSON.stringify(c)),!0)}catch(t){throw e.abort(),t}e.commit()},r.prototype.statSync=function(t,r){return this.findINode(this.store.beginTransaction("readonly"),t).toStats()},r.prototype.createFileSync=function(t,r,e){var n=this.store.beginTransaction("readwrite"),o=mr.emptyBuffer(),i=this.commitNewFile(n,t,Sr.FileType.FILE,e,o);return new c(this,t,r,i.toStats(),o)},r.prototype.openFileSync=function(t,r){var e=this.store.beginTransaction("readonly"),n=this.findINode(e,t),o=e.get(n.id);if(void 0===o)throw lr.ApiError.ENOENT(t);return new c(this,t,r,n.toStats(),o)},r.prototype.unlinkSync=function(t){this.removeEntry(t,!1)},r.prototype.rmdirSync=function(t){if(this.readdirSync(t).length>0)throw lr.ApiError.ENOTEMPTY(t);this.removeEntry(t,!0)},r.prototype.mkdirSync=function(t,r){var e=this.store.beginTransaction("readwrite"),n=Buffer.from("{}");this.commitNewFile(e,t,Sr.FileType.DIRECTORY,r,n)},r.prototype.readdirSync=function(t){var r=this.store.beginTransaction("readonly");return Object.keys(this.getDirListing(r,t,this.findINode(r,t)))},r.prototype._syncSync=function(t,r,e){var n=this.store.beginTransaction("readwrite"),o=this._findINode(n,At.dirname(t),At.basename(t)),i=this.getINode(n,t,o),s=i.update(e);try{n.put(i.id,r,!0),s&&n.put(o,i.toBuffer(),!0)}catch(t){throw n.abort(),t}n.commit()},r.prototype.makeRootDirectory=function(){var t=this.store.beginTransaction("readwrite");if(void 0===t.get("/")){var r=(new Date).getTime(),e=new Tr.default(s(),4096,511|Sr.FileType.DIRECTORY,r,r,r);t.put(e.id,i(),!1),t.put("/",e.toBuffer(),!1),t.commit()}},r.prototype._findINode=function(t,r,e){var n=this,o=function(o){var i=n.getDirListing(t,r,o);if(i[e])return i[e];throw lr.ApiError.ENOENT(At.resolve(r,e))};return"/"===r?""===e?"/":o(this.getINode(t,r,"/")):o(this.getINode(t,r+At.sep+e,this._findINode(t,At.dirname(r),At.basename(r))))},r.prototype.findINode=function(t,r){return this.getINode(t,r,this._findINode(t,At.dirname(r),At.basename(r)))},r.prototype.getINode=function(t,r,e){var n=t.get(e);if(void 0===n)throw lr.ApiError.ENOENT(r);return Tr.default.fromBuffer(n)},r.prototype.getDirListing=function(t,r,e){if(!e.isDirectory())throw lr.ApiError.ENOTDIR(r);var n=t.get(e.id);if(void 0===n)throw lr.ApiError.ENOENT(r);return JSON.parse(n.toString())},r.prototype.addNewNode=function(t,r){for(var e;;)try{return e=s(),t.put(e,r,!1),e}catch(t){}throw new lr.ApiError(lr.ErrorCode.EIO,"Unable to commit data to key-value store.")},r.prototype.commitNewFile=function(t,r,e,n,o){var i,s=At.dirname(r),u=At.basename(r),a=this.findINode(t,s),f=this.getDirListing(t,s,a),c=(new Date).getTime();if("/"===r)throw lr.ApiError.EEXIST(r);if(f[u])throw lr.ApiError.EEXIST(r);try{var p=this.addNewNode(t,o);i=new Tr.default(p,o.length,n|e,c,c,c);var h=this.addNewNode(t,i.toBuffer());f[u]=h,t.put(a.id,Buffer.from(JSON.stringify(f)),!0)}catch(r){throw t.abort(),r}return t.commit(),i},r.prototype.removeEntry=function(t,r){var e=this.store.beginTransaction("readwrite"),n=At.dirname(t),o=this.findINode(e,n),i=this.getDirListing(e,n,o),s=At.basename(t);if(!i[s])throw lr.ApiError.ENOENT(t);var u=i[s];delete i[s];var a=this.getINode(e,t,u);if(!r&&a.isDirectory())throw lr.ApiError.EISDIR(t);if(r&&!a.isDirectory())throw lr.ApiError.ENOTDIR(t);try{e.del(a.id),e.del(u),e.put(o.id,Buffer.from(JSON.stringify(i)),!0)}catch(t){throw e.abort(),t}e.commit()},r}(wr.SynchronousFileSystem);r.SyncKeyValueFileSystem=p;var h=function(t){function r(r,e,n,o,i){return t.call(this,r,e,n,o,i)||this}return n(r,t),r.prototype.sync=function(t){var r=this;this.isDirty()?this._fs._sync(this.getPath(),this.getBuffer(),this.getStats(),(function(e){e||r.resetDirty(),t(e)})):t()},r.prototype.close=function(t){this.sync(t)},r}(Pr.default);r.AsyncKeyValueFile=h;var l=function(t){function r(){return null!==t&&t.apply(this,arguments)||this}return n(r,t),r.isAvailable=function(){return!0},r.prototype.init=function(t,r){this.store=t,this.makeRootDirectory(r)},r.prototype.getName=function(){return this.store.name()},r.prototype.isReadOnly=function(){return!1},r.prototype.supportsSymlinks=function(){return!1},r.prototype.supportsProps=function(){return!1},r.prototype.supportsSynch=function(){return!1},r.prototype.empty=function(t){var r=this;this.store.clear((function(e){u(e,t)&&r.makeRootDirectory(t)}))},r.prototype.rename=function(t,r,e){var n=this,o=this.store.beginTransaction("readwrite"),i=At.dirname(t),s=At.basename(t),u=At.dirname(r),f=At.basename(r),c={},p={},h=!1;if(0===(u+"/").indexOf(t+"/"))return e(new lr.ApiError(lr.ErrorCode.EBUSY,i));var l=function(l){n.findINodeAndDirListing(o,l,(function(y,d,E){y?h||(h=!0,o.abort((function(){e(y)}))):(c[l]=d,p[l]=E,function(){if(!h&&p.hasOwnProperty(i)&&p.hasOwnProperty(u)){var l=p[i],y=c[i],d=p[u],E=c[u];if(l[s]){var g=l[s];delete l[s];var m=function(){d[f]=g,o.put(y.id,Buffer.from(JSON.stringify(l)),!0,(function(t){a(t,o,e)&&(i===u?o.commit(e):o.put(E.id,Buffer.from(JSON.stringify(d)),!0,(function(t){a(t,o,e)&&o.commit(e)})))}))};d[f]?n.getINode(o,r,d[f],(function(t,n){a(t,o,e)&&(n.isFile()?o.del(n.id,(function(t){a(t,o,e)&&o.del(d[f],(function(t){a(t,o,e)&&m()}))})):o.abort((function(t){e(lr.ApiError.EPERM(r))})))})):m()}else e(lr.ApiError.ENOENT(t))}}())}))};l(i),i!==u&&l(u)},r.prototype.stat=function(t,r,e){var n=this.store.beginTransaction("readonly");this.findINode(n,t,(function(t,r){u(t,e)&&e(null,r.toStats())}))},r.prototype.createFile=function(t,r,e,n){var o=this,i=this.store.beginTransaction("readwrite"),s=mr.emptyBuffer();this.commitNewFile(i,t,Sr.FileType.FILE,e,s,(function(e,i){u(e,n)&&n(null,new h(o,t,r,i.toStats(),s))}))},r.prototype.openFile=function(t,r,e){var n=this,o=this.store.beginTransaction("readonly");this.findINode(o,t,(function(i,s){u(i,e)&&o.get(s.id,(function(o,i){u(o,e)&&(void 0===i?e(lr.ApiError.ENOENT(t)):e(null,new h(n,t,r,s.toStats(),i)))}))}))},r.prototype.unlink=function(t,r){this.removeEntry(t,!1,r)},r.prototype.rmdir=function(t,r){var e=this;this.readdir(t,(function(n,o){n?r(n):o.length>0?r(lr.ApiError.ENOTEMPTY(t)):e.removeEntry(t,!0,r)}))},r.prototype.mkdir=function(t,r,e){var n=this.store.beginTransaction("readwrite"),o=Buffer.from("{}");this.commitNewFile(n,t,Sr.FileType.DIRECTORY,r,o,e)},r.prototype.readdir=function(t,r){var e=this,n=this.store.beginTransaction("readonly");this.findINode(n,t,(function(o,i){u(o,r)&&e.getDirListing(n,t,i,(function(t,e){u(t,r)&&r(null,Object.keys(e))}))}))},r.prototype._sync=function(t,r,e,n){var o=this,i=this.store.beginTransaction("readwrite");this._findINode(i,At.dirname(t),At.basename(t),(function(s,u){a(s,i,n)&&o.getINode(i,t,u,(function(t,o){if(a(t,i,n)){var s=o.update(e);i.put(o.id,r,!0,(function(t){a(t,i,n)&&(s?i.put(u,o.toBuffer(),!0,(function(t){a(t,i,n)&&i.commit(n)})):i.commit(n))}))}}))}))},r.prototype.makeRootDirectory=function(t){var r=this.store.beginTransaction("readwrite");r.get("/",(function(e,n){if(e||void 0===n){var o=(new Date).getTime(),u=new Tr.default(s(),4096,511|Sr.FileType.DIRECTORY,o,o,o);r.put(u.id,i(),!1,(function(e){a(e,r,t)&&r.put("/",u.toBuffer(),!1,(function(e){e?r.abort((function(){t(e)})):r.commit(t)}))}))}else r.commit(t)}))},r.prototype._findINode=function(t,r,e,n){var o=this,i=function(t,o,i){t?n(t):i[e]?n(null,i[e]):n(lr.ApiError.ENOENT(At.resolve(r,e)))};"/"===r?""===e?n(null,"/"):this.getINode(t,r,"/",(function(e,s){u(e,n)&&o.getDirListing(t,r,s,(function(t,r){i(t,0,r)}))})):this.findINodeAndDirListing(t,r,i)},r.prototype.findINode=function(t,r,e){var n=this;this._findINode(t,At.dirname(r),At.basename(r),(function(o,i){u(o,e)&&n.getINode(t,r,i,e)}))},r.prototype.getINode=function(t,r,e,n){t.get(e,(function(t,e){u(t,n)&&(void 0===e?n(lr.ApiError.ENOENT(r)):n(null,Tr.default.fromBuffer(e)))}))},r.prototype.getDirListing=function(t,r,e,n){e.isDirectory()?t.get(e.id,(function(t,e){if(u(t,n))try{n(null,JSON.parse(e.toString()))}catch(t){n(lr.ApiError.ENOENT(r))}})):n(lr.ApiError.ENOTDIR(r))},r.prototype.findINodeAndDirListing=function(t,r,e){var n=this;this.findINode(t,r,(function(o,i){u(o,e)&&n.getDirListing(t,r,i,(function(t,r){u(t,e)&&e(null,i,r)}))}))},r.prototype.addNewNode=function(t,r,e){var n,o=0,i=function(){5==++o?e(new lr.ApiError(lr.ErrorCode.EIO,"Unable to commit data to key-value store.")):(n=s(),t.put(n,r,!1,(function(t,r){t||!r?i():e(null,n)})))};i()},r.prototype.commitNewFile=function(t,r,e,n,o,i){var s=this,u=At.dirname(r),f=At.basename(r),c=(new Date).getTime();if("/"===r)return i(lr.ApiError.EEXIST(r));this.findINodeAndDirListing(t,u,(function(u,p,h){a(u,t,i)&&(h[f]?t.abort((function(){i(lr.ApiError.EEXIST(r))})):s.addNewNode(t,o,(function(r,u){if(a(r,t,i)){var l=new Tr.default(u,o.length,n|e,c,c,c);s.addNewNode(t,l.toBuffer(),(function(r,e){a(r,t,i)&&(h[f]=e,t.put(p.id,Buffer.from(JSON.stringify(h)),!0,(function(r){a(r,t,i)&&t.commit((function(r){a(r,t,i)&&i(null,l)}))})))}))}})))}))},r.prototype.removeEntry=function(t,r,e){var n=this,o=this.store.beginTransaction("readwrite"),i=At.dirname(t),s=At.basename(t);this.findINodeAndDirListing(o,i,(function(i,u,f){if(a(i,o,e))if(f[s]){var c=f[s];delete f[s],n.getINode(o,t,c,(function(n,i){a(n,o,e)&&(!r&&i.isDirectory()?o.abort((function(){e(lr.ApiError.EISDIR(t))})):r&&!i.isDirectory()?o.abort((function(){e(lr.ApiError.ENOTDIR(t))})):o.del(i.id,(function(t){a(t,o,e)&&o.del(c,(function(t){a(t,o,e)&&o.put(u.id,Buffer.from(JSON.stringify(f)),!0,(function(t){a(t,o,e)&&o.commit(e)}))}))})))}))}else o.abort((function(){e(lr.ApiError.ENOENT(t))}))}))},r}(wr.BaseFileSystem);r.AsyncKeyValueFileSystem=l}));pr(Rr),Rr.SimpleSyncRWTransaction,Rr.SyncKeyValueFile,Rr.SyncKeyValueFileSystem,Rr.AsyncKeyValueFile,Rr.AsyncKeyValueFileSystem;var Lr=hr((function(t,r){var e,n=cr&&cr.__extends||(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])},function(t,r){function n(){this.constructor=t}e(t,r),t.prototype=null===r?Object.create(r):(n.prototype=r.prototype,new n)});r.__esModule=!0;var o=function(){function t(){this.store={}}return t.prototype.name=function(){return i.Name},t.prototype.clear=function(){this.store={}},t.prototype.beginTransaction=function(t){return new Rr.SimpleSyncRWTransaction(this)},t.prototype.get=function(t){return this.store[t]},t.prototype.put=function(t,r,e){return!(!e&&this.store.hasOwnProperty(t))&&(this.store[t]=r,!0)},t.prototype.del=function(t){delete this.store[t]},t}();r.InMemoryStore=o;var i=function(t){function r(){return t.call(this,{store:new o})||this}return n(r,t),r.Create=function(t,e){e(null,new r)},r}(Rr.SyncKeyValueFileSystem);i.Name="InMemory",i.Options={},r.default=i})),Dr=pr(Lr);Lr.InMemoryStore;var Br=hr((function(t,r){r.endianness=function(){return"LE"},r.hostname=function(){return"undefined"!=typeof location?location.hostname:""},r.loadavg=function(){return[]},r.uptime=function(){return 0},r.freemem=function(){return Number.MAX_VALUE},r.totalmem=function(){return Number.MAX_VALUE},r.cpus=function(){return[]},r.type=function(){return"Browser"},r.release=function(){return"undefined"!=typeof navigator?navigator.appVersion:""},r.networkInterfaces=r.getNetworkInterfaces=function(){return{}},r.arch=function(){return"javascript"},r.platform=function(){return"browser"},r.tmpdir=r.tmpDir=function(){return"/tmp"},r.EOL="\n",r.homedir=function(){return"/"}})),kr=Br.endianness,Ur=Br.hostname,xr=Br.loadavg,Mr=Br.uptime,Yr=Br.freemem,jr=Br.totalmem,Vr=Br.cpus,zr=Br.type,Wr=Br.release,Xr=Br.networkInterfaces,Kr=Br.getNetworkInterfaces,Jr=Br.arch,Hr=Br.platform,qr=Br.tmpdir,Gr=Br.tmpDir,$r=Br.EOL,Zr=Br.homedir,Qr=Object.freeze(t({__proto__:null,default:Br,__moduleExports:Br,endianness:kr,hostname:Ur,loadavg:xr,uptime:Mr,freemem:Yr,totalmem:jr,cpus:Vr,type:zr,release:Wr,networkInterfaces:Xr,getNetworkInterfaces:Kr,arch:Jr,platform:Hr,tmpdir:qr,tmpDir:Gr,EOL:$r,homedir:Zr},[Br]));class te extends Cr{constructor(t,r,e,n,o){super(t,r,e,n,o)}sync(t){if(this.isDirty()){const r=this.getBuffer();this._fs._sync(this.getPath(),r,(r,e)=>{r||this.resetDirty(),t(r)})}else t()}close(t){this.sync(t)}syncSync(){this.isDirty()&&(this._fs._syncSync(this.getPath(),this.getBuffer()),this.resetDirty())}closeSync(){this.syncSync()}}class re extends vr{constructor(t){super(),this.baseFS=t.baseFS,this.omitValueOnEvent=t.omitValueOnEvent}static Create(t,r){r(null,new re(t))}static isAvailable(){return!0}getName(){return"VirtualFS"}isReadOnly(){return!1}supportsProps(){return!1}supportsSynch(){return!0}empty(t){const r=this.baseFS.getFiles();Object.keys(r).forEach(t=>{const e=r[t];this.baseFS.removeFile(e.path)}),t()}renameSync(t,r){const e=this.baseFS.getFiles(),n=Object.keys(e).filter(r=>r.startsWith(t)+"/"||r===t);if(0===n.length)throw dr.FileError(yr.ENOENT,t);n.map(t=>({path:t,file:e[t]})).forEach(({path:e,file:n})=>{this.baseFS.moveFile(n.path,e.replace(t,r))})}statSync(t,r){const e=this.baseFS.getFiles(),n=e[t];if(!n){if(Object.keys(e).filter(r=>r.startsWith(t.endsWith("/")?t:t+"/")||r===t).length>0)return new br(Ar.DIRECTORY,0);throw dr.FileError(yr.ENOENT,t)}return new br(Ar.FILE,((null==n?void 0:n.value)||"").length)}createFileSync(t,r,e){if("/"===t)throw dr.EEXIST(t);if(this.baseFS.getFiles()[t])throw dr.EEXIST(t);this.baseFS.addFile(t);const n=Buffer.from(""),o=new br(Ar.FILE,n.length);return new te(this,t,r,o,n)}openFileSync(t,r,e){const n=this.baseFS.getFiles()[t];if(!n)throw dr.ENOENT(t);const o=n.value||"",i=Buffer.from(o),s=new br(Ar.FILE,i.length);return new te(this,t,r,s,i)}rmdirSync(t){const r=this.baseFS.getFiles();Object.keys(r).filter(r=>r.startsWith(t+"/")||t===r).forEach(t=>{const e=r[t];this.baseFS.removeFile(e.path)})}mkdirSync(t){console.warn("mkdir [not implemented]",t)}readdirSync(t){const r=Object.keys(this.baseFS.getFiles()),e=t.endsWith("/")?t:t+"/",n=r.filter(t=>t.startsWith(e));if(0===n.length)return[];const o=new Set,i=e.split("/").length;return n.filter(t=>t.split("/").length>=i).forEach(t=>{const r=t.split("/");r.length=i,o.add(r.join("/"))}),Array.from(o).map(t=>t.replace(e,""))}_sync(t,r,e){const n=vt(t);this.stat(n,!1,(o,i)=>{if(o)e(dr.FileError(yr.ENOENT,n));else{const n=this.baseFS.getFiles()[t];this.omitValueOnEvent?this.baseFS.updateFile(n.path,void 0):this.baseFS.updateFile(n.path,r),e(null)}})}_syncSync(t,r){const e=vt(t);this.statSync(e,!1);const n=this.baseFS.getFiles()[t];n&&(this.omitValueOnEvent?this.baseFS.updateFile(n.path,void 0):this.baseFS.updateFile(n.path,r))}unlinkSync(t){const r=this.baseFS.getFiles()[t];if(!r)throw dr.ENOENT(t);this.baseFS.removeFile(r.path)}watch(t,r,e){if(!this.baseFS.getFiles()[t])throw dr.ENOENT(t);return"function"==typeof r?this.baseFS.watch(t,r):this.baseFS.watch(t,e)}unwatchFile(t,r){console.warn("unwatchFile: not implemented")}}re.Name="VirtualFS",re.Options={baseFS:{type:"object",description:"Base file system",validator:(t,r)=>{t?r():r(new dr(yr.EINVAL,"Base FS is invalid"))}},omitValueOnEvent:{type:"boolean",description:"Omit value on event",validator:(t,r)=>{r()}}};const ee=Object.getOwnPropertyDescriptors||function(t){const r=Object.keys(t),e={};for(let n=0;n<r.length;n++)e[r[n]]=Object.getOwnPropertyDescriptor(t,r[n]);return e},ne="undefined"!=typeof Symbol?Symbol("util.promisify.custom"):void 0;function oe(t){if("function"!=typeof t)throw new TypeError('The "original" argument must be of type Function');if(ne&&t[ne]){const r=t[ne];if("function"!=typeof r)throw new TypeError('The "util.promisify.custom" argument must be of type Function');return Object.defineProperty(r,ne,{value:r,enumerable:!1,writable:!1,configurable:!0}),r}function r(){let r,e;const n=new Promise((function(t,n){r=t,e=n})),o=[];for(let t=0;t<arguments.length;t++)o.push(arguments[t]);o.push((function(t,n){1!==arguments.length||t instanceof Error?t?e(t):r(n):r(t)}));try{t.apply(this,o)}catch(t){e(t)}return n}return Object.setPrototypeOf(r,Object.getPrototypeOf(t)),ne&&Object.defineProperty(r,ne,{value:r,enumerable:!1,writable:!1,configurable:!0}),Object.defineProperties(r,ee(t))}oe.custom=ne;const ie="undefined"!=typeof window?(se=window,new Proxy(se,{get(t,r,e){const n=Symbol.for("__"+r+"__");if(n)return t[n]},set:(t,r,e)=>t[Symbol.for("__"+r+"__")]=e})):{};var se;return{FS:Fr,backends:{InMemory:Dr,VirtualFS:re},polyFills:{path:Ot,buffer:Q,process:fr,os:Qr,events:{EventEmitter:rt}},plugins:{},BFSRequire:function(t){var r;switch(t){case"fs":return Ir;case"fs/promises":return Ir.promises;case"path":return Object.assign(Object.assign({},Ot),{posix:Ot});case"buffer":return Q;case"process":const e=Object.assign({},fr);return e.versions.node="16.14.0",e;case"events":return rt;case"os":return Qr;default:ie.startedPackages||(ie.startedPackages=new Map);const n=ie.startedPackages,o=null===(r=ie.modules)||void 0===r?void 0:r[t];if(o){if(n.has(t))return n.get(t);{const r=o(window);return n.set(t,r),r}}throw new Error(`Module "${t}" does not exist`)}},initialize:function(t){ie.startedPackages=new Map;const r=Ir.initialize(t);var e;return(e=Ir).promises={access:oe(e.access),appendFile:oe(e.appendFile),chmod:oe(e.chmod),chown:oe(e.chown),readdir:oe(e.readdir),readFile:oe(e.readFile),readlink:oe(e.readlink),realpath:oe(e.realpath),rename:oe(e.rename),rmdir:oe(e.rmdir),stat:oe(e.stat),symlink:oe(e.symlink),truncate:oe(e.truncate),unlink:oe(e.unlink),utimes:oe(e.utimes),writeFile:oe(e.writeFile)},r}}}(); window.process = {  env: { NODE_ENV: 'development' },  nextTick: function(cb) {    return requestAnimationFrame(cb);  },  browser: false,  once: __bfs__.BFSRequire('process').once,};window.path = __bfs__.BFSRequire('path');window.fs = __bfs__.BFSRequire('fs');window.events = __bfs__.BFSRequire('events');window.os = __bfs__.BFSRequire('os');window.process = __bfs__.BFSRequire('process');window.process.stdout = {isTTY: true};window.buffer = __bfs__.BFSRequire('buffer');window.buffer.hasOwnProperty = () => true;window.Buffer = window.buffer.Buffer;window.require = __bfs__.BFSRequire;window.__filename = '/index.js';window.__dirname = '/';__bfs__.backends.InMemory.Create({}, ( e, inMemory ) => {  if ( e ) {    console.error(e);    return;  };  __bfs__.initialize(inMemory);});</script></head>
+    <header id="head">
+          <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" id="level-status">Level: </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" id="health-status">Health: </a>
+                    <a class="nav-link" id="attack-status">Attack: </a>
+                    <a class="nav-link" id="gold-status">Gold: </a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle justify-content-end" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Shop
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><button type="button" class="dropdown-item uc"  id="larmor" data-toggle="tooltip" data-placement="right" title="Leather Armor: Grants the user +20 HP" >
+                          Leather Armor 50gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="carmor" data-toggle="tooltip" data-placement="right" title="Chainmail Armor: Grants the user +40 HP" >
+                          Chainmail Armor 100gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item e"  id="parmor" data-toggle="tooltip" data-placement="right" title="Plate Armor: Grants the user +80 HP" >
+                          Plate Armor 250gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item l"  id="marmor" data-toggle="tooltip" data-placement="right" title="Mitheral Armor: Grants the user +150 HP" >
+                          Mitheral Armor 500gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item border-top uc"  id="ssword" data-toggle="tooltip" data-placement="right" title="Short Sword: Grants the user +10 ATK" >
+                          Short Sword 50gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="lsword" data-toggle="tooltip" data-placement="right" title="Long Sword: Grants the user +20 ATK" >
+                          Long Sword 100gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item e"  id="gsword" data-toggle="tooltip" data-placement="right" title="Great Sword: Grants the user +35 ATK" >
+                          Great Sword 250gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item l"  id="gutssword" data-toggle="tooltip" data-placement="right" title="Guts Sword: Grants the user +50 ATK" >
+                          Guts Sword 500gp
+                        </button></li>
+                        <li><button type="button" class="dropdown-item border-top"  id="healthA" data-toggle="tooltip" data-placement="right" title="Small Health Potion: Heals you for +50 HP">
+                          Small Health Potion 25gp
+                        </button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown justify-content-end">
+                      <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Equipment
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><button class="dropdown-item" id="helm" type="button">Helmet: </button></li>
+                          <li><button class="dropdown-item" id="armor" type="button">Armor: </button></li>
+                          <li><button class="dropdown-item" id="cloak" type="button">Cloak: </button></li>
+                          <li><button class="dropdown-item" id="weapon" type="button">Weapon: </button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle justify-content-end" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inventory
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><button type="button" class="dropdown-item"  id="itemstick" data-toggle="tooltip" data-placement="right" title="Stick: Grants the user +3 ATK" style="display: none;">
+                          Stick
+                        </button></li>
+                        <li><button type="button" class="dropdown-item"  id="itempstick" data-toggle="tooltip" data-placement="right" title="Stick: Grants the user +3 ATK" style="display: none;">
+                          Pointy Stick
+                        </button></li>
+                        <li><button type="button" class="dropdown-item uc"  id="itemarmorA" data-toggle="tooltip" data-placement="right" title="Leather Armor: Grants the user +20 HP" style=" display: none;">
+                          Leather Armor
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="itemarmorB" data-toggle="tooltip" data-placement="right" title="Chainmail Armor: Grants the user +40 HP" style=" display: none;">
+                          Chainmail Armor
+                        </button></li>
+                        <li><button type="button" class="dropdown-item e"  id="itemarmorC" data-toggle="tooltip" data-placement="right" title="Plate Armor: Grants the user +80 HP" style=" display: none;">
+                          Plate Armor
+                        </button></li>
+                        <li><button type="button" class="dropdown-item l"  id="itemarmorD" data-toggle="tooltip" data-placement="right" title="Mitheral Armor: Grants the user +150 HP" style=" display: none;">
+                          Mitheral Armor
+                        </button></li>
+                        <li><button type="button" class="dropdown-item uc"  id="itemswordA" data-toggle="tooltip" data-placement="right" title="Short Sword: Grants the user +10 ATK" style=" display: none;">
+                          Short Sword 
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="itemswordB" data-toggle="tooltip" data-placement="right" title="Long Sword: Grants the user +20 ATK" style=" display: none;">
+                          Long Sword 
+                        </button></li>
+                        <li><button type="button" class="dropdown-item e"  id="itemswordC" data-toggle="tooltip" data-placement="right" title="Great Sword: Grants the user +35 ATK" style=" display: none;">
+                          Great Sword
+                        </button></li>
+                        <li><button type="button" class="dropdown-item l"  id="itemswordD" data-toggle="tooltip" data-placement="right" title="Guts Sword: Grants the user +50 ATK" style=" display: none;">
+                          Guts Sword
+                        </button></li>
+                        <li><button type="button" class="dropdown-item uc"  id="itemspear" data-toggle="tooltip" data-placement="right" title="Goblin Spear: Grants the user +8 ATK" style=" display: none;">
+                          Goblin Spear
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="itemlionhide" data-toggle="tooltip" data-placement="right" title="Lion Hide Cloak: Grants the user +20 HP" style=" display: none;">
+                          Lion Hide Cloak
+                        </button></li>
+                        <li><button type="button" class="dropdown-item r"  id="itemrockhelm" data-toggle="tooltip" data-placement="right" title="Rock Helmet: Grants the user +20 HP and +1 ATK" style=" display: none;">
+                          Rock Helmet 
+                        </button></li>
+                        <li><button type="button" class="dropdown-item uc"  id="itemhelmA" data-toggle="tooltip" data-placement="right" title="Leather Helmet: Grants the user +10 HP" style=" display: none;">
+                          Leather Helmet
+                        </button></li>
+                        <li><button type="button" class="dropdown-item uc"  id="itemknife" data-toggle="tooltip" data-placement="right" title="Fillet Knife: Grants the user +7 ATK" style=" display: none;">
+                          Fillet Knife 
+                        </button></li>
+                        <li><button type="button" class="dropdown-item k"  id="itemcatcollar" data-toggle="tooltip" data-placement="right" title="Kitty's Collar: Your cats collar. Hold this close to your heart." style="display: none;">
+                          Kitty's Collar
+                        </button></li>
+                        <li><button type="button" class="dropdown-item cc"  id="itemsharpeningstone" data-toggle="tooltip" data-placement="right" title="Sharpening Stone: This is a crafting item" style="display: none;">
+                          Sharpening Stone
+                        </button></li>
+                      </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle justify-content-end" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Crafting
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><button type="button" class="dropdown-item"  id="itempstickc" data-toggle="tooltip" data-placement="right" title="Stick: Grants the user +6 ATK" style="display: none;">
+                                  Pointy Stick
+                                </button></li>
+                              </ul>
+                            </li>
+                            <li class="nav-item dropdown justify-content-end" style="display: block;">
+                              <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Upgrade
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><button class="dropdown-item" type="button">TBA: </button></li>
+                              </ul>
+                            </li>
+                            <li class="nav-item dropdown justify-content-end" >
+                              <a class="nav-link dropdown-toggle " role="button" id="restee" data-bs-toggle="dropdown" aria-expanded="false" style="display: block;">
+                                Rest
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><button class="dropdown-item" id="srest" type="button">Short Rests: </button></li>
+                                  <li><button class="dropdown-item" id="lrest" type="button">Long Rest: </button></li>
+                              </ul>
+                            </li>
+                            <li class="nav-item dropdown justify-content-end">
+                              <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Info
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                  <a class="dropdown-item">
+                                    Resting &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="You can take 3x short rests per 1x long rest. Heals a various amount.">
+                                      Short Rest
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="You can long rest once per area. This will rest your short rests. In addition, you will be full healed.">
+                                      Long Rest
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item">
+                                    Combat &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="The main combat function. This will attack the enemy but they will also attack you.">
+                                      Fight
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="This is a varied chance, depending on the enemy, it allows you to dodge an attack and get a free opportunity attack.">
+                                      Evade
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="This is a difficult thing to pull off but you will be spared, but earn nothing from the encounter.">
+                                      Flee
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item">
+                                    Shop &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="As long as you can afford it you may purchase an item at any time.">
+                                      Buy
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="TBA">
+                                      Sell
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item">
+                                    Equipment &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="The best items you collect are auto equipped.">
+                                      What gets equipped?
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#">
+                                    Inventory &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="The colors are a ranking system as follows: | black - common | green - uncommon | blue - rare | purple - epic | orange - legendary | brown - crafting item | red - key item |">
+                                      Colors?
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="Everything you pick up will be added to your inventory.">
+                                      What is added?
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item">
+                                    Crafting &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="TBA">
+                                      TBA
+                                    </button></li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item">
+                                    Upgrades &raquo;
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-submenu">
+                                    <li><button type="button" class="dropdown-item"  data-toggle="tooltip" data-placement="right" title="TBA">
+                                      TBA
+                                    </button></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            
+                        </li>
+                      
+                  </div>
+              </div>
+            </div>
+          </nav>
+          <div id="Leveling_Status">
+            <div id="expstatus"></div>
+          </div>
+    </header>
+    <body id="body">
+        <div class="content">
+            <div class="container">
+                <div id="story">
+                    <p id="game-text" class="story-text"></p>
+                    <div id="button-holder"></div>
+                    <div id="image"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        
+
+         <!-- JavaScript Bundle with Popper -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script><script>var le = Object.defineProperty;
+var i = (a, e) => le(a, "name", {
+  value: e,
+  configurable: !0
+});
+var R = (a, e) => () => (a && (e = a(a = 0)), e);
+var he = (a, e) => {
+  for (var t in e) le(a, t, {
+    get: e[t],
+    enumerable: !0
+  });
+};
+var G,
+  o,
+  $ = R(() => {
+    G = class {
+      constructor(e, t, n, s, c, p, E, y, Ce, Te, Be) {
+        this.name = e, this.maxhp = t, this.currenthp = n, this.basehp = s, this.minatk = c, this.maxatk = p, this.baseatk = E, this.gp = y, this.level = Ce, this.reqexp = Te, this.exp = Be, this.equip = [], this.inventory = [];
+      }
+      recalculateStats() {
+        this.maxhp = this.basehp + this.equip.reduce((e, t) => e + (t.hp || 0), 0), this.minatk = 1 + this.equip.reduce((e, t) => e + (t.atk || 0), 0), this.maxatk = this.baseatk + this.equip.reduce((e, t) => e + (t.atk || 0), 0), this.currenthp > this.maxhp && (this.currenthp = this.maxhp);
+      }
+      heal(e) {
+        let t = this.currenthp;
+        return this.currenthp = Math.min(this.currenthp + e, this.maxhp), this.currenthp - t;
+      }
+      takeDamage(e) {
+        let t = this.currenthp;
+        return this.currenthp = Math.max(this.currenthp - e, 0), t - this.currenthp;
+      }
+      isAlive() {
+        return this.currenthp > 0;
+      }
+      gainExp(e) {
+        var _loopIt = 0;
+        this.exp += e;
+        let t = [];
+        for (; this.exp >= this.reqexp;) {
+          if (_loopIt++ > 1500) {
+            global.infiniteLoopError = new RangeError('Potential infinite loop: exceeded ' + 1500 + ' iterations.');
+            throw global.infiniteLoopError;
+          }
+          this.levelUp(), t.push(this.level);
+        }
+        return t;
+      }
+      levelUp() {
+        this.level++, this.exp -= this.reqexp, this.reqexp += 10 * this.level;
+        let e = 5,
+          t = 1;
+        return this.basehp += e, this.baseatk += t, this.currenthp += e, this.recalculateStats(), {
+          level: this.level,
+          hpBonus: e,
+          atkBonus: t
+        };
+      }
+      equipItem(e, t) {
+        let n = this.equip[t];
+        return this.equip[t] = e, this.recalculateStats(), n;
+      }
+      unequipItem(e) {
+        let t = this.equip[e];
+        return this.equip[e] = null, this.recalculateStats(), t;
+      }
+      addToInventory(e, t = 1) {
+        var _loopIt2 = 0;
+        for (let n = 0; n < t; n++) {
+          if (_loopIt2++ > 1500) {
+            global.infiniteLoopError = new RangeError('Potential infinite loop: exceeded ' + 1500 + ' iterations.');
+            throw global.infiniteLoopError;
+          }
+          this.inventory.push(e);
+        }
+      }
+      removeFromInventory(e, t = 1) {
+        var _loopIt3 = 0;
+        let n = 0;
+        for (let s = this.inventory.length - 1; s >= 0 && n < t; s--) {
+          if (_loopIt3++ > 1500) {
+            global.infiniteLoopError = new RangeError('Potential infinite loop: exceeded ' + 1500 + ' iterations.');
+            throw global.infiniteLoopError;
+          }
+          this.inventory[s] === e && (this.inventory.splice(s, 1), n++);
+        }
+        return n;
+      }
+      hasInInventory(e, t = 1) {
+        return this.inventory.filter(n => n === e).length >= t;
+      }
+      getInventoryCount(e) {
+        return this.inventory.filter(t => t === e).length;
+      }
+      canAfford(e) {
+        return this.gp >= e;
+      }
+      spendGold(e) {
+        return this.canAfford(e) ? (this.gp -= e, !0) : !1;
+      }
+      earnGold(e) {
+        this.gp += e;
+      }
+      toSaveData() {
+        return {
+          name: this.name,
+          maxhp: this.maxhp,
+          currenthp: this.currenthp,
+          basehp: this.basehp,
+          minatk: this.minatk,
+          maxatk: this.maxatk,
+          baseatk: this.baseatk,
+          gp: this.gp,
+          level: this.level,
+          reqexp: this.reqexp,
+          exp: this.exp,
+          equip: this.equip.map(e => e ? {
+            name: e.name,
+            tag: e.tag
+          } : null),
+          inventory: [...this.inventory]
+        };
+      }
+      static fromSaveData(e, t) {
+        let n = new G(e.name, e.maxhp, e.currenthp, e.basehp, e.minatk, e.maxatk, e.baseatk, e.gp, e.level, e.reqexp, e.exp);
+        return e.equip && (n.equip = e.equip.map(s => s && t[s.tag] || null)), e.inventory && (n.inventory = [...e.inventory]), n;
+      }
+      applyStatusEffect(e) {}
+      getAttackDamage(e = null, t = null) {
+        let n = e || this.minatk,
+          s = t || this.maxatk;
+        return Math.floor(Math.random() * (s - n + 1)) + n;
+      }
+      toString() {
+        return `${this.name} (Level ${this.level}) - HP: ${this.currenthp}/${this.maxhp}, ATK: ${this.minatk}-${this.maxatk}, Gold: ${this.gp}`;
+      }
+    };
+    i(G, "Character");
+    o = new G("Player", 100, 100, 100, 1, 10, 10, 35, 1, 15, 0);
+  });
+var d,
+  J,
+  Q,
+  C,
+  X,
+  ee,
+  w,
+  b,
+  Ge,
+  $e,
+  gt,
+  te = R(() => {
+    d = class {
+      constructor(e, t, n, s, c, p, E, y = {}) {
+        this.name = e, this.maxhp = t, this.hp = t, this.minatk = n, this.maxatk = s, this.gp = c, this.evade = p, this.exp = E, this.dodgeChance = y.dodgeChance || 0, this.fleeChance = y.fleeChance || 5, this.cannotFlee = y.cannotFlee || !1, this.description = y.description || `A ${e.toLowerCase()}.`, this.type = y.type || "normal", this.weaknesses = y.weaknesses || [], this.resistances = y.resistances || [], this.specialAbilities = y.specialAbilities || [];
+      }
+      attack(e = 0) {
+        let t = Math.floor(Math.random() * (this.maxatk - this.minatk + 1)) + this.minatk;
+        return Math.max(1, t - e);
+      }
+      takeDamage(e) {
+        let t = this.hp;
+        return this.hp = Math.max(0, this.hp - e), t - this.hp;
+      }
+      heal(e) {
+        let t = this.hp;
+        return this.hp = Math.min(this.maxhp, this.hp + e), this.hp - t;
+      }
+      isAlive() {
+        return this.hp > 0;
+      }
+      isDead() {
+        return this.hp <= 0;
+      }
+      getHealthPercentage() {
+        return this.hp / this.maxhp * 100;
+      }
+      getHealthStatus() {
+        let e = this.getHealthPercentage();
+        return e <= 25 ? "critical" : e <= 50 ? "wounded" : e <= 75 ? "damaged" : "healthy";
+      }
+      canUseSpecialAbility(e) {
+        return this.specialAbilities.includes(e);
+      }
+      useSpecialAbility(e) {
+        switch (e) {
+          case "web":
+            return this.webAttack();
+          case "roar":
+            return this.roarAttack();
+          case "poison":
+            return this.poisonAttack();
+          default:
+            return null;
+        }
+      }
+      webAttack() {
+        return {
+          name: "Web Shot",
+          damage: this.attack(),
+          effect: "immobilize",
+          description: `${this.name} shoots a web!`
+        };
+      }
+      roarAttack() {
+        return {
+          name: "Intimidating Roar",
+          damage: 0,
+          effect: "fear",
+          description: `${this.name} lets out a terrifying roar!`
+        };
+      }
+      poisonAttack() {
+        return {
+          name: "Poison Strike",
+          damage: this.attack(),
+          effect: "poison",
+          description: `${this.name} strikes with venomous fangs!`
+        };
+      }
+      shouldFlee() {
+        return this.getHealthPercentage() < 25 && Math.random() < .3;
+      }
+      shouldUseSpecialAbility() {
+        return this.specialAbilities.length > 0 && Math.random() < .2;
+      }
+      getRewards() {
+        return {
+          gp: this.gp,
+          exp: this.exp,
+          items: this.dropItems()
+        };
+      }
+      dropItems() {
+        return [];
+      }
+      reset() {
+        this.hp = this.maxhp;
+      }
+      clone() {
+        return new d(this.name, this.maxhp, this.minatk, this.maxatk, this.gp, this.evade, this.exp, {
+          dodgeChance: this.dodgeChance,
+          fleeChance: this.fleeChance,
+          cannotFlee: this.cannotFlee,
+          description: this.description,
+          type: this.type,
+          weaknesses: [...this.weaknesses],
+          resistances: [...this.resistances],
+          specialAbilities: [...this.specialAbilities]
+        });
+      }
+      toString() {
+        return `${this.name} - HP: ${this.hp}/${this.maxhp}, ATK: ${this.minatk}-${this.maxatk}`;
+      }
+    };
+    i(d, "Enemy");
+    J = new d("Giant Spider", 25, 8, 12, 20, 50, 14, {
+      dodgeChance: 0,
+      fleeChance: 5,
+      description: "A massive spider with glowing red eyes and venomous fangs.",
+      type: "arachnid",
+      specialAbilities: ["web", "poison"],
+      weaknesses: ["fire"],
+      resistances: ["poison"]
+    }), Q = new d("Lion", 55, 8, 15, 15, 75, 35, {
+      cannotFlee: !0,
+      description: "A fierce predator with a golden mane and powerful claws.",
+      type: "beast",
+      specialAbilities: ["roar"],
+      weaknesses: ["loud_noise"],
+      resistances: ["fear"]
+    }), C = new d("Goblin", 50, 8, 13, 10, 15, 20, {
+      dodgeChance: 33,
+      description: "A cunning green-skinned warrior wielding a crude spear.",
+      type: "humanoid",
+      specialAbilities: [],
+      weaknesses: ["light"],
+      resistances: []
+    }), X = new d("Swamp Witch", 65, 10, 15, 10, 15, 35, {
+      dodgeChance: 10,
+      description: "A decrepit old woman with dark magic and malicious intent.",
+      type: "humanoid",
+      specialAbilities: ["poison", "curse"],
+      weaknesses: ["holy"],
+      resistances: ["poison", "curse"]
+    }), ee = new d("Golem", 50, 6, 10, 10, 15, 35, {
+      dodgeChance: 10,
+      fleeChance: 0,
+      description: "A massive construct of animated stone and earth.",
+      type: "construct",
+      specialAbilities: ["slam"],
+      weaknesses: ["lightning"],
+      resistances: ["physical", "poison"]
+    }), w = new d("Golemite A", 25, 3, 5, 5, 7, 15, {
+      description: "A smaller fragment of the original golem.",
+      type: "construct",
+      weaknesses: ["lightning"],
+      resistances: ["poison"]
+    }), b = new d("Golemite B", 25, 3, 5, 5, 7, 15, {
+      description: "A smaller fragment of the original golem.",
+      type: "construct",
+      weaknesses: ["lightning"],
+      resistances: ["poison"]
+    }), Ge = w, $e = {
+      skeletona: new d("Skeleton Grunt", 35, 8, 12, 10, 50, 15, {
+        description: "An animated skeleton warrior.",
+        type: "undead",
+        weaknesses: ["holy", "bludgeoning"],
+        resistances: ["poison", "fear"]
+      }),
+      skeletonb: new d("Skeleton Grunt", 35, 8, 12, 10, 50, 15, {
+        description: "An animated skeleton warrior.",
+        type: "undead",
+        weaknesses: ["holy", "bludgeoning"],
+        resistances: ["poison", "fear"]
+      }),
+      skeletonc: new d("Giant Skeleton", 65, 10, 14, 10, 30, 25, {
+        description: "A towering undead giant.",
+        type: "undead",
+        weaknesses: ["holy", "bludgeoning"],
+        resistances: ["poison", "fear"]
+      }),
+      goblina: new d("Goblin Grunt", 50, 8, 13, 10, 45, 20, {
+        description: "A goblin soldier.",
+        type: "humanoid",
+        weaknesses: ["light"],
+        resistances: []
+      }),
+      goblinb: new d("Goblin Grunt", 50, 8, 13, 10, 45, 20, {
+        description: "A goblin soldier.",
+        type: "humanoid",
+        weaknesses: ["light"],
+        resistances: []
+      }),
+      goblinc: new d("Goblin Archer", 40, 9, 14, 10, 45, 20, {
+        description: "A goblin with a crude bow.",
+        type: "humanoid",
+        specialAbilities: ["ranged_attack"],
+        weaknesses: ["light"],
+        resistances: []
+      }),
+      hobgob: new d("Hobgoblin", 70, 12, 15, 100, 40, 70, {
+        description: "A large, intelligent goblin leader.",
+        type: "humanoid",
+        specialAbilities: ["command", "intimidate"],
+        weaknesses: ["light"],
+        resistances: ["fear"]
+      })
+    }, gt = {
+      spider: J,
+      lion: Q,
+      goblin: C,
+      witch: X,
+      golem: ee,
+      golemite: Ge,
+      golemitea: w,
+      golemiteb: b,
+      ...$e
+    };
+  });
+function oe(a) {
+  return Object.values(qe).find(e => e.name === a);
+}
+var l,
+  T,
+  k,
+  h,
+  q,
+  qe,
+  wt,
+  kt,
+  xt,
+  bt,
+  vt,
+  St,
+  It,
+  At,
+  Et,
+  Rt,
+  Ct,
+  Tt,
+  Bt,
+  Gt,
+  $t,
+  qt,
+  Ht,
+  Yt,
+  Nt,
+  Dt,
+  Ot,
+  Lt,
+  W = R(() => {
+    l = class {
+      constructor(e, t = 0, n = 0, s = 0, c = "", p = "", E = "c") {
+        this.name = e, this.hp = t, this.atk = n, this.price = s, this.label = c, this.tag = p, this.rarity = E, this.equipSlot = this.getEquipSlot(c), this.primaryStat = this.getPrimaryStat();
+      }
+      getEquipSlot(e) {
+        return {
+          weapon: 0,
+          helmet: 1,
+          cloak: 2,
+          armor: 3
+        }[e] ?? -1;
+      }
+      getPrimaryStat() {
+        return this.atk > 0 ? "atk" : this.hp > 0 ? "hp" : null;
+      }
+      isBetterThan(e) {
+        return !this.primaryStat || !e ? !0 : this[this.primaryStat] > e[this.primaryStat];
+      }
+    };
+    i(l, "Item");
+    T = {
+      weapon: new l("None", 0, 0, 0, "weapon", "none", "c"),
+      helmet: new l("None", 0, 0, 0, "helmet", "none", "c"),
+      cloak: new l("None", 0, 0, 0, "cloak", "none", "c"),
+      armor: new l("None", 0, 0, 0, "armor", "none", "c")
+    }, k = {
+      stick: new l("Stick", 0, 3, 1, "weapon", "itemstick", "c"),
+      lionHide: new l("Lions Hide Cloak", 20, 0, 25, "cloak", "itemlionhide", "uc"),
+      spear: new l("Goblin Spear", 0, 8, 10, "weapon", "itemspear", "uc"),
+      knife: new l("Fillet Knife", 0, 7, 10, "weapon", "itemknife", "uc"),
+      rockHelm: new l("Rock Helm", 20, 1, 10, "helmet", "itemrockhelm", "r"),
+      helmA: new l("Leather Helm", 10, 0, 10, "helmet", "itemhelmA", "uc"),
+      stickB: new l("Pointy Stick", 0, 6, 5, "weapon", "itempstick", "c")
+    }, h = {
+      armor: [new l("Leather Armor", 20, 0, 50, "armor", "itemarmorA", "uc"), new l("Chain Armor", 40, 0, 100, "armor", "itemarmorB", "r"), new l("Plate Armor", 80, 0, 250, "armor", "itemarmorC", "e"), new l("Mitheral Armor", 150, 0, 500, "armor", "itemarmorD", "l")],
+      weapons: [new l("Short Sword", 0, 10, 50, "weapon", "itemswordA", "uc"), new l("Long Sword", 0, 20, 100, "weapon", "itemswordB", "r"), new l("Great Sword", 0, 35, 250, "weapon", "itemswordC", "e"), new l("Gut Sword", 0, 50, 500, "weapon", "itemswordD", "l")],
+      consumables: [new l("Small Health Potion", 50, 0, 25, "consumable", "itemsmallhp", "cc"), new l("Sharpening Stone", 0, 0, 10, "consumable", "itemsharpeningstone", "cc")]
+    }, q = {
+      keyItemA: new l("Kitty Collar", 0, 0, 1, "key item", "itemcatcollar", "k"),
+      stoneA: new l("Sharpening Stone", 0, 0, 1, "consumable", "itemsharpeningstone", "cc")
+    }, qe = {
+      ...T,
+      ...k,
+      ...q,
+      ...h.armor.reduce((a, e, t) => (a[`armor${t}`] = e, a), {}),
+      ...h.weapons.reduce((a, e, t) => (a[`weapon${t}`] = e, a), {}),
+      ...h.consumables.reduce((a, e, t) => (a[`consumable${t}`] = e, a), {})
+    };
+    i(oe, "getItemByName");
+    ({
+      weapon: wt,
+      helmet: kt,
+      cloak: xt,
+      armor: bt
+    } = T), ({
+      stick: vt,
+      lionHide: St,
+      spear: It,
+      knife: At,
+      rockHelm: Et,
+      helmA: Rt,
+      stickB: Ct
+    } = k), ({
+      keyItemA: Tt,
+      stoneA: Bt
+    } = q), [Gt, $t, qt, Ht] = h.armor, [Yt, Nt, Dt, Ot] = h.weapons, [Lt] = h.consumables;
+  });
+var ue = {};
+he(ue, {
+  CraftingRecipe: () => B,
+  checkRec: () => He,
+  craftStickB: () => Ye,
+  craftingSystem: () => N,
+  default: () => De,
+  unhideCraftItem: () => Ne
+});
+function He() {
+  N.checkAvailableRecipes();
+}
+function Ye() {
+  let a = N.getRecipe("pointy_stick");
+  a && N.craftItem(a);
+}
+function Ne(a) {
+  let e = document.getElementById(a);
+  e && (e.style.display = "block");
+}
+var B,
+  P,
+  N,
+  De,
+  ne = R(() => {
+    W();
+    $();
+    F();
+    B = class {
+      constructor(e, t, n, s, c = "") {
+        this.id = e, this.name = t, this.ingredients = n, this.result = s, this.description = c, this.unlocked = !0;
+      }
+      canCraft() {
+        return this.ingredients.every(e => o.hasInInventory(e.itemName, e.quantity));
+      }
+      craft() {
+        if (!this.canCraft()) return {
+          success: !1,
+          message: "Missing required ingredients!"
+        };
+        this.ingredients.forEach(t => {
+          if (o.removeFromInventory(t.itemName, t.quantity), !o.hasInInventory(t.itemName)) {
+            let n = oe(t.itemName);
+            n && de(n.tag);
+          }
+        });
+        let e = oe(this.result.itemName);
+        if (e && (o.addToInventory(this.result.itemName, this.result.quantity), v(e.tag), e.equipSlot >= 0)) {
+          let t = o.equip[e.equipSlot];
+          e.isBetterThan(t) && o.equipItem(e, e.equipSlot);
+        }
+        return u(), {
+          success: !0,
+          message: `Crafted ${this.result.quantity}x ${this.result.itemName}!`,
+          result: e
+        };
+      }
+      getIngredientsList() {
+        return this.ingredients.map(e => `${e.quantity}x ${e.itemName}`).join(", ");
+      }
+    };
+    i(B, "CraftingRecipe");
+    P = class {
+      constructor() {
+        this.recipes = new Map(), this.availableRecipes = new Set(), this.initializeRecipes();
+      }
+      initializeRecipes() {
+        [new B("pointy_stick", "Pointy Stick", [{
+          itemName: "Stick",
+          quantity: 1
+        }, {
+          itemName: "Sharpening Stone",
+          quantity: 1
+        }], {
+          itemName: "Pointy Stick",
+          quantity: 1
+        }, "Sharpen a stick to make it more effective in combat."), new B("reinforced_leather", "Reinforced Leather Armor", [{
+          itemName: "Leather Armor",
+          quantity: 1
+        }, {
+          itemName: "Lions Hide Cloak",
+          quantity: 1
+        }], {
+          itemName: "Reinforced Leather Armor",
+          quantity: 1
+        }, "Combine leather armor with lion hide for better protection."), new B("health_potion", "Health Potion", [{
+          itemName: "Red Herb",
+          quantity: 2
+        }, {
+          itemName: "Water",
+          quantity: 1
+        }], {
+          itemName: "Small Health Potion",
+          quantity: 1
+        }, "Brew a healing potion from herbs and water.")].forEach(t => {
+          this.recipes.set(t.id, t);
+        });
+      }
+      checkAvailableRecipes() {
+        this.availableRecipes.clear(), this.recipes.forEach(e => {
+          e.canCraft() ? (this.availableRecipes.add(e.id), this.showCraftingOption(e)) : this.hideCraftingOption(e);
+        });
+      }
+      showCraftingOption(e) {
+        let t = `craft_${e.id}`,
+          n = document.getElementById(t);
+        n ? (n.style.display = "block", this.setupCraftingButton(n, e)) : this.createCraftingButton(e);
+      }
+      hideCraftingOption(e) {
+        let t = `craft_${e.id}`,
+          n = document.getElementById(t);
+        n && (n.style.display = "none");
+      }
+      createCraftingButton(e) {
+        let t = document.getElementById("crafting-container");
+        if (!t) return;
+        let n = document.createElement("button");
+        n.id = `craft_${e.id}`, n.className = "crafting-button", n.innerHTML = `
+            <div class="recipe-name">${e.name}</div>
+            <div class="recipe-ingredients">${e.getIngredientsList()}</div>
+            <div class="recipe-description">${e.description}</div>
+        `, t.appendChild(n), this.setupCraftingButton(n, e);
+      }
+      setupCraftingButton(e, t) {
+        e.onclick = () => this.craftItem(t);
+      }
+      craftItem(e) {
+        let t = e.craft();
+        if (t.success) {
+          if (alert(t.message), t.result && t.result.equipSlot >= 0) {
+            let n = o.equip[t.result.equipSlot];
+            t.result.isBetterThan(n) && alert(`${t.result.name} has been equipped!`);
+          }
+          e.canCraft() || this.hideCraftingOption(e), this.checkAvailableRecipes();
+        } else alert(t.message);
+      }
+      getRecipe(e) {
+        return this.recipes.get(e);
+      }
+      getAllRecipes() {
+        return Array.from(this.recipes.values());
+      }
+      getAvailableRecipes() {
+        return Array.from(this.availableRecipes).map(e => this.recipes.get(e));
+      }
+      unlockRecipe(e) {
+        let t = this.recipes.get(e);
+        t && (t.unlocked = !0, this.checkAvailableRecipes());
+      }
+      createCraftingInterface(e) {
+        let t = document.getElementById(e);
+        if (!t) return;
+        t.innerHTML = "<h3>Crafting</h3>";
+        let n = this.getAvailableRecipes();
+        if (n.length === 0) {
+          t.innerHTML += "<p>No recipes available. Collect more items to unlock crafting options.</p>";
+          return;
+        }
+        n.forEach(s => {
+          let c = document.createElement("div");
+          c.className = "crafting-recipe", c.innerHTML = `
+                <h4>${s.name}</h4>
+                <p>${s.description}</p>
+                <p><strong>Requires:</strong> ${s.getIngredientsList()}</p>
+                <button onclick="craftingSystem.craftItem(craftingSystem.getRecipe('${s.id}'))">
+                    Craft
+                </button>
+            `, t.appendChild(c);
+        });
+      }
+      discoverRecipe(e) {
+        let n = {
+          "Sharpening Stone": ["pointy_stick"],
+          "Lions Hide Cloak": ["reinforced_leather"],
+          "Red Herb": ["health_potion"]
+        }[e];
+        n && (n.forEach(s => {
+          let c = this.recipes.get(s);
+          c && !c.unlocked && (c.unlocked = !0, alert(`You discovered a new recipe: ${c.name}!`));
+        }), this.checkAvailableRecipes());
+      }
+    };
+    i(P, "CraftingSystem");
+    N = new P();
+    i(He, "checkRec");
+    i(Ye, "craftStickB");
+    i(Ne, "unhideCraftItem");
+    De = N;
+  });
+function H(a, e) {
+  return a = Math.ceil(a), e = Math.floor(e), Math.floor(Math.random() * (e - a) + a);
+}
+function Oe(a) {
+  try {
+    var _loopIt4 = 0;
+    let e = document.getElementsByClassName(a);
+    for (; e.length > 0;) {
+      if (_loopIt4++ > 1500) {
+        global.infiniteLoopError = new RangeError('Potential infinite loop: exceeded ' + 1500 + ' iterations.');
+        throw global.infiniteLoopError;
+      }
+      e[0].parentNode.removeChild(e[0]);
+    }
+  } catch (e) {
+    console.log("removeElementsByClass error (non-critical):", e);
+  }
+}
+function ae(a, e) {
+  try {
+    let t = "option" + a,
+      n = document.createElement("button"),
+      s = document.querySelector("#button-holder");
+    return s ? (n.innerText = e, n.classList.add("btn"), n.id = t, s.appendChild(n), n) : (console.error("ERROR: #button-holder element not found!"), null);
+  } catch (t) {
+    return console.error("makeButton error:", t), null;
+  }
+}
+function D() {
+  try {
+    if (o.exp >= o.reqexp) {
+      o.level++, o.reqexp += 10 * o.level, o.exp = 0;
+      let a = 5,
+        e = 1;
+      o.basehp += a, o.baseatk += e, alert(`Level Up! You are now level ${o.level}!
+Health: +${a}
+Attack: +${e}`), g && (g.recalculatePlayerStats(), g.updateAll());
+    }
+  } catch (a) {
+    console.log("checkLevel error:", a);
+  }
+}
+function v(a) {
+  try {
+    let e = document.getElementById(a);
+    e && (e.style.display = "block");
+  } catch (e) {
+    console.log("addToInventory error (non-critical):", e);
+  }
+}
+function de(a) {
+  try {
+    let e = document.getElementById(a);
+    e && (e.style.display = "none");
+  } catch (e) {
+    console.log("removeFromInventory error (non-critical):", e);
+  }
+}
+function Le() {
+  try {
+    o.currenthp <= 0 && Promise.resolve().then(() => (re(), ge)).then(({
+      gameOver: a
+    }) => {
+      a();
+    });
+  } catch (a) {
+    console.log("checkHealth error:", a);
+  }
+}
+function A() {
+  try {
+    m || (m = new z(), m.initializeRestButtons()), g || (g = new V(), g.initializeStatusElements()), console.log("Support systems initialized successfully");
+  } catch (a) {
+    console.log("Support systems initialization error (non-critical):", a);
+  }
+}
+function ie() {
+  try {
+    g || A(), g && g.updateAll(), Le(), D(), Oe("btn");
+    try {
+      Promise.resolve().then(() => (ne(), ue)).then(({
+        checkRec: a
+      }) => {
+        typeof a == "function" && a();
+      });
+    } catch {}
+  } catch (a) {
+    console.log("update error:", a);
+  }
+}
+function u() {
+  try {
+    g || A(), g && g.updateAll();
+  } catch (a) {
+    console.log("updateNav error (non-critical):", a);
+  }
+}
+function pe() {
+  try {
+    m || A(), m && m.reset();
+  } catch (a) {
+    console.log("restReset error:", a);
+  }
+}
+function me() {
+  try {
+    m || A(), m && m.hide();
+  } catch (a) {
+    console.log("hideRest error (non-critical):", a);
+  }
+}
+function O() {
+  try {
+    m || A(), m && m.show();
+  } catch (a) {
+    console.log("unhideRest error (non-critical):", a);
+  }
+}
+var z,
+  V,
+  m,
+  g,
+  _t,
+  jt,
+  Zt,
+  Jt,
+  F = R(() => {
+    $();
+    i(H, "getRandomInt");
+    i(Oe, "removeElementsByClass");
+    i(ae, "makeButton");
+    z = class {
+      constructor() {
+        this.shortRest = 3, this.longRest = 1, this.initialized = !1;
+      }
+      initializeRestButtons() {
+        try {
+          let e = document.getElementById("srest"),
+            t = document.getElementById("lrest");
+          e && (e.onclick = () => this.takeShortRest()), t && (t.onclick = () => this.takeLongRest()), this.updateRestDisplay(), this.initialized = !0;
+        } catch (e) {
+          console.log("RestSystem initialization error (non-critical):", e);
+        }
+      }
+      takeShortRest() {
+        try {
+          if (this.shortRest <= 0) {
+            alert("You can't short rest for a while");
+            return;
+          }
+          if (o.currenthp >= o.maxhp) {
+            alert("There is no need to rest, you are at full health.");
+            return;
+          }
+          let e = H(1, 5) * 4 + o.level;
+          o.currenthp = Math.min(o.currenthp + e, o.maxhp), this.shortRest--, alert(`You take a short rest and regain ${e} health.`), u();
+        } catch (e) {
+          console.log("takeShortRest error:", e);
+        }
+      }
+      takeLongRest() {
+        try {
+          if (this.longRest <= 0) {
+            alert("You can't long rest for a while");
+            return;
+          }
+          if (o.currenthp >= o.maxhp) {
+            alert("There is no need to rest, you are at full health.");
+            return;
+          }
+          o.currenthp = o.maxhp, this.shortRest = 3, this.longRest = 0, alert("You take a long rest and feel completely refreshed!"), u();
+        } catch (e) {
+          console.log("takeLongRest error:", e);
+        }
+      }
+      reset() {
+        try {
+          this.shortRest = 3, this.longRest = 1, o.currenthp = o.maxhp, alert("You now are at full health."), u();
+        } catch (e) {
+          console.log("restReset error:", e);
+        }
+      }
+      updateRestDisplay() {
+        try {
+          if (!this.initialized) {
+            this.initializeRestButtons();
+            return;
+          }
+          let e = document.getElementById("srest"),
+            t = document.getElementById("lrest");
+          e && (e.textContent = `Short Rests: ${this.shortRest}/3`), t && (t.textContent = `Long Rests: ${this.longRest}/1`);
+        } catch (e) {
+          console.log("updateRestDisplay error (non-critical):", e);
+        }
+      }
+      hide() {
+        try {
+          let e = document.getElementById("restee");
+          e && (e.style.display = "none");
+        } catch (e) {
+          console.log("hideRest error (non-critical):", e);
+        }
+      }
+      show() {
+        try {
+          let e = document.getElementById("restee");
+          e && (e.style.display = "block");
+        } catch (e) {
+          console.log("unhideRest error (non-critical):", e);
+        }
+      }
+    };
+    i(z, "RestSystem");
+    V = class {
+      constructor() {
+        this.elements = {}, this.initialized = !1;
+      }
+      initializeStatusElements() {
+        try {
+          this.elements = {
+            level: document.getElementById("level-status"),
+            health: document.getElementById("health-status"),
+            attack: document.getElementById("attack-status"),
+            gold: document.getElementById("gold-status"),
+            weapon: document.getElementById("weapon"),
+            helm: document.getElementById("helm"),
+            cloak: document.getElementById("cloak"),
+            armor: document.getElementById("armor"),
+            expBar: document.getElementById("expstatus")
+          }, this.initialized = !0, this.updateAll();
+        } catch (e) {
+          console.log("PlayerStatsManager initialization error (non-critical):", e);
+        }
+      }
+      updateAll() {
+        this.initialized || this.initializeStatusElements();
+        try {
+          this.updateStats(), this.updateEquipment(), this.updateExpBar(), this.recalculatePlayerStats();
+        } catch (e) {
+          console.log("PlayerStatsManager update error (non-critical):", e);
+        }
+      }
+      updateStats() {
+        try {
+          this.elements.level && (this.elements.level.textContent = `Level: ${o.level}`), this.elements.health && (this.elements.health.textContent = `Health: ${o.currenthp}/${o.maxhp}`), this.elements.attack && (this.elements.attack.textContent = `Attack: ${o.minatk}-${o.maxatk}`), this.elements.gold && (this.elements.gold.textContent = `Gold: ${o.gp}`);
+        } catch (e) {
+          console.log("updateStats error (non-critical):", e);
+        }
+      }
+      updateEquipment() {
+        try {
+          if (!o.equip || !Array.isArray(o.equip)) return;
+          let e = ["weapon", "helm", "cloak", "armor"],
+            t = ["Weapon", "Helm", "Cloak", "Armor"];
+          e.forEach((n, s) => {
+            let c = this.elements[n];
+            if (!c || !o.equip[s]) return;
+            let p = o.equip[s];
+            !p || !p.name || (["c", "uc", "r", "e", "l"].forEach(E => {
+              c.classList.remove(E);
+            }), c.textContent = `${t[s]}: ${p.name}`, p.rarity && c.classList.add(p.rarity));
+          });
+        } catch (e) {
+          console.log("updateEquipment error (non-critical):", e);
+        }
+      }
+      updateExpBar() {
+        try {
+          if (!this.elements.expBar || !o.reqexp) return;
+          let e = o.exp / o.reqexp * 100;
+          this.elements.expBar.style.width = e + "%";
+        } catch (e) {
+          console.log("updateExpBar error (non-critical):", e);
+        }
+      }
+      recalculatePlayerStats() {
+        try {
+          if (!o.equip || !Array.isArray(o.equip)) {
+            console.log("mc.equip not properly initialized, skipping recalculation");
+            return;
+          }
+          o.maxhp = o.basehp + o.equip.reduce((e, t) => e + (t?.hp || 0), 0), o.minatk = 1 + o.equip.reduce((e, t) => e + (t?.atk || 0), 0), o.maxatk = o.baseatk + o.equip.reduce((e, t) => e + (t?.atk || 0), 0), o.currenthp > o.maxhp && (o.currenthp = o.maxhp);
+        } catch (e) {
+          console.log("recalculatePlayerStats error (non-critical):", e);
+        }
+      }
+    };
+    i(V, "PlayerStatsManager");
+    i(D, "checkLevel");
+    i(v, "addToInventory");
+    i(de, "removeFromInventory");
+    i(Le, "checkHealth");
+    m = null, g = null;
+    i(A, "initializeSupportSystems");
+    i(ie, "update");
+    i(u, "updateNav");
+    i(pe, "restReset");
+    i(me, "hideRest");
+    i(O, "unhideRest");
+    _t = document.getElementById("level-status"), jt = document.getElementById("health-status"), Zt = document.getElementById("attack-status"), Jt = document.getElementById("gold-status");
+  });
+var U,
+  K,
+  Me,
+  no,
+  fe = R(() => {
+    W();
+    $();
+    F();
+    U = class {
+      constructor() {
+        this.initializeShopButtons();
+      }
+      initializeShopButtons() {
+        this.setupItemButton("larmor", h.armor[0]), this.setupItemButton("carmor", h.armor[1]), this.setupItemButton("parmor", h.armor[2]), this.setupItemButton("marmor", h.armor[3]), this.setupItemButton("ssword", h.weapons[0]), this.setupItemButton("lsword", h.weapons[1]), this.setupItemButton("gsword", h.weapons[2]), this.setupItemButton("gutssword", h.weapons[3]), this.setupConsumableButton("healthA", h.consumables[0]);
+      }
+      setupItemButton(e, t) {
+        let n = document.getElementById(e);
+        n && (n.onclick = () => this.purchaseEquipment(t));
+      }
+      setupConsumableButton(e, t) {
+        let n = document.getElementById(e);
+        n && (n.onclick = () => this.purchaseConsumable(t));
+      }
+      purchaseEquipment(e) {
+        if (o.gp < e.price) {
+          alert("You can't afford this item");
+          return;
+        }
+        let t = o.equip[e.equipSlot];
+        if (!e.isBetterThan(t)) {
+          alert("Current Item Is Equal Or Better");
+          return;
+        }
+        this.completePurchase(e), o.equip[e.equipSlot] = e, this.updatePlayerAfterPurchase(), v(e.tag), alert(`Purchased and equipped ${e.name}!`);
+      }
+      purchaseConsumable(e) {
+        if (o.gp < e.price) {
+          alert("You can't afford this item");
+          return;
+        }
+        switch (e.tag) {
+          case "itemsmallhp":
+            this.useHealthPotion(e);
+            break;
+          default:
+            this.completePurchase(e), v(e.tag), alert(`Purchased ${e.name}!`);
+        }
+      }
+      useHealthPotion(e) {
+        if (o.currenthp >= o.maxhp) {
+          alert("You are already at full health!");
+          return;
+        }
+        o.currenthp += e.hp, o.gp -= e.price, o.currenthp > o.maxhp && (o.currenthp = o.maxhp), u(), alert(`Used ${e.name}! Restored ${e.hp} health.`);
+      }
+      completePurchase(e) {
+        o.gp -= e.price, o.inventory.push(e.name);
+      }
+      updatePlayerAfterPurchase() {
+        o.maxhp = o.basehp + o.equip.reduce((e, t) => e + (t.hp || 0), 0), o.minatk = 1 + o.equip.reduce((e, t) => e + (t.atk || 0), 0), o.maxatk = o.baseatk + o.equip.reduce((e, t) => e + (t.atk || 0), 0), o.currenthp > o.maxhp && (o.currenthp = o.maxhp), u();
+      }
+      purchaseMultiple(e, t) {
+        var _loopIt5 = 0;
+        let n = e.price * t;
+        if (o.gp < n) return alert(`You need ${n} gold to buy ${t} ${e.name}(s)`), !1;
+        o.gp -= n;
+        for (let s = 0; s < t; s++) {
+          if (_loopIt5++ > 1500) {
+            global.infiniteLoopError = new RangeError('Potential infinite loop: exceeded ' + 1500 + ' iterations.');
+            throw global.infiniteLoopError;
+          }
+          o.inventory.push(e.name);
+        }
+        return u(), alert(`Purchased ${t} ${e.name}(s) for ${n} gold!`), !0;
+      }
+      getShopInventory() {
+        return {
+          armor: h.armor,
+          weapons: h.weapons,
+          consumables: h.consumables
+        };
+      }
+      canAfford(e, t = 1) {
+        return o.gp >= e.price * t;
+      }
+      getAffordableItems() {
+        let e = {};
+        return Object.keys(h).forEach(t => {
+          e[t] = h[t].filter(n => this.canAfford(n));
+        }), e;
+      }
+    };
+    i(U, "ShopSystem");
+    K = class {
+      constructor(e) {
+        this.shopSystem = e;
+      }
+      createShopInterface(e, t) {
+        let n = document.getElementById(e);
+        n && (n.innerHTML = "", Object.keys(t).forEach(s => {
+          let c = this.createShopSection(s, t[s]);
+          n.appendChild(c);
+        }));
+      }
+      createShopSection(e, t) {
+        let n = document.createElement("div");
+        n.className = "shop-section";
+        let s = document.createElement("h3");
+        return s.textContent = e.charAt(0).toUpperCase() + e.slice(1), n.appendChild(s), t.forEach(c => {
+          let p = this.createShopItem(c);
+          n.appendChild(p);
+        }), n;
+      }
+      createShopItem(e) {
+        let t = document.createElement("div");
+        t.className = `shop-item rarity-${e.rarity}`;
+        let n = this.shopSystem.canAfford(e);
+        return n || t.classList.add("unaffordable"), t.innerHTML = `
+            <div class="item-name">${e.name}</div>
+            <div class="item-stats">
+                ${e.hp > 0 ? `+${e.hp} HP` : ""}
+                ${e.atk > 0 ? `+${e.atk} ATK` : ""}
+            </div>
+            <div class="item-price">${e.price} gold</div>
+        `, n && (t.onclick = () => {
+          e.label === "consumable" ? this.shopSystem.purchaseConsumable(e) : this.shopSystem.purchaseEquipment(e), this.refreshShopDisplay();
+        }), t;
+      }
+      refreshShopDisplay() {
+        let e = this.shopSystem.getShopInventory();
+        this.createShopInterface("shop-container", e);
+      }
+    };
+    i(K, "DynamicShop");
+    Me = new U(), no = new K(Me);
+  });
+var ge = {};
+he(ge, {
+  gameOver: () => Re,
+  gameText: () => We,
+  inventory: () => Pe,
+  mc: () => o,
+  playerArmor: () => Ie,
+  playerCloak: () => Se,
+  playerHelm: () => ve,
+  playerWeapon: () => be
+});
+function ze() {
+  r.showScene({
+    id: "areaOneForest",
+    text: "You trek through the woods as visibility gets lower. It becomes so dark you can no longer see your own hands. You stop and hear branches snapping.",
+    options: [{
+      text: "Run",
+      action: () => Ve()
+    }, {
+      text: "Investigate",
+      action: () => x(1)
+    }]
+  });
+}
+function Ve() {
+  r.showScene({
+    id: "areaOneClearing",
+    text: "You run through the dark woods, trip over a root, but make it to a clearing. The noises are getting closer. What do you do?",
+    options: [{
+      text: "Fight",
+      action: () => ye()
+    }, {
+      text: "Search for items",
+      action: () => {
+        r.handleItemFound(k.stick), ye();
+      }
+    }, {
+      text: "Hide",
+      action: () => x(2)
+    }]
+  });
+}
+function Y() {
+  r.visitArea("areaTwoPath"), r.showScene({
+    id: "areaTwoPath",
+    text: "You head down the path. The forest becomes less thick and you see a clearing ahead. What would you like to do?",
+    options: [{
+      text: "Walk out into the clearing",
+      action: () => f()
+    }, {
+      text: "Investigate the area",
+      action: () => Ue()
+    }]
+  }), pe();
+}
+function f() {
+  let a = [];
+  r.isEnemyDefeated("Swamp Witch") || a.push({
+    text: "Follow the tree line to the left",
+    action: () => Xe()
+  }), (!r.isEnemyDefeated("Goblin") || !r.isEnemyDefeated("Lion")) && a.push({
+    text: "Walk towards the hill",
+    action: () => Ke()
+  }), r.isEnemyDefeated("Golem") || a.push({
+    text: "Head towards the rock structures",
+    action: () => nt()
+  }), r.showScene({
+    id: "areaTwoClearing",
+    text: "You see a savanna with waist-high grass. Ahead is a small hill, to the left the tree line continues, and to the right are rock formations.",
+    options: a
+  });
+}
+function Ue() {
+  r.showScene({
+    id: "areaTwoInvestigate",
+    text: "You investigate and see smoke from a hill, a purple haze from trees, and moving rocks.",
+    options: [{
+      text: "Enter clearing",
+      action: () => f()
+    }]
+  });
+}
+function Ke() {
+  r.showScene({
+    id: "areaTwoSavannaA",
+    text: "You walk out into the savanna. There is a nice cross breeze. What would you like to do?",
+    options: [{
+      text: "Keep walking towards the hill",
+      action: () => _e()
+    }, {
+      text: "Go back to the tree line",
+      action: () => f()
+    }]
+  });
+}
+function _e() {
+  r.showScene({
+    id: "areaTwoSavannaB",
+    text: "You make it to the top of the hill and notice a little hut built along a river flowing from right to left. What would you like to do?",
+    options: [{
+      text: "Investigate the hut",
+      action: () => L()
+    }, {
+      text: "Go back to savanna",
+      action: () => r.isEnemyDefeated("Lion") ? f() : je(),
+      condition: () => !r.isEnemyDefeated("Lion")
+    }, {
+      text: "Go back to the tree line",
+      action: () => f(),
+      condition: () => r.isEnemyDefeated("Lion")
+    }]
+  });
+}
+function je() {
+  r.showScene({
+    id: "areaTwoSavannaAB",
+    text: "You walk back into the savanna. There is no longer a breeze. Just silence. What would you like to do?",
+    options: [{
+      text: "Keep walking towards the hill",
+      action: () => we()
+    }, {
+      text: "Go back to the tree line",
+      action: () => we()
+    }]
+  });
+}
+function L() {
+  r.showScene({
+    id: "areaTwoSavannaC",
+    text: "You approach the hut. It's made of forest wood with a straw roof. What would you like to do?",
+    options: [{
+      text: "Investigate the inside",
+      action: () => Ze()
+    }, {
+      text: "Investigate the outside",
+      action: () => Qe()
+    }]
+  });
+}
+function Ze() {
+  r.isEnemyDefeated("Goblin") ? r.showScene({
+    id: "areaTwoHutInsideEmpty",
+    text: "You already investigated the hut. Not much here anymore.",
+    options: [{
+      text: "Go back outside",
+      action: () => st()
+    }]
+  }) : r.showScene({
+    id: "areaTwoHutInside",
+    text: "You enter the quiet hut. It looks like something is living here. There's a pile of grass that resembles a cot. What would you like to do?",
+    options: [{
+      text: "Keep Investigating",
+      action: () => {
+        r.handleItemFound(k.helmA), Je();
+      },
+      condition: () => !o.hasInInventory("Leather Helm")
+    }, {
+      text: "Go back outside",
+      action: () => L(),
+      condition: () => o.hasInInventory("Leather Helm")
+    }]
+  });
+}
+function Je() {
+  r.showScene({
+    id: "areaTwoInsideInvestigation",
+    text: "You're inside the hut rummaging around. You find a couple gold pieces. But before you can do anything else, you hear a noise from outside. What do you do?",
+    options: [{
+      text: "Surprise the creature!",
+      action: () => {
+        let a = o.getAttackDamage();
+        C.takeDamage(a), r.showScene({
+          text: `You surprise the creature and attack dealing ${a} damage! The goblin now has ${C.hp} health.`,
+          options: [{
+            text: "Fight!",
+            action: () => se()
+          }]
+        });
+      }
+    }, {
+      text: "Hide...",
+      action: () => {
+        let a = H(C.minatk, C.maxatk);
+        o.takeDamage(a), r.showScene({
+          text: `You try to hide but the creature bursts in and sees you. It attacks dealing ${a} damage.`,
+          options: [{
+            text: "Fight!",
+            action: () => se()
+          }]
+        });
+      }
+    }]
+  });
+}
+function Qe() {
+  r.isEnemyDefeated("Goblin") ? r.showScene({
+    id: "areaTwoHutOutsideEmpty",
+    text: "Not really any other clues or materials to gather here. Should probably push forward.",
+    options: [{
+      text: "Go across river",
+      action: () => ce()
+    }, {
+      text: "Go back to forest",
+      action: () => f()
+    }]
+  }) : r.showScene({
+    id: "areaTwoHutOutside",
+    text: "You're looking around the outside when suddenly a goblin appears in front of you. He is rambling and swinging his spear above his head. He seems upset. What will you do?",
+    options: [{
+      text: "Fight!",
+      action: () => se()
+    }]
+  });
+}
+function Xe() {
+  r.showScene({
+    id: "areaTwoSwampA",
+    text: "You follow the tree line around the savanna. A pungent smell fills the air. The trees are getting thinner and the ground feels damp. What would you like to do?",
+    options: [{
+      text: "Continue through the thinning woods",
+      action: () => et()
+    }]
+  });
+}
+function et() {
+  r.showScene({
+    id: "areaTwoSwampB",
+    text: "You keep pushing on, holding your nose, when you encounter a swamp. There's a little home propped above the water with smoke billowing from the chimney. What would you like to do?",
+    options: [{
+      text: "Investigate the swamp",
+      action: () => tt()
+    }, {
+      text: "Investigate the home",
+      action: () => Ae()
+    }]
+  });
+}
+function tt() {
+  r.showScene({
+    id: "areaTwoSwampC",
+    text: "You look around and find several piles of skin scattered around the swamp. No bones or organs, just piles of skin from various creatures. As you investigate, you hear cackling from the swamp home. What would you like to do?",
+    options: [{
+      text: "Investigate the house",
+      action: () => Ae()
+    }, {
+      text: "Ignore it",
+      action: () => x(7)
+    }]
+  });
+}
+function Ae() {
+  r.showScene({
+    id: "areaTwoWitchHutA",
+    text: "You approach the hut as you drudge through purplish water. You notice the door is open and hear a faint voice of what appears to be an old lady. What do you want to do?",
+    options: [{
+      text: 'Ask "Who is there?"',
+      action: () => ot()
+    }, {
+      text: "Burst in and attack the woman",
+      action: () => Ee()
+    }]
+  });
+}
+function ot() {
+  r.showScene({
+    id: "areaTwoWitchHutB",
+    text: 'You ask "Who is there?" After a few moments you hear: "Just a troubled old lady, would you mind coming in and helping me with something?"',
+    options: [{
+      text: "Go in and help her",
+      action: () => x(6)
+    }, {
+      text: "Go in and attack the woman",
+      action: () => Ee()
+    }]
+  });
+}
+function ye() {
+  console.log("Starting spider fight..."), M.startCombat(J, 3, a => {
+    console.log("Spider fight finished, fled:", a);
+    try {
+      a ? r.showScene({
+        text: "You escaped from the spider and continue down the path.",
+        options: [{
+          text: "Continue",
+          action: () => Y()
+        }]
+      }) : r.showScene({
+        text: "You defeated the spider! The path ahead is now clear.",
+        options: [{
+          text: "Go down the path",
+          action: () => Y()
+        }]
+      });
+    } catch (e) {
+      console.error("Error in spider victory callback:", e), alert("You won! Click OK to continue."), Y();
+    }
+  });
+}
+function we() {
+  M.startCombat(Q, 4, () => {
+    r.showScene({
+      text: "After defeating the lion, what would you like to do?",
+      options: [{
+        text: "Walk back towards the hill",
+        action: () => L()
+      }, {
+        text: "Go back to the tree line",
+        action: () => f()
+      }]
+    });
+  }, [k.lionHide]);
+}
+function se() {
+  M.startCombat(C, 5, () => it(), [k.spear]);
+}
+function Ee() {
+  M.startCombat(X, 8, a => {
+    a ? r.showScene({
+      text: "You escape the witch's hut and run away through the swamp.",
+      options: [{
+        text: "Keep Running",
+        action: () => xe()
+      }]
+    }) : r.showScene({
+      text: "You kill the horrid witch. The room is littered with bones and flesh. Nothing really left for you here.",
+      options: [{
+        text: "Exit Hut",
+        action: () => xe()
+      }]
+    });
+  }, [k.knife]);
+}
+function nt() {
+  M.startCombat(ee, 8, () => at(), []);
+}
+function at() {
+  r.showScene({
+    id: "fightGolemites",
+    text: "You defeated the Golem and it begins to violently shake. When all of a sudden it splits apart into two smaller golemites! What will you do?",
+    options: [{
+      text: "Attack Golemite A",
+      action: () => {
+        let a = o.getAttackDamage();
+        w.takeDamage(a), w.isDead() && b.isDead() ? (r.handleVictoryRewards(w, [k.rockHelm, q.stoneA]), r.handleVictoryRewards(b, []), ke()) : (I.textContent = `You damaged Golemite A for ${a}! Both golemites attack back!`, o.takeDamage(w.attack() + b.attack()), u(), o.isAlive() || x(9));
+      }
+    }, {
+      text: "Attack Golemite B",
+      action: () => {
+        let a = o.getAttackDamage();
+        b.takeDamage(a), w.isDead() && b.isDead() ? (r.handleVictoryRewards(w, [k.rockHelm, q.stoneA]), r.handleVictoryRewards(b, []), ke()) : (I.textContent = `You damaged Golemite B for ${a}! Both golemites attack back!`, o.takeDamage(w.attack() + b.attack()), u(), o.isAlive() || x(9));
+      }
+    }]
+  });
+}
+function ke() {
+  r.showScene({
+    id: "areaThreeRiverG",
+    text: "After defeating the Golem and Golemites, you notice you're next to a river. The river bank has footprints that go upstream. What do you do?",
+    options: [{
+      text: "Follow footprints upstream",
+      action: () => L()
+    }, {
+      text: "Go back to the forest",
+      action: () => f()
+    }]
+  });
+}
+function xe() {
+  r.showScene({
+    id: "areaThreeRiverW",
+    text: "After the witch encounter, you notice you're next to a river. The river bank has footprints that go downstream. What do you do?",
+    options: [{
+      text: "Follow footprints upstream",
+      action: () => L()
+    }, {
+      text: "Go back to the forest",
+      action: () => f()
+    }]
+  });
+}
+function it() {
+  r.showScene({
+    id: "areaThreeRiverGG",
+    text: "You defeat the goblin and find a collar with a bell. Next to the bell is a name tag. You flip it over and it reads 'Kitty'.",
+    options: [{
+      text: "Next",
+      action: () => rt()
+    }]
+  });
+}
+function rt() {
+  r.showScene({
+    id: "areaThreeRiverGGG",
+    text: "You clench the collar and put it around your wrist. What do you want to do now?",
+    options: [{
+      text: "Go across the river",
+      action: () => ce()
+    }, {
+      text: "Go back to the forest",
+      action: () => f()
+    }]
+  }), o.hasInInventory("Kitty Collar") || r.handleItemFound(q.keyItemA, !0);
+}
+function st() {
+  r.showScene({
+    id: "areaThreeRiverGGGG",
+    text: "What do you want to do now?",
+    options: [{
+      text: "Go across the river",
+      action: () => ce()
+    }, {
+      text: "Go back to the forest",
+      action: () => f()
+    }]
+  });
+}
+function ce() {
+  r.showScene({
+    id: "areaThreeRiver",
+    text: "You wait by the river to continue your adventure. This is all that's implemented so far. Thanks for playing the optimized version!",
+    options: [{
+      text: "Main Menu",
+      action: () => location.reload()
+    }]
+  });
+}
+function x(a) {
+  let e = ct[a] || "You have died.";
+  r.showScene({
+    id: "death",
+    text: e,
+    options: [{
+      text: "Accept Fate",
+      action: Re
+    }]
+  });
+}
+function Re() {
+  r.showScene({
+    id: "gameOver",
+    text: "GAME OVER YOU HAVE DIED",
+    options: [{
+      text: "GG",
+      action: () => location.reload()
+    }]
+  });
+}
+var We,
+  yo,
+  I,
+  be,
+  ve,
+  Se,
+  Ie,
+  Pe,
+  _,
+  j,
+  Z,
+  Fe,
+  S,
+  ct,
+  r,
+  M,
+  lt,
+  re = R(() => {
+    $();
+    te();
+    W();
+    F();
+    fe();
+    ne();
+    window.updateNav = window.updateNav || function () {
+      console.log("updateNav fallback");
+    };
+    window.checkLevel = window.checkLevel || function () {
+      console.log("checkLevel fallback");
+    };
+    window.unhideRest = window.unhideRest || function () {
+      console.log("unhideRest fallback");
+    };
+    window.hideRest = window.hideRest || function () {
+      console.log("hideRest fallback");
+    };
+    o.equip = [T.weapon, T.helmet, T.cloak, T.armor];
+    We = document.getElementById("story"), yo = document.createElement("h1").appendChild(document.createElement("h1")), I = document.querySelector("#game-text");
+    I.textContent = "Welcome to the Journey. Press start to begin.";
+    be = document.getElementById("weapon"), ve = document.getElementById("helm"), Se = document.getElementById("cloak"), Ie = document.getElementById("armor"), Pe = o.inventory;
+    be.append(`${o.equip[0].name}`);
+    ve.append(`${o.equip[1].name}`);
+    Se.append(`${o.equip[2].name}`);
+    Ie.append(`${o.equip[3].name}`);
+    _ = class {
+      constructor() {
+        this.currentScene = null, this.gameState = {
+          defeatedEnemies: new Set(),
+          foundItems: new Set(),
+          visitedAreas: new Set(),
+          completedQuests: new Set()
+        };
+      }
+      showScene(e) {
+        console.log("=== SHOW SCENE DEBUG START ==="), console.log("Scene data:", e);
+        try {
+          I.textContent = e.text, console.log("Text content set"), this.clearButtons(), console.log("Buttons cleared"), e.options.forEach((t, n) => {
+            if (console.log(`Processing option ${n}:`, t), t.condition && !t.condition()) {
+              console.log(`Skipping option ${n} due to condition`);
+              return;
+            }
+            let s = String.fromCharCode(97 + n);
+            console.log(`Creating button ${s}:`, t.text);
+            let c = ae(s, t.text);
+            c ? (c.onclick = () => {
+              console.log(`Button ${s} clicked`), ie(), t.action && (console.log("Executing option action..."), t.action());
+            }, console.log(`Button ${s} event listener set`)) : console.error(`ERROR: Failed to create button ${s}!`);
+          }), this.currentScene = e.id || "unknown", console.log("Current scene set to:", this.currentScene), console.log("showScene completed successfully");
+        } catch (t) {
+          console.error("ERROR in showScene:", t), alert("There was an error displaying the scene. Game will continue.");
+        }
+        console.log("=== SHOW SCENE DEBUG END ===");
+      }
+      clearButtons() {
+        try {
+          ["a", "b", "c", "d"].forEach(e => {
+            let t = document.getElementById(`option${e}`);
+            t && t.remove();
+          });
+        } catch (e) {
+          console.log("clearButtons error (non-critical):", e);
+        }
+      }
+      handleItemFound(e, t = !1) {
+        try {
+          e.equipSlot >= 0 && e.isBetterThan && e.isBetterThan(o.equip[e.equipSlot]) ? (alert(`Item Found: ${e.name}
+${e.primaryStat}: +${e[e.primaryStat]}
+Item has been equipped!`), o.equip[e.equipSlot] = e, this.updatePlayerStats()) : t && alert(`Item Found: ${e.name}
+Item has been added to your inventory!`), o.addToInventory && typeof o.addToInventory == "function" && o.addToInventory(e.name), v && typeof v == "function" && v(e.tag), u();
+        } catch (n) {
+          console.log("handleItemFound error:", n), alert(`Item Found: ${e?.name || "Unknown Item"}`);
+        }
+      }
+      handleVictoryRewards(e, t = []) {
+        console.log("=== VICTORY REWARDS DEBUG START ==="), console.log("Enemy:", e.name), console.log("Items:", t.map(n => n?.name || "undefined"));
+        try {
+          let n = e.getRewards();
+          console.log("Rewards received:", n);
+          let s = `Victory!
+Gold Gained: ${n.gp}
+Exp Gained: ${n.exp}`;
+          t.forEach(c => {
+            c && c.name && (s += `
+Item Found: ${c.name}`);
+          }), console.log("Showing alert..."), alert(s), console.log("Alert shown"), console.log("About to call mc.earnGold..."), typeof o.earnGold == "function" ? (o.earnGold(n.gp), console.log("mc.earnGold completed")) : console.error("ERROR: mc.earnGold is not a function!"), console.log("About to call mc.gainExp..."), typeof o.gainExp == "function" ? (o.gainExp(n.exp), console.log("mc.gainExp completed")) : console.error("ERROR: mc.gainExp is not a function!"), t.forEach(c => {
+            c && this.handleItemFound(c);
+          }), this.gameState.defeatedEnemies.add(e.name), console.log("About to call checkLevel..."), typeof D == "function" ? (D(), console.log("checkLevel completed")) : console.error("ERROR: checkLevel is not a function!"), console.log("About to call updateNav..."), typeof u == "function" ? (u(), console.log("updateNav completed")) : console.error("ERROR: updateNav is not a function!"), console.log("About to call unhideRest..."), typeof O == "function" ? (O(), console.log("unhideRest completed")) : console.error("ERROR: unhideRest is not a function!"), console.log("=== VICTORY REWARDS COMPLETED ===");
+        } catch (n) {
+          console.error("CRITICAL ERROR in handleVictoryRewards:", n), alert("Victory! (There was a minor error, but you won!)"), this.gameState.defeatedEnemies.add(e.name);
+        }
+      }
+      updatePlayerStats() {
+        try {
+          o.recalculateStats && typeof o.recalculateStats == "function" && o.recalculateStats(), u();
+        } catch (e) {
+          console.log("updatePlayerStats error:", e);
+        }
+      }
+      isEnemyDefeated(e) {
+        return this.gameState.defeatedEnemies.has(e);
+      }
+      hasVisitedArea(e) {
+        return this.gameState.visitedAreas.has(e);
+      }
+      visitArea(e) {
+        this.gameState.visitedAreas.add(e);
+      }
+    };
+    i(_, "GameEngine");
+    j = class {
+      constructor(e) {
+        this.game = e, this.currentEnemy = null, this.deathId = 0, this.onVictory = null, this.victoryItems = [];
+      }
+      startCombat(e, t, n, s = []) {
+        this.currentEnemy = e.clone ? e.clone() : e, this.deathId = t, this.onVictory = n, this.victoryItems = s, me(), this.showCombatOptions();
+      }
+      showCombatOptions() {
+        let e = this.currentEnemy;
+        this.game.showScene({
+          text: `The ${e.name} attacks! What will you do?`,
+          options: [{
+            text: "Attack",
+            action: () => this.attack()
+          }, {
+            text: "Evade",
+            action: () => this.evade()
+          }, {
+            text: "Flee",
+            action: () => this.flee()
+          }]
+        });
+      }
+      attack() {
+        let e = this.currentEnemy;
+        if (console.log("Attack called, enemy HP:", e.hp), e.dodgeChance && H(1, 100) <= e.dodgeChance) {
+          this.enemyDodged();
+          return;
+        }
+        let t = o.getAttackDamage(),
+          n = e.attack();
+        o.takeDamage(n), e.takeDamage(t), u(), console.log("After damage - enemy HP:", e.hp, "enemy isDead:", e.isDead()), e.isDead() ? (console.log("Enemy is dead, calling victory..."), this.victory()) : o.isAlive() ? (I.textContent = `You deal ${t} damage! The ${e.name} has ${e.hp} health remaining.
+
+The ${e.name} attacks back for ${n} damage.
+
+What is your next move?`, this.showCombatOptions()) : x(this.deathId);
+      }
+      evade() {
+        let e = this.currentEnemy;
+        if (H(1, 100) <= e.evade) {
+          let n = o.getAttackDamage();
+          e.takeDamage(n), e.isDead() ? this.victory() : (I.textContent = `You evaded successfully and counter for ${n} damage!
+What will you do next?`, this.showCombatOptions());
+        } else {
+          let n = e.attack();
+          o.takeDamage(n), u(), o.isAlive() ? (I.textContent = `Your evasion failed! The ${e.name} attacks for ${n} damage!
+What will you do next?`, this.showCombatOptions()) : x(this.deathId);
+        }
+      }
+      flee() {
+        let e = this.currentEnemy;
+        if (e.cannotFlee) {
+          alert("You can't flee from this enemy!");
+          return;
+        }
+        if (H(1, 100) <= (e.fleeChance || 5)) e.hp = 0, O(), ie(), this.onVictory && this.onVictory(!0);else {
+          let n = e.attack();
+          o.takeDamage(n), u(), o.isAlive() ? (I.textContent = `Your escape failed! The ${e.name} attacks for ${n} damage!
+What will you do next?`, this.showCombatOptions()) : x(this.deathId);
+        }
+      }
+      enemyDodged() {
+        let e = this.currentEnemy.attack();
+        o.takeDamage(e), u(), o.isAlive() ? (I.textContent = `The ${this.currentEnemy.name} avoided your attack and strikes back for ${e} damage!
+What is your next move?`, this.showCombatOptions()) : x(this.deathId);
+      }
+      victory(e = !1) {
+        console.log("=== VICTORY DEBUG START ==="), console.log("Victory called, fled:", e), console.log("Current enemy:", this.currentEnemy), console.log("OnVictory callback exists:", !!this.onVictory);
+        try {
+          e || (console.log("About to call handleVictoryRewards..."), this.game.handleVictoryRewards(this.currentEnemy, this.victoryItems), console.log("handleVictoryRewards completed successfully")), this.onVictory ? (console.log("About to call onVictory callback..."), this.onVictory(e), console.log("onVictory callback completed successfully")) : (console.error("ERROR: No onVictory callback found!"), this.manualNavigation());
+        } catch (t) {
+          console.error("ERROR in victory method:", t), this.manualNavigation();
+        }
+        console.log("=== VICTORY DEBUG END ===");
+      }
+      manualNavigation() {
+        console.log("Manual navigation triggered");
+        try {
+          this.game.showScene({
+            text: "You are victorious! What will you do next?",
+            options: [{
+              text: "Continue your journey",
+              action: () => {
+                try {
+                  Y();
+                } catch (e) {
+                  console.error("Navigation error:", e), alert("Navigation error. Click OK to restart."), location.reload();
+                }
+              }
+            }]
+          });
+        } catch (e) {
+          console.error("Manual navigation failed:", e), confirm("Victory! Click OK to restart the game.") && location.reload();
+        }
+      }
+    };
+    i(j, "CombatSystem");
+    Z = class {
+      constructor(e) {
+        this.game = e;
+      }
+      playSequence(e, t = 0) {
+        if (t >= e.length) return;
+        let n = e[t],
+          s = [{
+            text: t === e.length - 1 ? n.finalButtonText : "Next",
+            action: () => {
+              t === e.length - 1 ? n.finalAction() : this.playSequence(e, t + 1);
+            }
+          }];
+        n.skippable && t < e.length - 1 && s.push({
+          text: "Skip Intro",
+          action: n.skipAction
+        }), this.game.showScene({
+          id: n.id,
+          text: n.text,
+          options: s
+        });
+      }
+    };
+    i(Z, "StorySequence");
+    Fe = [{
+      id: "areaZeroA",
+      text: "A large man and his Orange cat, Kitty, once lived on a secluded ranch on the outskirts of the forest.",
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroB",
+      text: "He made a peaceful life for the two of them, living off the land and only having minor encounters with the local wildlife.",
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroC",
+      text: "Until one day when the two were celebrating Kitty's 20th birthday, the unthinkable happened...",
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroD",
+      text: "As he returned from the kitchen with the tuna and chicken birthday cake, the door was broken open and the cat was nowhere to be found, with muddy footprints everywhere.",
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroE",
+      text: '"KITTY!" he screamed.',
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroF",
+      text: "He frantically looked around and rushed to the door. In the distance, he saw shadowy figures running off with his beloved pet.",
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroG",
+      text: `With no hesitation he ran out the door bringing nothing with him. "I swear I'll do everything in my power to get you back!"`,
+      skippable: !0,
+      skipAction: () => r.showScene(S.startGame)
+    }, {
+      id: "areaZeroH",
+      text: "And so our adventure began on his quest to find his beloved animal. Will he be able to find Kitty in time?",
+      finalButtonText: "Start Your Journey",
+      finalAction: () => r.showScene(S.startGame)
+    }], S = {
+      mainMenu: {
+        id: "mainMenu",
+        text: "Welcome to the Journey. Press start to begin.",
+        options: [{
+          text: "Start Game",
+          action: () => lt.playSequence(Fe)
+        }]
+      },
+      startGame: {
+        id: "startGame",
+        text: "You enter the forest where you last saw the shadowy figures. What do you want to do?",
+        options: [{
+          text: "Check the forest",
+          action: () => ze()
+        }, {
+          text: "Follow the path",
+          action: () => Y()
+        }]
+      }
+    };
+    i(ze, "areaOneForest");
+    i(Ve, "areaOneClearing");
+    i(Y, "areaTwoPath");
+    i(f, "areaTwoClearing");
+    i(Ue, "areaTwoInvestigate");
+    i(Ke, "areaTwoSavannaA");
+    i(_e, "areaTwoSavannaB");
+    i(je, "areaTwoSavannaAB");
+    i(L, "areaTwoSavannaC");
+    i(Ze, "areaTwoHutInside");
+    i(Je, "areaTwoInsideInvestigation");
+    i(Qe, "areaTwoHutOutside");
+    i(Xe, "areaTwoSwampA");
+    i(et, "areaTwoSwampB");
+    i(tt, "areaTwoSwampC");
+    i(Ae, "areaTwoWitchHutA");
+    i(ot, "areaTwoWitchHutB");
+    i(ye, "fightSpider");
+    i(we, "fightLion");
+    i(se, "fightGoblin");
+    i(Ee, "fightWitch");
+    i(nt, "fightGolem");
+    i(at, "fightGolemites");
+    i(ke, "areaThreeRiverG");
+    i(xe, "areaThreeRiverW");
+    i(it, "areaThreeRiverGG");
+    i(rt, "areaThreeRiverGGG");
+    i(st, "areaThreeRiverGGGG");
+    i(ce, "areaThreeRiver");
+    ct = {
+      1: "You investigate the noise and hear chattering above. You turn to look as your head is crushed between the mandibles of a large spider.",
+      2: "You hide behind a log but something sticks to your head. You're dragged into a web and slowly fade away...",
+      3: "The spider catches you with a well-timed web. Unable to defend yourself, you slowly fade away...",
+      4: "The lion lunges on top of you, pinning you down. It bites your neck and everything fades to black.",
+      5: "The goblin throws his spear and pierces your chest. As you collapse, he steals your coin pouch.",
+      6: "You walk into the home and are immediately stabbed with a large knife. Blood pours from your stomach as everything fades to black.",
+      7: "You awake in some room, bound and muzzled. A witch stands over you with a knife. 'Now be a good boy as I get my pound of flesh.' Muffled screams fill the swamp.",
+      8: "The golem's massive rocky fist comes down and crushes you.",
+      9: "A golemite catches you off guard and sweeps your legs. It body slams you into the rocky ground until you are mush."
+    };
+    i(x, "death");
+    i(Re, "gameOver");
+    window.emergencyDebug = function () {
+      console.log("=== EMERGENCY DEBUG ==="), console.log("mc:", o), console.log("mc.equip:", o.equip), console.log("button-holder element:", document.querySelector("#button-holder")), console.log("makeButton function:", typeof ae), console.log("updateNav function:", typeof u), console.log("checkLevel function:", typeof D), console.log("unhideRest function:", typeof O);
+    };
+    window.testNavigation = function () {
+      try {
+        r.showScene({
+          text: "Navigation test - can you see this?",
+          options: [{
+            text: "Yes, I can see this",
+            action: () => alert("Navigation is working!")
+          }, {
+            text: "Go to area two",
+            action: () => Y()
+          }]
+        });
+      } catch (a) {
+        console.error("Navigation test failed:", a), alert("Navigation system has a problem: " + a.message);
+      }
+    };
+    r = new _(), M = new j(r), lt = new Z(r);
+    try {
+      A(), console.log("Support systems initialized");
+    } catch (a) {
+      console.log("Support initialization error:", a);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        A(), console.log("Support systems re-initialized after DOM ready");
+      } catch (a) {
+        console.log("DOM ready initialization error:", a);
+      }
+    });
+    r.showScene(S.mainMenu);
+  });
+re();
+te();
+$();
+//!===========================================================================================
+//!========= Starting Materials Begin ===========</script>
+    </body>
+</html>

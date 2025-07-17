@@ -1,361 +1,501 @@
-//This program is a collection of supportive functions for the game
+// ===== OPTIMIZED SUPPORT UTILITIES =====
+import { mc } from './player.js';
 
-//imports
-import {mc,playerArmor,playerWeapon,playerCloak,playerHelm,gameOver} from './game.js'
-import{checkRec} from './crafting.js'
-
-
-//!========Supporting Functions begin===============
-
-//!=======Remove button begin===========
-// removes old set of buttons
-function removeElementsByClass(className) {
-    const elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
-//!========Remove button end=============
-
-
-
-//!=======Evasion begin=========
-//generates random number for enemy evasion
-function getRandomInte(max) {
-  return Math.floor(Math.random() * max);
-}
-//!=======Evasion end=========
-
-
-
-//!=========Attack Range begin=========
-//generates damage for each player attack
-function getRandomInt(min, max) {
+// ===== UTILITY FUNCTIONS =====
+export function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
 }
-//!=========Attack Range end=========
 
-
-
-//!=======Making Buttons begin=======
-//creates buttons by passing which button and descript
-function makeButton(x, xx){
-  var z = 'option' + x;
-  var y = document.createElement(z)
-  var home = document.querySelector("#button-holder")
-  y.innerText = xx
-  y.classList.add('btn')
-  y.id = z;
-  home.appendChild(y);
+export function getRandomInte(max) {
+    return Math.floor(Math.random() * max);
 }
-//!=======Making Buttons end ===============
 
-
-
-//!=======Start Navbar Elements begin ===============
-//creates initial nav elements for status
-var levelStatus = document.getElementById('level-status')
-levelStatus.append(`${
-    mc.level
-}`)
-var healthStatus = document.getElementById('health-status')
-healthStatus.append(`${
-    mc.currenthp
-}/${
-    mc.maxhp
-}`)
-
-var attackStatus = document.getElementById('attack-status')
-attackStatus.append(`${mc.minatk}-${mc.maxatk}`)
-var goldStatus = document.getElementById('gold-status')
-goldStatus.append(`${
-    mc.gp
-}`)
-
-var shortRests = document.getElementById('srest')
-shortRests.append(`${
-    shortRest
-}`)
-var longRests = document.getElementById('lrest')
-longRests.append(`${
-    longRest
-}`)
-//!======Start Navbar Elements end ===============
-
-
-
-//!========Exp bar Begin=======================
-//Exp bar update
-function expUpdate() {
-    var f = mc.exp
-    var g = mc.reqexp
-    var h = f/g
-    var i = document.getElementById("expstatus")
-    i.style.width = (h*100) + '%'; 
-    return
-  }
-//!========Exp bar end=======================
-
-
-
-//!========Rests Begin===================
-//types of rests
-var shortRest = 3
-var longRest = 1
-
-
-//when a short rest is taken
-shortRests.onclick = function () {
-    if (shortRest > 0){
-    if (mc.currenthp != mc.maxhp) {
-        let z = Math.floor(Math.random() * 5);
-        var heal = z * 4 + mc.level
-        alert(`You decide to take a short rest, you regain ${heal} health and feel a little more refreshed.`)
-        mc.currenthp += heal;
-        shortRest = shortRest - 1
-        if (mc.currenthp > mc.maxhp) {
-            mc.currenthp === mc.maxhp
+// ===== DOM UTILITIES =====
+export function removeElementsByClass(className) {
+    try {
+        const elements = document.getElementsByClassName(className);
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
         }
-    } else {
-        alert(`There is no need to rest you are at full health.`)
+    } catch (error) {
+        console.log("removeElementsByClass error (non-critical):", error);
     }
 }
-else{
-    alert(`You cant short rest for a while`)
-}
-    updateNav()
-}
 
-//when a long rest is taken
-longRests.onclick = function () {
-    if(longRest > 0){
-    if (mc.currenthp != mc.maxhp) {
-        alert(`You decide to take a long rest, you regain full health and feel well rested.`)
-        mc.currenthp = mc.maxhp
-        if (mc.currenthp > mc.maxhp) {
-            mc.currenthp === mc.maxhp
+export function makeButton(letter, text) {
+    try {
+        const buttonId = 'option' + letter;
+        const button = document.createElement('button');
+        const home = document.querySelector("#button-holder");
+        
+        if (!home) {
+            console.error("ERROR: #button-holder element not found!");
+            return null;
         }
-        shortRest = 3
-        longRest = 0
-    } else {
-        alert(`There is no need to rest you are at full health.`)
-    }
-}
-else{
-    alert(`You cant long rest for a while`)
-}
-    updateNav()
-}
-
-
-//When a new area is entered the rests are reset with a little text blurb and alert
-function restReset(){
-    shortRest = 3
-    longRest = 1
-    alert(`You now are at full health.`)
-    mc.currenthp = mc.maxhp
-    updateNav()
-}
-//!=======Rests End========================
-
-
-
-//!=======Update Navbar begin ===============
-//updates the nav bar items
-function updateNav() {
-  levelStatus.textContent = (`Level: ${
-      mc.level
-  }`)
-  healthStatus.textContent = (`Health: ${
-      mc.currenthp
-  }/${
-      mc.maxhp
-  }`)
-  attackStatus.textContent = (`Attack: ${mc.minatk}-${mc.maxatk}`)
-  goldStatus.textContent = (`Gold: ${
-      mc.gp
-  }`)
-
-
-  //updates the players equip
- 
-//player helm equip
-playerHelm.classList.remove(`c`);
-playerHelm.classList.remove(`uc`);
-playerHelm.classList.remove(`r`);
-playerHelm.classList.remove(`e`);
-playerHelm.classList.remove(`l`);
-  playerHelm.classList.remove(`${mc.equip[1].rarity}`);
-  playerHelm.textContent = (`Helm: ${
-    mc.equip[1].name
-  }`)
-  //playerHelm.classList.add(`dropdown-item`);
-  playerHelm.classList.add(`${mc.equip[1].rarity}`);
-
-//player armor equip
-playerArmor.classList.remove(`c`);
-playerArmor.classList.remove(`uc`);
-playerArmor.classList.remove(`r`);
-playerArmor.classList.remove(`e`);
-playerArmor.classList.remove(`l`);
-  playerArmor.classList.remove(`${mc.equip[3].rarity}`);
-  playerArmor.textContent = (`Armor: ${
-      mc.equip[3].name
-  }`)
-  //playerArmor.classList.add(`dropdown-item`);
-  playerArmor.classList.add(`${mc.equip[3].rarity}`);
-
-
-//player cloak equip
-playerCloak.classList.remove(`c`);
-playerCloak.classList.remove(`uc`);
-playerCloak.classList.remove(`r`);
-playerCloak.classList.remove(`e`);
-playerCloak.classList.remove(`l`);
-  playerCloak.classList.remove(`${mc.equip[2].rarity}`);
-  playerCloak.textContent = (`Cloak: ${
-      mc.equip[2].name
-  }`)
-  //playerCloak.classList.add(`dropdown-item`);
-  playerCloak.classList.add(`${mc.equip[2].rarity}`);
-
-
-
-//player weapon equip
-  //playerWeapon.classList.remove(`dropdown-item`);
-  playerWeapon.classList.remove(`c`);
-  playerWeapon.classList.remove(`uc`);
-  playerWeapon.classList.remove(`r`);
-  playerWeapon.classList.remove(`e`);
-  playerWeapon.classList.remove(`l`);
-  playerWeapon.textContent = (`Weapon: ${
-      mc.equip[0].name
-  }`)
-  //playerWeapon.classList.add(`dropdown-item`);
-  playerWeapon.classList.add(`${mc.equip[0].rarity}`);
-
-
-  //rests
-  shortRests.textContent = (`Short Rests: ${shortRest}/3`)
-  longRests.textContent = (`Long Rests: ${longRest}/1`)
-
-  //info
-
-  mc.maxhp = mc.basehp + mc.equip[3].hp + mc.equip[2].hp + mc.equip[1].hp + mc.equip[0].hp
-  mc.minatk = 1 + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-  mc.maxatk = mc.baseatk + mc.equip[3].atk + mc.equip[2].atk + mc.equip[1].atk + mc.equip[0].atk
-}
-
-//!======Update Navbar end ===============
-
-
-
-//!=======Start Level Check begin ===============
-
-function checkLevel() {
-  if (mc.exp > mc.reqexp) {
-      mc.level = 1 + mc.level;
-      mc.reqexp += 10 * mc.level
-      mc.exp = 0
-      alert(`You are now level ${
-          mc.level
-      }!\n Health: +5\n Attack: +1\n`)
-      mc.maxhp += 5
-      mc.minatk += 1
-      mc.maxatk += 1
-      return
-  } else {
-      return
-  }
-}
-
-//!=======Start Level Check end ===============
-
-
-
-//!======is alive? start====================
-//^needs work still have a couple neg health overflows
-//is supposed to check health after each hit to prevent overflow
-function checkHealth(){
-    if(mc.currenthp <= 0){
-        gameOver()
-    }
-    else {
-        return
+        
+        button.innerText = text;
+        button.classList.add('btn');
+        button.id = buttonId;
+        home.appendChild(button);
+        
+        return button;
+    } catch (error) {
+        console.error("makeButton error:", error);
+        return null;
     }
 }
 
-//!=======is alive? end=====================
-
-
-
-//!=======Add Item to invin begin=================
-//add to inventory
-function addToInventory(zzz){
-    let invin = document.getElementById(zzz);
-    invin.style.display = 'block';
+// ===== REST SYSTEM =====
+class RestSystem {
+    constructor() {
+        this.shortRest = 3;
+        this.longRest = 1;
+        this.initialized = false;
+    }
+    
+    initializeRestButtons() {
+        try {
+            const shortRestBtn = document.getElementById('srest');
+            const longRestBtn = document.getElementById('lrest');
+            
+            if (shortRestBtn) {
+                shortRestBtn.onclick = () => this.takeShortRest();
+            }
+            
+            if (longRestBtn) {
+                longRestBtn.onclick = () => this.takeLongRest();
+            }
+            
+            this.updateRestDisplay();
+            this.initialized = true;
+        } catch (error) {
+            console.log("RestSystem initialization error (non-critical):", error);
+        }
+    }
+    
+    takeShortRest() {
+        try {
+            if (this.shortRest <= 0) {
+                alert("You can't short rest for a while");
+                return;
+            }
+            
+            if (mc.currenthp >= mc.maxhp) {
+                alert("There is no need to rest, you are at full health.");
+                return;
+            }
+            
+            const healAmount = getRandomInt(1, 5) * 4 + mc.level;
+            mc.currenthp = Math.min(mc.currenthp + healAmount, mc.maxhp);
+            this.shortRest--;
+            
+            alert(`You take a short rest and regain ${healAmount} health.`);
+            updateNav();
+        } catch (error) {
+            console.log("takeShortRest error:", error);
+        }
+    }
+    
+    takeLongRest() {
+        try {
+            if (this.longRest <= 0) {
+                alert("You can't long rest for a while");
+                return;
+            }
+            
+            if (mc.currenthp >= mc.maxhp) {
+                alert("There is no need to rest, you are at full health.");
+                return;
+            }
+            
+            mc.currenthp = mc.maxhp;
+            this.shortRest = 3;
+            this.longRest = 0;
+            
+            alert("You take a long rest and feel completely refreshed!");
+            updateNav();
+        } catch (error) {
+            console.log("takeLongRest error:", error);
+        }
+    }
+    
+    reset() {
+        try {
+            this.shortRest = 3;
+            this.longRest = 1;
+            mc.currenthp = mc.maxhp;
+            alert("You now are at full health.");
+            updateNav();
+        } catch (error) {
+            console.log("restReset error:", error);
+        }
+    }
+    
+    updateRestDisplay() {
+        try {
+            if (!this.initialized) {
+                this.initializeRestButtons();
+                return;
+            }
+            
+            const shortRestDisplay = document.getElementById('srest');
+            const longRestDisplay = document.getElementById('lrest');
+            
+            if (shortRestDisplay) {
+                shortRestDisplay.textContent = `Short Rests: ${this.shortRest}/3`;
+            }
+            
+            if (longRestDisplay) {
+                longRestDisplay.textContent = `Long Rests: ${this.longRest}/1`;
+            }
+        } catch (error) {
+            console.log("updateRestDisplay error (non-critical):", error);
+        }
+    }
+    
+    hide() {
+        try {
+            const restElement = document.getElementById('restee');
+            if (restElement) restElement.style.display = 'none';
+        } catch (error) {
+            console.log("hideRest error (non-critical):", error);
+        }
+    }
+    
+    show() {
+        try {
+            const restElement = document.getElementById('restee');
+            if (restElement) restElement.style.display = 'block';
+        } catch (error) {
+            console.log("unhideRest error (non-critical):", error);
+        }
+    }
 }
-//!=======Add Item to invin end=================
 
-
-//!=======Remove Item to invin begin=================
-//add to inventory
-function removeFromInventory(zzz){
-    let invin = document.getElementById(zzz);
-    invin.style.display = 'none';
+// ===== PLAYER STATS SYSTEM =====
+class PlayerStatsManager {
+    constructor() {
+        this.elements = {};
+        this.initialized = false;
+    }
+    
+    initializeStatusElements() {
+        try {
+            // Get DOM elements for status display with error checking
+            this.elements = {
+                level: document.getElementById('level-status'),
+                health: document.getElementById('health-status'),
+                attack: document.getElementById('attack-status'),
+                gold: document.getElementById('gold-status'),
+                weapon: document.getElementById('weapon'),
+                helm: document.getElementById('helm'),
+                cloak: document.getElementById('cloak'),
+                armor: document.getElementById('armor'),
+                expBar: document.getElementById('expstatus')
+            };
+            
+            this.initialized = true;
+            // Only update if we successfully found elements
+            this.updateAll();
+        } catch (error) {
+            console.log("PlayerStatsManager initialization error (non-critical):", error);
+        }
+    }
+    
+    updateAll() {
+        if (!this.initialized) {
+            this.initializeStatusElements();
+        }
+        
+        try {
+            this.updateStats();
+            this.updateEquipment();
+            this.updateExpBar();
+            this.recalculatePlayerStats();
+        } catch (error) {
+            console.log("PlayerStatsManager update error (non-critical):", error);
+        }
+    }
+    
+    updateStats() {
+        try {
+            if (this.elements.level) {
+                this.elements.level.textContent = `Level: ${mc.level}`;
+            }
+            
+            if (this.elements.health) {
+                this.elements.health.textContent = `Health: ${mc.currenthp}/${mc.maxhp}`;
+            }
+            
+            if (this.elements.attack) {
+                this.elements.attack.textContent = `Attack: ${mc.minatk}-${mc.maxatk}`;
+            }
+            
+            if (this.elements.gold) {
+                this.elements.gold.textContent = `Gold: ${mc.gp}`;
+            }
+        } catch (error) {
+            console.log("updateStats error (non-critical):", error);
+        }
+    }
+    
+    updateEquipment() {
+        try {
+            if (!mc.equip || !Array.isArray(mc.equip)) return;
+            
+            const equipmentSlots = ['weapon', 'helm', 'cloak', 'armor'];
+            const equipmentLabels = ['Weapon', 'Helm', 'Cloak', 'Armor'];
+            
+            equipmentSlots.forEach((slot, index) => {
+                const element = this.elements[slot];
+                if (!element || !mc.equip[index]) return;
+                
+                const item = mc.equip[index];
+                if (!item || !item.name) return;
+                
+                // Remove old rarity classes
+                ['c', 'uc', 'r', 'e', 'l'].forEach(rarity => {
+                    element.classList.remove(rarity);
+                });
+                
+                // Update text and add new rarity class
+                element.textContent = `${equipmentLabels[index]}: ${item.name}`;
+                if (item.rarity) {
+                    element.classList.add(item.rarity);
+                }
+            });
+        } catch (error) {
+            console.log("updateEquipment error (non-critical):", error);
+        }
+    }
+    
+    updateExpBar() {
+        try {
+            if (!this.elements.expBar || !mc.reqexp) return;
+            
+            const expPercent = (mc.exp / mc.reqexp) * 100;
+            this.elements.expBar.style.width = expPercent + '%';
+        } catch (error) {
+            console.log("updateExpBar error (non-critical):", error);
+        }
+    }
+    
+    recalculatePlayerStats() {
+        try {
+            if (!mc.equip || !Array.isArray(mc.equip)) {
+                console.log("mc.equip not properly initialized, skipping recalculation");
+                return;
+            }
+            
+            mc.maxhp = mc.basehp + mc.equip.reduce((sum, item) => sum + (item?.hp || 0), 0);
+            mc.minatk = 1 + mc.equip.reduce((sum, item) => sum + (item?.atk || 0), 0);
+            mc.maxatk = mc.baseatk + mc.equip.reduce((sum, item) => sum + (item?.atk || 0), 0);
+            
+            // Ensure current HP doesn't exceed max HP
+            if (mc.currenthp > mc.maxhp) {
+                mc.currenthp = mc.maxhp;
+            }
+        } catch (error) {
+            console.log("recalculatePlayerStats error (non-critical):", error);
+        }
+    }
 }
-//!=======Remove Item to invin end=================
 
-
-
-//!======= Rest Nav begin=================
-//hide rest nav
-function hideRest(){
-    const restee = document.getElementById('restee');
-    restee.style.display = 'none';
-}
-//unhide rest nav
-function unhideRest(){
-    const restee = document.getElementById('restee');
-    restee.style.display = 'block';
-}
-//!======= Rest Nav end=================
-
-
-
-
-//!=======Start Update begin ===============
-//function goes through list of what needs to be updated on page change
-function update() {
-    updateNav()
-    checkRec()
-    checkHealth()
-    checkLevel()
-    expUpdate()
-    removeElementsByClass('btn')
-    updateNav()
+// ===== LEVEL SYSTEM =====
+export function checkLevel() {
+    try {
+        if (mc.exp >= mc.reqexp) {
+            mc.level++;
+            mc.reqexp += 10 * mc.level;
+            mc.exp = 0;
+            
+            const hpBonus = 5;
+            const atkBonus = 1;
+            
+            mc.basehp += hpBonus;
+            mc.baseatk += atkBonus;
+            
+            alert(`Level Up! You are now level ${mc.level}!\nHealth: +${hpBonus}\nAttack: +${atkBonus}`);
+            
+            if (playerStatsManager) {
+                playerStatsManager.recalculatePlayerStats();
+                playerStatsManager.updateAll();
+            }
+        }
+    } catch (error) {
+        console.log("checkLevel error:", error);
+    }
 }
 
-//!=======Start Update end ===============
+// ===== INVENTORY MANAGEMENT =====
+export function addToInventory(itemTag) {
+    try {
+        const element = document.getElementById(itemTag);
+        if (element) {
+            element.style.display = 'block';
+        }
+    } catch (error) {
+        console.log("addToInventory error (non-critical):", error);
+    }
+}
 
+export function removeFromInventory(itemTag) {
+    try {
+        const element = document.getElementById(itemTag);
+        if (element) {
+            element.style.display = 'none';
+        }
+    } catch (error) {
+        console.log("removeFromInventory error (non-critical):", error);
+    }
+}
 
-//!========Supporting Functions End ===============
+// ===== HEALTH SYSTEM =====
+export function checkHealth() {
+    try {
+        if (mc.currenthp <= 0) {
+            // Import gameOver function when needed to avoid circular dependencies
+            import('./game.js').then(({ gameOver }) => {
+                gameOver();
+            });
+        }
+    } catch (error) {
+        console.log("checkHealth error:", error);
+    }
+}
 
+// ===== SAFE INITIALIZATION =====
+let restSystem = null;
+let playerStatsManager = null;
 
-//exports
-export {getRandomInt}
-export {getRandomInte}
-export {makeButton}
-export {updateNav}
-export {checkLevel}
-export {checkHealth}
-export {update}
-export {expUpdate}
-export {addToInventory}
-export {restReset}
-export {hideRest}
-export {unhideRest}
-export{removeFromInventory}
-export{levelStatus,healthStatus,attackStatus,goldStatus, shortRest, longRest}
+export function initializeSupportSystems() {
+    try {
+        if (!restSystem) {
+            restSystem = new RestSystem();
+            restSystem.initializeRestButtons();
+        }
+        
+        if (!playerStatsManager) {
+            playerStatsManager = new PlayerStatsManager();
+            playerStatsManager.initializeStatusElements();
+        }
+        
+        console.log("Support systems initialized successfully");
+    } catch (error) {
+        console.log("Support systems initialization error (non-critical):", error);
+    }
+}
+
+// ===== MASTER UPDATE FUNCTION =====
+export function update() {
+    try {
+        if (!playerStatsManager) {
+            initializeSupportSystems();
+        }
+        if (playerStatsManager) {
+            playerStatsManager.updateAll();
+        }
+        checkHealth();
+        checkLevel();
+        removeElementsByClass('btn');
+        
+        // Check crafting recipes if crafting system is available
+        try {
+            import('./crafting.js').then(({ checkRec }) => {
+                if (typeof checkRec === 'function') {
+                    checkRec();
+                }
+            });
+        } catch (error) {
+            // Crafting system not available
+        }
+    } catch (error) {
+        console.log("update error:", error);
+    }
+}
+
+// ===== CONVENIENCE FUNCTIONS =====
+export function updateNav() {
+    try {
+        if (!playerStatsManager) {
+            initializeSupportSystems();
+        }
+        if (playerStatsManager) {
+            playerStatsManager.updateAll();
+        }
+    } catch (error) {
+        console.log("updateNav error (non-critical):", error);
+    }
+}
+
+export function expUpdate() {
+    try {
+        if (!playerStatsManager) {
+            initializeSupportSystems();
+        }
+        if (playerStatsManager) {
+            playerStatsManager.updateExpBar();
+        }
+    } catch (error) {
+        console.log("expUpdate error (non-critical):", error);
+    }
+}
+
+export function restReset() {
+    try {
+        if (!restSystem) {
+            initializeSupportSystems();
+        }
+        if (restSystem) {
+            restSystem.reset();
+        }
+    } catch (error) {
+        console.log("restReset error:", error);
+    }
+}
+
+export function hideRest() {
+    try {
+        if (!restSystem) {
+            initializeSupportSystems();
+        }
+        if (restSystem) {
+            restSystem.hide();
+        }
+    } catch (error) {
+        console.log("hideRest error (non-critical):", error);
+    }
+}
+
+export function unhideRest() {
+    try {
+        if (!restSystem) {
+            initializeSupportSystems();
+        }
+        if (restSystem) {
+            restSystem.show();
+        }
+    } catch (error) {
+        console.log("unhideRest error (non-critical):", error);
+    }
+}
+
+// ===== EXPORTS =====
+export { restSystem, playerStatsManager };
+
+// Legacy exports for backward compatibility
+export const levelStatus = document.getElementById('level-status');
+export const healthStatus = document.getElementById('health-status');
+export const attackStatus = document.getElementById('attack-status');
+export const goldStatus = document.getElementById('gold-status');
+
+// Dynamic rest exports
+export function getShortRest() {
+    return restSystem ? restSystem.shortRest : 3;
+}
+
+export function getLongRest() {
+    return restSystem ? restSystem.longRest : 1;
+}
