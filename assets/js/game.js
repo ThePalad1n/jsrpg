@@ -1,6 +1,6 @@
 /*
 Evan Green
-07/28/2022
+07/17/2025
 JSRPG
 
 Note:
@@ -12,26 +12,6 @@ Note:
 */
 
 //!===========================================================================================
-/*
-Evan Green
-07/28/2022
-JSRPG
-
-Note:
-! = beginning of exclusive funtions or sections for each area
-^ = Features to be added
-* = seperation of areas
-? = used to seperate battle scenes
-
-*/
-
-//!===========================================================================================
-//!========= Starting Materials Begin ===========
-/*
-Optimized JSRPG - Main Game File
-Integrates all optimized systems
-*/
-
 // ===== IMPORTS =====
 import { mc } from "./player.js";
 import { spider, lion, goblin, witch, golem, golemitea, golemiteb } from "./enemies.js";
@@ -150,7 +130,6 @@ class GameEngine {
             console.log("showScene completed successfully");
         } catch (error) {
             console.error("ERROR in showScene:", error);
-            // Emergency fallback
             alert("There was an error displaying the scene. Game will continue.");
         }
         console.log("=== SHOW SCENE DEBUG END ===");
@@ -203,18 +182,6 @@ class GameEngine {
             const rewards = enemy.getRewards();
             console.log("Rewards received:", rewards);
             
-            let alertText = `Victory!\nGold Gained: ${rewards.gp}\nExp Gained: ${rewards.exp}`;
-            
-            items.forEach(item => {
-                if (item && item.name) {
-                    alertText += `\nItem Found: ${item.name}`;
-                }
-            });
-            
-            console.log("Showing alert...");
-            alert(alertText);
-            console.log("Alert shown");
-            
             console.log("About to call mc.earnGold...");
             if (typeof mc.earnGold === 'function') {
                 mc.earnGold(rewards.gp);
@@ -266,7 +233,6 @@ class GameEngine {
             console.log("=== VICTORY REWARDS COMPLETED ===");
         } catch (error) {
             console.error("CRITICAL ERROR in handleVictoryRewards:", error);
-            alert("Victory! (There was a minor error, but you won!)");
             // Continue anyway
             this.gameState.defeatedEnemies.add(enemy.name);
         }
@@ -297,7 +263,7 @@ class GameEngine {
     }
 }
 
-// ===== COMBAT SYSTEM =====
+// ===== UNIFIED COMBAT SYSTEM =====
 class CombatSystem {
     constructor(gameEngine) {
         this.game = gameEngine;
@@ -305,6 +271,7 @@ class CombatSystem {
         this.deathId = 0;
         this.onVictory = null;
         this.victoryItems = [];
+        this.combatLog = [];
     }
 
     startCombat(enemy, deathId, onVictory, items = []) {
@@ -312,16 +279,34 @@ class CombatSystem {
         this.deathId = deathId;
         this.onVictory = onVictory;
         this.victoryItems = items;
+        this.combatLog = [];
         
         hideRest();
-        this.showCombatOptions();
+        this.showCombatStatus();
     }
 
-    showCombatOptions() {
+    showCombatStatus(lastAction = null) {
         const enemy = this.currentEnemy;
         
+        // Build combat status display
+        let statusText = `=== COMBAT ===\n`;
+        statusText += `Enemy: ${enemy.name}\n`;
+        statusText += `HP: ${enemy.hp}/${enemy.maxhp}\n`;
+        statusText += `Attack: ${enemy.minatk}-${enemy.maxatk}\n\n`;
+        
+        statusText += `Your HP: ${mc.currenthp}/${mc.maxhp}\n`;
+        statusText += `Your Attack: ${mc.minatk}-${mc.maxatk}\n\n`;
+        
+        // Add last action result if any
+        if (lastAction) {
+            statusText += `${lastAction}\n\n`;
+        }
+        
+        statusText += `What will you do?`;
+        
         this.game.showScene({
-            text: `The ${enemy.name} attacks! What will you do?`,
+            id: 'combat',
+            text: statusText,
             options: [
                 { text: 'Attack', action: () => this.attack() },
                 { text: 'Evade', action: () => this.evade() },
@@ -347,16 +332,20 @@ class CombatSystem {
         
         updateNav();
         
+        // Create action log
+        let actionLog = `You attack for ${playerDamage} damage!\n`;
+        actionLog += `${enemy.name} strikes back for ${enemyDamage} damage!`;
+        
         console.log("After damage - enemy HP:", enemy.hp, "enemy isDead:", enemy.isDead());
         
         if (enemy.isDead()) {
             console.log("Enemy is dead, calling victory...");
-            this.victory();
+            actionLog += `\n\n${enemy.name} has been defeated!`;
+            this.showVictoryScreen(actionLog);
         } else if (!mc.isAlive()) {
             death(this.deathId);
         } else {
-            text.textContent = `You deal ${playerDamage} damage! The ${enemy.name} has ${enemy.hp} health remaining.\n\nThe ${enemy.name} attacks back for ${enemyDamage} damage.\n\nWhat is your next move?`;
-            this.showCombatOptions();
+            this.showCombatStatus(actionLog);
         }
     }
 
@@ -364,35 +353,38 @@ class CombatSystem {
         const enemy = this.currentEnemy;
         const evadeSuccess = getRandomInt(1, 100) <= enemy.evade;
         
+        let actionLog;
+        
         if (evadeSuccess) {
             const counterDamage = mc.getAttackDamage();
             enemy.takeDamage(counterDamage);
+            actionLog = `You successfully evade and counter for ${counterDamage} damage!`;
             
             if (enemy.isDead()) {
-                this.victory();
-            } else {
-                text.textContent = `You evaded successfully and counter for ${counterDamage} damage!\nWhat will you do next?`;
-                this.showCombatOptions();
+                actionLog += `\n\n${enemy.name} has been defeated!`;
+                this.showVictoryScreen(actionLog);
+                return;
             }
         } else {
             const enemyDamage = enemy.attack();
             mc.takeDamage(enemyDamage);
             updateNav();
+            actionLog = `Your evasion failed! ${enemy.name} attacks for ${enemyDamage} damage!`;
             
             if (!mc.isAlive()) {
                 death(this.deathId);
-            } else {
-                text.textContent = `Your evasion failed! The ${enemy.name} attacks for ${enemyDamage} damage!\nWhat will you do next?`;
-                this.showCombatOptions();
+                return;
             }
         }
+        
+        this.showCombatStatus(actionLog);
     }
 
     flee() {
         const enemy = this.currentEnemy;
         
         if (enemy.cannotFlee) {
-            alert("You can't flee from this enemy!");
+            this.showCombatStatus("You can't flee from this enemy!");
             return;
         }
         
@@ -408,11 +400,12 @@ class CombatSystem {
             mc.takeDamage(enemyDamage);
             updateNav();
             
+            const actionLog = `Your escape failed! ${enemy.name} attacks for ${enemyDamage} damage!`;
+            
             if (!mc.isAlive()) {
                 death(this.deathId);
             } else {
-                text.textContent = `Your escape failed! The ${enemy.name} attacks for ${enemyDamage} damage!\nWhat will you do next?`;
-                this.showCombatOptions();
+                this.showCombatStatus(actionLog);
             }
         }
     }
@@ -422,19 +415,49 @@ class CombatSystem {
         mc.takeDamage(enemyDamage);
         updateNav();
         
+        const actionLog = `${this.currentEnemy.name} avoided your attack and strikes back for ${enemyDamage} damage!`;
+        
         if (!mc.isAlive()) {
             death(this.deathId);
         } else {
-            text.textContent = `The ${this.currentEnemy.name} avoided your attack and strikes back for ${enemyDamage} damage!\nWhat is your next move?`;
-            this.showCombatOptions();
+            this.showCombatStatus(actionLog);
         }
+    }
+
+    showVictoryScreen(finalAction) {
+        const enemy = this.currentEnemy;
+        const rewards = enemy.getRewards();
+        
+        let victoryText = `${finalAction}\n\n`;
+        victoryText += `=== VICTORY! ===\n`;
+        victoryText += `Defeated: ${enemy.name}\n`;
+        victoryText += `Gold Gained: ${rewards.gp}\n`;
+        victoryText += `Experience Gained: ${rewards.exp}\n`;
+        
+        if (this.victoryItems.length > 0) {
+            victoryText += `\nItems Found:\n`;
+            this.victoryItems.forEach(item => {
+                if (item && item.name) {
+                    victoryText += `- ${item.name}\n`;
+                }
+            });
+        }
+        
+        this.game.showScene({
+            id: 'victory',
+            text: victoryText,
+            options: [
+                { 
+                    text: 'Continue', 
+                    action: () => this.victory(false)
+                }
+            ]
+        });
     }
 
     victory(fled = false) {
         console.log("=== VICTORY DEBUG START ===");
         console.log("Victory called, fled:", fled);
-        console.log("Current enemy:", this.currentEnemy);
-        console.log("OnVictory callback exists:", !!this.onVictory);
         
         try {
             if (!fled) {
@@ -449,12 +472,10 @@ class CombatSystem {
                 console.log("onVictory callback completed successfully");
             } else {
                 console.error("ERROR: No onVictory callback found!");
-                // Emergency fallback
                 this.manualNavigation();
             }
         } catch (error) {
             console.error("ERROR in victory method:", error);
-            // Show a basic scene so player isn't stuck
             this.manualNavigation();
         }
         console.log("=== VICTORY DEBUG END ===");
@@ -463,7 +484,6 @@ class CombatSystem {
     manualNavigation() {
         console.log("Manual navigation triggered");
         try {
-            // Show a simple continue option
             this.game.showScene({
                 text: "You are victorious! What will you do next?",
                 options: [
@@ -483,7 +503,6 @@ class CombatSystem {
             });
         } catch (error) {
             console.error("Manual navigation failed:", error);
-            // Ultimate fallback
             if (confirm("Victory! Click OK to restart the game.")) {
                 location.reload();
             }
@@ -881,7 +900,6 @@ function fightSpider() {
                 }
             } catch (error) {
                 console.error("Error in spider victory callback:", error);
-                alert("You won! Click OK to continue.");
                 areaTwoPath();
             }
         }
@@ -944,50 +962,177 @@ function fightGolem() {
     );
 }
 
+// ===== MULTI-ENEMY COMBAT (GOLEMITES) =====
 function fightGolemites() {
-    gameEngine.showScene({
-        id: 'fightGolemites',
-        text: "You defeated the Golem and it begins to violently shake. When all of a sudden it splits apart into two smaller golemites! What will you do?",
-        options: [
-            { 
-                text: 'Attack Golemite A', 
-                action: () => {
-                    // Simplified multi-enemy combat
-                    const damage = mc.getAttackDamage();
-                    golemitea.takeDamage(damage);
-                    
-                    if (golemitea.isDead() && golemiteb.isDead()) {
+    // Reset golemites to full health
+    golemitea.hp = golemitea.maxhp;
+    golemiteb.hp = golemiteb.maxhp;
+    
+    showGolemiteCombat();
+}
+
+function showGolemiteCombat(lastAction = null) {
+    // Check victory condition
+    if (golemitea.isDead() && golemiteb.isDead()) {
+        let victoryText = "=== VICTORY! ===\n";
+        victoryText += "Both golemites have been defeated!\n\n";
+        victoryText += "Items Found:\n";
+        victoryText += "- Rock Helm\n";
+        victoryText += "- Stone Fragment\n";
+        
+        gameEngine.showScene({
+            id: 'golemiteVictory',
+            text: victoryText,
+            options: [
+                { 
+                    text: 'Continue', 
+                    action: () => {
                         gameEngine.handleVictoryRewards(golemitea, [worldItems.rockHelm, specialItems.stoneA]);
-                        gameEngine.handleVictoryRewards(golemiteb, []);
                         areaThreeRiverG();
-                    } else {
-                        text.textContent = `You damaged Golemite A for ${damage}! Both golemites attack back!`;
-                        mc.takeDamage(golemitea.attack() + golemiteb.attack());
-                        updateNav();
-                        if (!mc.isAlive()) death(9);
                     }
                 }
-            },
-            { 
-                text: 'Attack Golemite B', 
-                action: () => {
-                    const damage = mc.getAttackDamage();
-                    golemiteb.takeDamage(damage);
-                    
-                    if (golemitea.isDead() && golemiteb.isDead()) {
-                        gameEngine.handleVictoryRewards(golemitea, [worldItems.rockHelm, specialItems.stoneA]);
-                        gameEngine.handleVictoryRewards(golemiteb, []);
-                        areaThreeRiverG();
-                    } else {
-                        text.textContent = `You damaged Golemite B for ${damage}! Both golemites attack back!`;
-                        mc.takeDamage(golemitea.attack() + golemiteb.attack());
-                        updateNav();
-                        if (!mc.isAlive()) death(9);
-                    }
-                }
-            }
-        ]
+            ]
+        });
+        return;
+    }
+    
+    // Build combat status display
+    let statusText = `=== GOLEMITE COMBAT ===\n`;
+    statusText += `Golemite A: ${golemitea.hp}/${golemitea.maxhp} HP\n`;
+    statusText += `Golemite B: ${golemiteb.hp}/${golemiteb.maxhp} HP\n\n`;
+    statusText += `Your HP: ${mc.currenthp}/${mc.maxhp}\n`;
+    statusText += `Your Attack: ${mc.minatk}-${mc.maxatk}\n\n`;
+    
+    // Add last action result if any
+    if (lastAction) {
+        statusText += `${lastAction}\n\n`;
+    }
+    
+    statusText += `What will you do?`;
+    
+    const options = [];
+    
+    // Add attack options for living golemites
+    if (!golemitea.isDead()) {
+        options.push({
+            text: 'Attack Golemite A',
+            action: () => attackGolemite('A')
+        });
+    }
+    
+    if (!golemiteb.isDead()) {
+        options.push({
+            text: 'Attack Golemite B',
+            action: () => attackGolemite('B')
+        });
+    }
+    
+    // Add flee option
+    options.push({
+        text: 'Attempt to Flee',
+        action: () => attemptFleeGolemites()
     });
+    
+    gameEngine.showScene({
+        id: 'golemiteCombat',
+        text: statusText,
+        options: options
+    });
+}
+
+function attackGolemite(target) {
+    try {
+        const damage = mc.getAttackDamage();
+        let targetGolemite = target === 'A' ? golemitea : golemiteb;
+        
+        // Player attacks
+        targetGolemite.takeDamage(damage);
+        
+        let actionLog = `You attack Golemite ${target} for ${damage} damage!\n`;
+        
+        // Check if both are dead after this attack
+        if (golemitea.isDead() && golemiteb.isDead()) {
+            actionLog += `Golemite ${target} crumbles to dust!\nBoth golemites have been defeated!`;
+            showGolemiteCombat(actionLog);
+            return;
+        }
+        
+        // Living golemites counter-attack
+        let totalDamage = 0;
+        
+        if (!golemitea.isDead()) {
+            const damageA = golemitea.attack();
+            totalDamage += damageA;
+            actionLog += `Golemite A strikes for ${damageA} damage!\n`;
+        }
+        
+        if (!golemiteb.isDead()) {
+            const damageB = golemiteb.attack();
+            totalDamage += damageB;
+            actionLog += `Golemite B strikes for ${damageB} damage!\n`;
+        }
+        
+        // Apply damage to player
+        mc.takeDamage(totalDamage);
+        updateNav();
+        
+        actionLog += `Total damage taken: ${totalDamage}`;
+        
+        // Check if player died
+        if (!mc.isAlive()) {
+            death(9);
+            return;
+        }
+        
+        // Continue the combat with action log
+        showGolemiteCombat(actionLog);
+        
+    } catch (error) {
+        console.error("Error in golemite combat:", error);
+        showGolemiteCombat("There was an error in combat, but the fight continues...");
+    }
+}
+
+function attemptFleeGolemites() {
+    const fleeChance = 25;
+    const fleeRoll = getRandomInt(1, 100);
+    
+    if (fleeRoll <= fleeChance) {
+        gameEngine.showScene({
+            text: "You successfully escape from the golemites and retreat to safety!",
+            options: [
+                { text: 'Go back to clearing', action: () => areaTwoClearing() }
+            ]
+        });
+    } else {
+        // Failed to flee, golemites attack
+        let totalDamage = 0;
+        let actionLog = "Your escape attempt failed!\n";
+        
+        if (!golemitea.isDead()) {
+            const damageA = golemitea.attack();
+            totalDamage += damageA;
+            actionLog += `Golemite A blocks your path and attacks for ${damageA} damage!\n`;
+        }
+        
+        if (!golemiteb.isDead()) {
+            const damageB = golemiteb.attack();
+            totalDamage += damageB;
+            actionLog += `Golemite B strikes for ${damageB} damage!\n`;
+        }
+        
+        mc.takeDamage(totalDamage);
+        updateNav();
+        
+        actionLog += `Total damage taken: ${totalDamage}`;
+        
+        if (!mc.isAlive()) {
+            death(9);
+            return;
+        }
+        
+        showGolemiteCombat(actionLog);
+    }
 }
 
 // ===== AREA THREE FUNCTIONS =====
